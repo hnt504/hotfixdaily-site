@@ -12,6 +12,7 @@ Key facts:
 - Subscribe: https://hotfixdaily.com/#subscribe
 - Contact: hello@hotfixdaily.com
 - Website: https://hotfixdaily.com/
+- X (Twitter): https://x.com/hotfixdaily (@hotfixdaily)
 
 ## Pages
 
@@ -21,4 +22,5 @@ Key facts:
 
 ## Optional
 
+- [Hotfix Daily on X](https://x.com/hotfixdaily): daily posts and updates
 - [Sitemap](https://hotfixdaily.com/sitemap.xml)
