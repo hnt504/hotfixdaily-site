@@ -13,6 +13,8 @@
             note.className='formnote ok';
             note.textContent='You\u2019re in! Check your inbox (and Promotions tab) to confirm your subscription.';
             email.value='';
+            var to=f.getAttribute('data-redirect');
+            if(to){setTimeout(function(){window.location.href=to;},600);}
           }else{
             var msg=(d&&d.errors&&d.errors.messages&&d.errors.messages[0])||'Something went wrong. Please try again.';
             note.className='formnote err';note.textContent=msg;

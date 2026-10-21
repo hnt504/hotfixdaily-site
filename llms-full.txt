@@ -1,0 +1,134 @@
+# Hotfix Daily: full text for LLMs
+
+> Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.
+> Website: https://hotfixdaily.com/ · Subscribe: https://hotfixdaily.com/#subscribe
+
+## The best AI coding agents for builders (October 2026)
+URL: https://hotfixdaily.com/guides/ai-coding-agents/ · Last reviewed: 2026-10-21
+
+Coding agents now live in three places: inside your editor, in your terminal, and in the cloud working on your repo while you do something else. Most builders end up using one from each group. Below is what each tool is (from its own docs), plus our take on who it suits. We left out pricing because it changes monthly; check each link before you pay.
+
+### In your editor (IDE agents)
+- **Cursor** (Desktop editor, plus CLI) <https://cursor.com>: An AI code editor built around agents you hand tasks to. Its docs cover Agent mode, Rules, Skills, MCP servers and a CLI. Our take, best for: Builders who want one editor where agents do most of the typing. Source: https://cursor.com/docs
+- **GitHub Copilot** (Editor, terminal, desktop and GitHub.com) <https://github.com/features/copilot>: GitHub's coding agent works from an open issue through to reviewing and merging a pull request, and runs in your editor, the terminal, a desktop app and on GitHub itself. Our take, best for: Teams already living in GitHub issues and PRs. Source: https://github.com/features/copilot
+- **Devin Desktop (formerly Windsurf)** (Desktop IDE plus cloud agents) <https://devin.ai/desktop>: Cognition renamed Windsurf to Devin Desktop on June 2, 2026. It keeps the full IDE and adds an Agent Command Center for managing local and cloud agents from one place. Our take, best for: Windsurf users, and anyone who wants local and cloud agents in one window. Source: https://devin.ai/blog/windsurf-is-now-devin-desktop
+- **Kiro** (Agentic IDE (from AWS)) <https://kiro.dev>: Kiro turns prompts into executable specs, checks code correctness, and runs parallel agents across large codebases. It is built by Amazon Web Services. Our take, best for: Builders who like to plan with a written spec before code gets generated. Source: https://kiro.dev
+- **Cline** (Open source (Apache-2.0): IDE extension, CLI or SDK) <https://cline.bot>: An open-source coding agent with Plan and Act modes and MCP support. You bring your own model provider. Our take, best for: People who want an open-source agent and full control over which model they pay for. Source: https://github.com/cline/cline
+
+### In your terminal (CLI agents)
+- **Claude Code** (Terminal and IDE (Anthropic)) <https://www.claude.com/product/claude-code>: Anthropic's agentic coding tool understands your codebase, edits files and runs commands. It reads project instructions from CLAUDE.md or AGENTS.md files. Our take, best for: Long, multi-step changes in an existing codebase. Source: https://code.claude.com/docs/en/memory
+- **Codex** (Open-source CLI (Apache-2.0), IDE extension, desktop app, cloud) <https://github.com/openai/codex>: OpenAI's coding agent runs locally in your terminal and can be scripted in CI with codex exec. There is also an IDE extension, a desktop app (macOS since Feb 2, 2026; Windows since Mar 4, 2026) and a cloud version. Usage is included in paid ChatGPT plans. Our take, best for: ChatGPT subscribers, and anyone who wants to run agents in CI pipelines. Source: https://openai.com/index/introducing-the-codex-app/
+- **Gemini CLI** (Open source (Apache-2.0) terminal agent) <https://github.com/google-gemini/gemini-cli>: An open-source AI agent that brings Google's Gemini models into your terminal. Our take, best for: Trying a terminal agent with Google's models, or forking one. Source: https://github.com/google-gemini/gemini-cli
+- **OpenCode** (Open source (MIT) terminal agent) <https://opencode.ai>: An open-source coding agent you can point at the model provider of your choice. Our take, best for: Open-source fans who want a model-agnostic terminal agent. Source: https://github.com/anomalyco/opencode
+- **Aider** (Open source (Apache-2.0) terminal pair programmer) <https://aider.chat>: AI pair programming in your terminal, working directly on your git repo. Our take, best for: Small, focused edits with a clean git history. Source: https://github.com/Aider-AI/aider
+- **Amp** (CLI and cloud runner) <https://ampcode.com>: A coding agent and development environment. You can run it on your own machine with its CLI, or unattended in the cloud. Our take, best for: Builders who want to hand off long tasks and check back later. Source: https://ampcode.com
+
+### In the cloud (async agents)
+- **Jules** (Cloud agent (Google) connected to GitHub) <https://jules.google>: Clones your repo into a cloud VM, plans and makes the change, runs tests and can open a pull request. You can trigger it from GitHub or a GitHub Action. Our take, best for: Clearing small issues and chores without tying up your laptop. Source: https://github.com/google-labs-code/jules-action
+- **Devin** (Cloud agents (Cognition)) <https://devin.ai>: An autonomous AI software engineer that runs parallel cloud agents, aimed at engineering teams. Our take, best for: Teams with a big backlog of well-scoped tickets. Source: https://devin.ai
+- **Codex cloud and Copilot on GitHub** (Cloud) <https://github.com/features/copilot>: Both OpenAI (chatgpt.com/codex) and GitHub let you delegate a task in the browser and review the result as a diff or PR. Our take, best for: Whoever already pays for ChatGPT or Copilot: try these before buying anything new. Source: https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github
+
+FAQ:
+- Q: What is an AI coding agent?
+  A: A tool that doesn't just suggest code: it reads your project, makes changes across files, runs commands like tests, and reports back. You review and approve the result.
+- Q: Which AI coding agent is best?
+  A: There isn't one winner. Editor agents suit hands-on work, terminal agents suit larger changes and automation, and cloud agents suit backlog chores. Most builders use one from two of these groups.
+- Q: Are there free or open-source coding agents?
+  A: Yes. Cline, OpenCode, Aider, Gemini CLI and OpenAI's Codex CLI publish their source code on GitHub under open-source licenses. You still pay for model usage unless you run a local model.
+- Q: What happened to Windsurf?
+  A: Cognition renamed Windsurf to Devin Desktop on June 2, 2026. The IDE, plans and settings carried over.
+
+## Vibe coding tools: build apps by describing them (October 2026)
+URL: https://hotfixdaily.com/guides/vibe-coding-tools/ · Last reviewed: 2026-10-21
+
+"Vibe coding" means describing what you want in plain language and letting an AI write the code. Andrej Karpathy coined the term in February 2025, and Merriam-Webster listed it as trending slang a month later. Today there are two kinds of vibe coding tools: browser app builders that host everything for you, and coding agents that work on real code on your machine. This guide covers the first kind and tells you when to move to the second.
+
+### Browser app builders
+- **Lovable** (Web apps and sites) <https://lovable.dev>: Describe what you want in plain language and Lovable builds it with you in real time. It also handles hosting, SSL, authentication, backend and payments. Our take, best for: Non-developers shipping a real web product or internal tool. Source: https://lovable.dev
+- **Bolt** (Websites, apps and prototypes) <https://bolt.new>: An AI builder that creates websites and apps from your words. Our take, best for: Fast prototypes you can tweak in the browser. Source: https://bolt.new
+- **v0 by Vercel** (Full-stack web apps) <https://v0.app>: Vercel's AI assistant for designing, iterating on and scaling full-stack web apps. Our take, best for: Polished web UI, especially if you already deploy on Vercel. Source: https://v0.app
+- **Replit** (Apps and websites, in the browser) <https://replit.com>: Describe what you want and Replit builds a working app or website. No coding required. Our take, best for: Learners, and builders who want to go from idea to deployed app in one place. Source: https://replit.com
+- **Base44** (No-code apps and websites (part of Wix)) <https://base44.com>: A no-code AI platform that turns ideas into working apps and websites. The site's footer shows it is owned by Wix.com Ltd. Our take, best for: Simple business apps and dashboards with no code at all. Source: https://base44.com
+- **Rork** (Mobile apps (iOS, Android) and web) <https://rork.com>: A cross-platform AI app builder that can publish to the App Store and Google Play. Our take, best for: Getting a phone app into the stores without learning Swift or Kotlin. Source: https://rork.com
+- **Firebase Studio** (Web-based full-stack workspace (Google)) <https://firebase.studio>: A browser-based workspace for full-stack app development with Gemini built in and app previews running on cloud emulators. Our take, best for: Builders already on Firebase or Google Cloud. Source: https://firebase.studio
+
+FAQ:
+- Q: What is vibe coding?
+  A: Building software by describing what you want in natural language and letting an AI model generate the code, often without reading every line. Andrej Karpathy coined the term in February 2025.
+- Q: What's the best vibe coding tool for beginners?
+  A: Our take: start with a browser builder (Lovable, Bolt, v0 or Replit) because hosting is handled for you. Pick by output: Rork for mobile apps, v0 for polished web UI, Lovable or Base44 for full apps with logins and data.
+- Q: Is vibe-coded software safe to launch?
+  A: It can be, but only if you review it like any other code: secrets, authentication and database permissions especially. Use the checklist on this page before real users sign up.
+
+## AI game dev tools in 2026: engines, assets, NPCs and prototyping
+URL: https://hotfixdaily.com/guides/ai-game-dev-tools/ · Last reviewed: 2026-10-21
+
+AI in game dev has moved from novelty generators into the engines themselves. Unity, Unreal and Roblox now all let AI agents act inside the editor, and the common plug is MCP (Model Context Protocol). Adoption is wide but shallow: in a Vivrato survey of 101 studio leaders, 94% use AI in at least one production stage, yet 52% rate how deeply it's integrated at 3 out of 10 or lower.
+
+### AI inside the engine
+- **Unity's AI tools** (Unity 6+) <https://unity.com/features/ai>: An agentic in-editor assistant, a free Unity CLI with an MCP server, and an official plugin for Claude Code, Codex and Grok. The CLI, MCP server and plugin are free. The in-editor assistant uses credits; Personal users get a free trial that converts to $10/month. Unity has retired the "Unity AI" brand name, and Muse is deprecated. Our take, best for: Unity devs who want their existing coding agent to drive the Editor. Source: https://unity.com/features/ai
+- **Unreal Engine MCP plugin** (Unreal Engine 5.8 (Experimental)) <https://www.unrealengine.com/news/state-of-unreal-2026-top-news-from-the-show>: UE 5.8 adds an Experimental Model Context Protocol plugin that connects models like Claude or Gemini directly to UE projects. Epic says UE6 will build in MCP integrations and is targeting Early Access at the end of 2027. Our take, best for: Unreal teams ready to experiment with agents operating editor workflows. Source: https://www.unrealengine.com/news/state-of-unreal-2026-top-news-from-the-show
+- **Roblox Assistant** (Roblox Studio) <https://create.roblox.com/docs/assistant/guide>: An AI helper in Studio that answers questions, creates and edits objects and scripts, inserts Creator Store assets, generates materials, and generates 3D meshes and procedural models. Our take, best for: Roblox creators who want to automate repetitive Studio work. Source: https://create.roblox.com/docs/assistant/guide
+- **Roblox Cube** (Open model on GitHub) <https://github.com/Roblox/cube>: Roblox's foundation model for 3D intelligence, published on GitHub. Our take, best for: Technical teams researching 3D generation. Source: https://github.com/Roblox/cube
+
+### Art, 3D and audio assets
+- **Scenario** (Web platform) <https://www.scenario.com>: Brings leading AI models together for game assets and creative production, with workflows and agents for image, video, 3D and audio pipelines. Our take, best for: Studios that want a consistent style across many generated assets. Source: https://www.scenario.com
+- **Meshy** (Web platform) <https://www.meshy.ai>: An AI 3D model generator for text and images that exports FBX, OBJ, GLB and STL. Our take, best for: Props and placeholder 3D models. Source: https://www.meshy.ai
+- **Tripo** (Web platform) <https://www.tripo3d.ai>: Turns text or images into 3D models for games, 3D printing and animation. Our take, best for: Quick 3D concepts from a sketch or reference image. Source: https://www.tripo3d.ai
+- **Ludo.ai** (Web platform) <https://ludo.ai>: Generates game assets ready for your engine: sprites, icons, UI, textures, music, 3D and video. Our take, best for: 2D and indie games that need many sprites and icons. Source: https://ludo.ai
+- **ElevenLabs** (API and web app) <https://elevenlabs.io>: An AI voice generator and voice agents platform with APIs and SDKs. Our take, best for: Placeholder or final voice-over, and talking characters. Source: https://elevenlabs.io
+
+### Characters, NPCs and prototyping
+- **Inworld AI** (API) <https://inworld.ai>: Realtime voice models and open LLMs for consumer apps, including games. Our take, best for: Voiced, responsive characters with low latency. Source: https://inworld.ai
+- **Convai** (API and engine plugins) <https://www.convai.com>: Conversational AI for games, XR and virtual worlds, used to bring characters to life. Our take, best for: Talking NPCs in 3D worlds. Source: https://convai.com
+- **Rosebud AI** (Browser game maker) <https://rosebud.ai>: Create playable games from prompts or templates, then build and deploy them. No coding required. Our take, best for: Game jams, prototypes and non-coders. Source: https://rosebud.ai
+
+FAQ:
+- Q: Can AI build a game for me?
+  A: Browser tools like Rosebud can make small playable games from prompts. For anything bigger, AI speeds up parts of the work (code, assets, voices) while you still design and integrate.
+- Q: Does Unity still have Muse?
+  A: No. Unity says Muse is deprecated. Its current AI tools are an in-editor assistant, a CLI with an MCP server, and an official plugin for coding agents.
+- Q: Can I connect Claude or another agent to Unreal Engine?
+  A: Yes, experimentally. Unreal Engine 5.8 added an Experimental MCP plugin that connects models like Claude or Gemini to UE projects.
+
+## Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more
+URL: https://hotfixdaily.com/issues/001/ · Date: 2026-10-21
+
+
+
+**Issue #1 · Wednesday, Oct 21, 2026**
+
+Five things from the last 48 hours worth your attention if you build with AI. No fluff.
+
+---
+
+**1. Inception ships Mercury 3, a diffusion model built for speed**
+Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception's own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.
+*Why builders care:* It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.
+[source](https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/)
+
+**2. Mistral launches Voxtral 3 and a voice agent SDK**
+New speech-to-text and text-to-speech models plus an SDK built on LiveKit. It runs listening, reasoning, tool calls, and speech as one streaming pipeline, and Mistral says each turn finishes in under a second. It works over WebRTC in browsers and over SIP for phone calls.
+*Why builders care:* Voice agents used to mean wiring three vendors together. Now it's one SDK priced per minute, and you can still swap out the LLM.
+[source](https://mistral.ai/news/voxtral-3/)
+
+**3. Beacon: shared memory for your coding agents**
+Asymptote Labs raised a $5.5M seed round for Beacon, an MIT-licensed open-source layer. It records sessions across Claude Code, Codex, Cursor, and 20+ other agent tools, and it lets lessons from earlier sessions carry over instead of disappearing.
+*Why builders care:* If you hop between Cursor and Claude Code, you can stop re-explaining your project to each one.
+[source](https://www.asymptotelabs.ai/blog/asymptote-labs-raises-5-5m-seed-round)
+
+**4. Game studios use AI everywhere, but not deeply**
+Vivrato interviewed 101 studio leaders: 94% use AI in at least one production stage, yet 52% rate how deeply it's built into their pipeline at 3/10 or lower. European studios reported deeper adoption than North American ones.
+*Why builders care:* The gap is in the pipeline. Studios have picked up AI tools but haven't built them into how they work, and that's an opening for tools that fit real game dev workflows.
+[source](https://gamesbeat.com/adam-boyes-vivrato-issues-report-based-on-101-game-leaders-views-on-ai-in-gaming-exclusive/)
+
+**5. Repo of the day: Google's Harness²**
+This trending open-source framework (Apache 2.0) improves the setup around an agent while the agent works: prompts, memory, tools, skills, and subagents. The model itself stays the same. Google reports gains of up to 11.5 points on WorkBuddy-Bench. It supports OpenCode and Codex as executors.
+*Why builders care:* You can get better results by improving the setup around your model, without switching to a new one.
+[source](https://github.com/google-research/harness2)
+
+---
+
+### 🛠 Try this today
+Before you accept "done" from your coding agent, make it **show proof**: run the tests, the build, or a screenshot. Then have a fresh-context subagent review the diff. The Claude Code team says that's the first layer of their review process. From June to September, their merged PRs more than doubled while the share needing reverts fell by over 40%. Put your run-able checks in a short `CLAUDE.md` (or `.cursorrules`).
+[source](https://claude.dev/blog/solving-code-review-at-anthropic/)

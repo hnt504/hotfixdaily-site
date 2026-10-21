@@ -10,17 +10,30 @@ Key facts:
 - Frequency: weekdays (Monday to Friday)
 - Price: free (some issues may carry one clearly labeled sponsor)
 - Subscribe: https://hotfixdaily.com/#subscribe
-- Contact: hello@hotfixdaily.com
-- Website: https://hotfixdaily.com/
+- Archive: https://hotfixdaily.com/issues/
+- Feeds: https://hotfixdaily.com/feed.xml (Atom), https://hotfixdaily.com/rss.xml (RSS)
+- Contact: hello@hotfixdaily.com · Sponsorships: sponsors@hotfixdaily.com
 - X (Twitter): https://x.com/hotfixdaily (@hotfixdaily)
 
-## Pages
+## Guides (sourced, last reviewed 2026-10-21)
 
-- [Home and signup](https://hotfixdaily.com/): what Hotfix Daily is, who it's for, FAQ, and the subscribe form
-- [Sample issue #1](https://hotfixdaily.com/issues/001/): a full example issue (Oct 21, 2026)
-- [Privacy policy](https://hotfixdaily.com/privacy/): what data is collected (email only) and how it's used
+- [The best AI coding agents for builders (October 2026)](https://hotfixdaily.com/guides/ai-coding-agents/): A sourced guide to AI coding agents (Oct 2026): Cursor, Claude Code, Codex, Copilot, Devin Desktop, Gemini CLI, Jules, Kiro, Cline and more, by where they run.
+- [Vibe coding tools: build apps by describing them (October 2026)](https://hotfixdaily.com/guides/vibe-coding-tools/): A sourced guide to vibe coding tools (Oct 2026): Lovable, Bolt, v0, Replit, Base44, Rork and Firebase Studio, when to graduate, and a pre-launch checklist.
+- [AI game dev tools in 2026: engines, assets, NPCs and prototyping](https://hotfixdaily.com/guides/ai-game-dev-tools/): A sourced guide to AI game dev tools (Oct 2026): Unity's AI tools, Unreal 5.8 MCP, Roblox Assistant, plus Scenario, Meshy, Ludo.ai, Inworld and more.
+- [The AI Builder Starter Stack](https://hotfixdaily.com/starter-stack/): A free one-page starter stack for building with AI in 2026: coding agents, app builders, models, hosting and game tools, plus 5 rules for shipping agent code.
+
+## Issues (newest first)
+
+- [Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more](https://hotfixdaily.com/issues/001/) (2026-10-21): Inception ships Mercury 3, a diffusion model built for speed; Mistral launches Voxtral 3 and a voice agent SDK; Beacon: shared memory for your coding agents; Game studios use AI everywhere, but not deeply; Repo of the day: Google's Harness²
+
+## About
+
+- [About Hotfix Daily](https://hotfixdaily.com/about/): how issues are researched and sourced; sponsor and corrections policy
+- [Sponsor Hotfix Daily](https://hotfixdaily.com/sponsor/): ad formats and founding-sponsor rates
+- [Privacy policy](https://hotfixdaily.com/privacy/)
 
 ## Optional
 
-- [Hotfix Daily on X](https://x.com/hotfixdaily): daily posts and updates
+- [Full text of guides and recent issues](https://hotfixdaily.com/llms-full.txt)
+- [Hotfix Daily on X](https://x.com/hotfixdaily)
 - [Sitemap](https://hotfixdaily.com/sitemap.xml)

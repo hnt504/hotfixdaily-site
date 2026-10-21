@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /welcome/
+Disallow: /confirmed/
 
 # AI search and chatbots are welcome to read and cite this site.
 User-agent: GPTBot
