@@ -40,6 +40,8 @@ details{border-top:1px solid var(--line);padding:12px 0}summary{cursor:pointer;f
 .tip,.sponsor,.ctabox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:24px 0 32px}.tip h2,.sponsor h2,.ctabox h2{margin:0 0 6px;font-size:20px}
 .ctabox{border-color:var(--accent)}.ctabox p{margin:6px 0}.ctabox .signup{margin-top:12px}
 code{font-family:ui-monospace,monospace;font-size:.92em;background:var(--panel);padding:1px 5px;border-radius:5px;border:1px solid var(--line)}
+pre{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow-x:auto;font-size:14px;line-height:1.5;margin:8px 0}pre code{background:none;border:0;padding:0;font-size:inherit;white-space:pre}
+.meta{font-size:15px;color:var(--muted)}.meta strong{color:var(--fg)}
 .prose{padding-top:28px;padding-bottom:40px;max-width:760px}.prose.wide{max-width:860px}.prose h2{font-size:24px;margin-top:36px;letter-spacing:-.01em}
 .crumbs{font-size:14px;color:var(--muted);margin:0 0 18px}.crumbs a{color:var(--muted)}
 .pager{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:16px 0;margin-top:8px}
