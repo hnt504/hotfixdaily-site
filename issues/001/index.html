@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more (sample issue)</title>
+<meta name="description" content="Sample issue of Hotfix Daily, the daily AI builder digest: Inception&#x27;s Mercury 3, Mistral&#x27;s Voxtral 3 voice agent SDK, Beacon shared agent memory, AI in game studios, and Google&#x27;s Harness².">
+<link rel="canonical" href="https://hotfixdaily.com/issues/001/">
+<meta name="theme-color" content="#0b0f14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:site_name" content="Hotfix Daily">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more (sample issue)">
+<meta property="og:description" content="Sample issue of Hotfix Daily, the daily AI builder digest: Inception&#x27;s Mercury 3, Mistral&#x27;s Voxtral 3 voice agent SDK, Beacon shared agent memory, AI in game studios, and Google&#x27;s Harness².">
+<meta property="og:url" content="https://hotfixdaily.com/issues/001/">
+<meta property="og:image" content="https://hotfixdaily.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hotfix Daily: the daily AI builder digest">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more (sample issue)">
+<meta name="twitter:description" content="Sample issue of Hotfix Daily, the daily AI builder digest: Inception&#x27;s Mercury 3, Mistral&#x27;s Voxtral 3 voice agent SDK, Beacon shared agent memory, AI in game studios, and Google&#x27;s Harness².">
+<meta name="twitter:image" content="https://hotfixdaily.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hotfixdaily.com/#org","name":"Hotfix Daily","url":"https://hotfixdaily.com/","logo":"https://hotfixdaily.com/assets/icon-512.png","email":"hello@hotfixdaily.com","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://hotfixdaily.com/#website","name":"Hotfix Daily","alternateName":"Hotfix Daily newsletter","url":"https://hotfixdaily.com/","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","inLanguage":"en-US","publisher":{"@id":"https://hotfixdaily.com/#org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon, AI in game studios, Harness\u00b2","datePublished":"2026-10-21","dateModified":"2026-10-21","url":"https://hotfixdaily.com/issues/001/","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"},"isPartOf":{"@id":"https://hotfixdaily.com/#website"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap row">
+<a class="brand" href="/" aria-label="Hotfix Daily home"><img src="/favicon.svg" width="28" height="28" alt=""> <span>Hotfix Daily</span></a>
+<nav aria-label="Main"><a href="/issues/001/">Sample issue</a><a href="/#subscribe" class="navcta">Subscribe</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap issue">
+<p class="kicker">Sample issue · Issue #1 · Wednesday, Oct 21, 2026</p>
+<h1>Hotfix Daily #1</h1>
+<p class="lede">Five things from the last 48 hours worth your attention if you build with AI. No fluff.</p>
+<article class="item"><h2><span class="n">1</span> Inception ships Mercury 3, a diffusion model built for speed</h2>
+<p>Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception's own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.</p>
+<p class="why"><strong>Why builders care:</strong> It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.</p>
+<p class="src"><a href="https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/" rel="noopener">Source</a></p></article>
+<article class="item"><h2><span class="n">2</span> Mistral launches Voxtral 3 and a voice agent SDK</h2>
+<p>New speech-to-text and text-to-speech models plus an SDK built on LiveKit. It runs listening, reasoning, tool calls, and speech as one streaming pipeline, and Mistral says each turn finishes in under a second. It works over WebRTC in browsers and over SIP for phone calls.</p>
+<p class="why"><strong>Why builders care:</strong> Voice agents used to mean wiring three vendors together. Now it's one SDK priced per minute, and you can still swap out the LLM.</p>
+<p class="src"><a href="https://mistral.ai/news/voxtral-3/" rel="noopener">Source</a></p></article>
+<article class="item"><h2><span class="n">3</span> Beacon: shared memory for your coding agents</h2>
+<p>Asymptote Labs raised a $5.5M seed round for Beacon, an MIT-licensed open-source layer. It records sessions across Claude Code, Codex, Cursor, and 20+ other agent tools, and it lets lessons from earlier sessions carry over instead of disappearing.</p>
+<p class="why"><strong>Why builders care:</strong> If you hop between Cursor and Claude Code, you can stop re-explaining your project to each one.</p>
+<p class="src"><a href="https://www.asymptotelabs.ai/blog/asymptote-labs-raises-5-5m-seed-round" rel="noopener">Source</a></p></article>
+<article class="item"><h2><span class="n">4</span> Game studios use AI everywhere, but not deeply</h2>
+<p>Vivrato interviewed 101 studio leaders: 94% use AI in at least one production stage, yet 52% rate how deeply it's built into their pipeline at 3/10 or lower. European studios reported deeper adoption than North American ones.</p>
+<p class="why"><strong>Why builders care:</strong> The gap is in the pipeline. Studios have picked up AI tools but haven't built them into how they work, and that's an opening for tools that fit real game dev workflows.</p>
+<p class="src"><a href="https://gamesbeat.com/adam-boyes-vivrato-issues-report-based-on-101-game-leaders-views-on-ai-in-gaming-exclusive/" rel="noopener">Source</a></p></article>
+<article class="item"><h2><span class="n">5</span> Repo of the day: Google's Harness²</h2>
+<p>This trending open-source framework (Apache 2.0) improves the setup around an agent while the agent works: prompts, memory, tools, skills, and subagents. The model itself stays the same. Google reports gains of up to 11.5 points on WorkBuddy-Bench. It supports OpenCode and Codex as executors.</p>
+<p class="why"><strong>Why builders care:</strong> You can get better results by improving the setup around your model, without switching to a new one.</p>
+<p class="src"><a href="https://github.com/google-research/harness2" rel="noopener">Source</a></p></article>
+<aside class="tip"><h2>🛠 Try this today</h2>
+<p>Before you accept "done" from your coding agent, make it <strong>show proof</strong>: run the tests, the build, or a screenshot. Then have a fresh-context subagent review the diff. The Claude Code team says that's the first layer of their review process. From June to September, their merged PRs more than doubled while the share needing reverts fell by over 40%. Put your run-able checks in a short <code>CLAUDE.md</code> (or <code>.cursorrules</code>).</p>
+<p class="src"><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" rel="noopener">Source</a></p></aside>
+<section class="final"><h2>Get the next one in your inbox</h2>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086">
+<label class="sr" for="email-issue">Email address</label>
+<input id="email-issue" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form></section>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+<p><strong>Hotfix Daily</strong> · The daily AI builder digest. Free, weekdays.</p>
+<p><a href="/">Home</a> · <a href="/issues/001/">Sample issue</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:hello@hotfixdaily.com">hello@hotfixdaily.com</a> · <a href="/llms.txt">llms.txt</a></p>
+<p class="muted">© 2026 Hotfix Daily</p>
+</div></footer>
+<script src="/assets/subscribe.js" defer></script>
+</body>
+</html>

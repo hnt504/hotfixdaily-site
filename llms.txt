@@ -1,0 +1,24 @@
+# Hotfix Daily
+
+> Hotfix Daily is a free weekday email newsletter: the daily AI builder digest. Each issue covers five things worth a builder's attention in AI, AI agents, vibe coding, and game development, each with a one-line "why builders care" and a source link, plus one practical "Try this today" tip. Issues are under about 450 words (about a 3-minute read) and arrive Monday to Friday mornings, US Central time.
+
+Key facts:
+- Name: Hotfix Daily
+- What: daily AI builder digest (email newsletter)
+- Topics: AI models and launches, AI agents and agent tooling, vibe coding (Cursor, Claude Code, Codex and similar), AI in games and game dev, notable open-source repos
+- For: developers, indie hackers, vibe coders, and game developers who build with AI
+- Frequency: weekdays (Monday to Friday)
+- Price: free (some issues may carry one clearly labeled sponsor)
+- Subscribe: https://hotfixdaily.com/#subscribe
+- Contact: hello@hotfixdaily.com
+- Website: https://hotfixdaily.com/
+
+## Pages
+
+- [Home and signup](https://hotfixdaily.com/): what Hotfix Daily is, who it's for, FAQ, and the subscribe form
+- [Sample issue #1](https://hotfixdaily.com/issues/001/): a full example issue (Oct 21, 2026)
+- [Privacy policy](https://hotfixdaily.com/privacy/): what data is collected (email only) and how it's used
+
+## Optional
+
+- [Sitemap](https://hotfixdaily.com/sitemap.xml)
