@@ -91,6 +91,85 @@ FAQ:
 - Q: Can I connect Claude or another agent to Unreal Engine?
   A: Yes, experimentally. Unreal Engine 5.8 added an Experimental MCP plugin that connects models like Claude or Gemini to UE projects.
 
+## AI agent frameworks compared (October 2026)
+URL: https://hotfixdaily.com/guides/ai-agent-frameworks/ · Last reviewed: 2026-10-21
+
+A coding agent writes your code. An agent framework is what you reach for when the agent is your product: it runs the loop of model calls and tool calls, keeps state, and lets a human step in. Most of these now work with more than one model provider, so the real differences are language, how much control you get over each step, and which ecosystem you already use. Licenses below come from each project's GitHub repo. We left out stars and pricing because they change every week.
+
+### SDKs from the model labs
+- **OpenAI Agents SDK** (Python and TypeScript · MIT) <https://openai.github.io/openai-agents-python/>: OpenAI's lightweight framework for multi-agent workflows. Agents get instructions, tools, guardrails and handoffs, with built-in sessions, human-in-the-loop and tracing. It also covers realtime voice agents and sandbox agents that work inside a container. Its README says it is provider-agnostic: it supports OpenAI's Responses and Chat Completions APIs plus 100+ other LLMs. Our take, best for: A small API with tracing built in, especially for voice agents. Source: https://github.com/openai/openai-agents-python
+- **Claude Agent SDK** (Python and TypeScript (Anthropic)) <https://code.claude.com/docs/en/agent-sdk/overview>: Anthropic describes it as Claude Code as a library. Your agent gets Claude Code's tools for reading and editing files and running commands, plus MCP, subagents, skills, hooks and permission controls. The Python package bundles the Claude Code CLI, so there is nothing else to install. It used to be called the Claude Code SDK. The Python repo is MIT-licensed; the docs link Anthropic's license and terms. Our take, best for: Agents that work on files and code: internal dev tools, research bots, ops agents. Source: https://github.com/anthropics/claude-agent-sdk-python
+- **Google Agent Development Kit (ADK)** (Python, TypeScript, Java, Go, Kotlin · Apache-2.0) <https://adk.dev/>: Google's open-source, code-first toolkit, now at version 2.0 in Python. It adds a graph-based workflow runtime (routing, fan-out, loops, retries, human-in-the-loop), structured agent-to-agent delegation, and MCP and OpenAPI tools. It is optimized for Gemini but model-agnostic, and deploys to Cloud Run or Vertex AI Agent Engine. Our take, best for: Teams on Gemini or Google Cloud, or anyone who wants one framework across several languages. Source: https://github.com/google/adk-python
+- **Strands Agents** (Python and TypeScript · Apache-2.0) <https://strandsagents.com/>: An open-source SDK for building and running agents inside your own process, with no hosted control plane. It supports Amazon Bedrock, Anthropic, OpenAI, Gemini and other providers. The repo (now strands-agents/harness-sdk) also ships a ready-made harness agent, a CLI, and plugins for Claude Code, Codex and Cursor. Our take, best for: Builders who would otherwise hand-roll their own agent loop, especially on Bedrock. Source: https://github.com/strands-agents/harness-sdk
+
+### Orchestration frameworks
+- **LangGraph** (Python and JavaScript · MIT) <https://docs.langchain.com/oss/python/langgraph/overview>: LangChain's low-level orchestration framework for long-running, stateful agents. It offers durable execution that resumes where it left off after a failure, human-in-the-loop interrupts, and short- and long-term memory. For a quicker start, LangChain points to Deep Agents, a higher-level package built on LangGraph. Our take, best for: Complex flows where you want to control every step and survive crashes. Source: https://github.com/langchain-ai/langgraph
+- **CrewAI** (Python · MIT) <https://docs.crewai.com/>: An open-source Python framework with two layers: Crews, teams of role-based agents that collaborate, and Flows, event-driven workflows for precise control. A paid AMP Suite adds managed deployment, observability and governance. Our take, best for: Getting a multi-agent team (researcher, writer, reviewer) working fast. Source: https://github.com/crewAIInc/crewAI
+- **Microsoft Agent Framework** (.NET and Python (Go in a separate repo) · MIT) <https://learn.microsoft.com/en-us/agent-framework/>: Microsoft's framework for production agents and multi-agent workflows, with graph-based patterns (sequential, concurrent, handoff, group collaboration), middleware, durability and observability. Version 1.0 is a production release with stable APIs, and Microsoft calls it the enterprise-ready successor to AutoGen. Our take, best for: .NET shops, and teams on Azure or Microsoft Foundry. Source: https://github.com/microsoft/agent-framework
+
+### TypeScript-first
+- **AI SDK (Vercel)** (TypeScript · Apache-2.0) <https://ai-sdk.dev/docs/introduction>: A free, provider-agnostic TypeScript toolkit for AI apps and agents. It works with Next.js, React, Svelte, Vue, Angular and Node.js. By default it routes model names through Vercel AI Gateway, or you can install a provider package to connect directly. Our take, best for: Adding an agent or chat feature to a web app you already ship. Source: https://github.com/vercel/ai
+- **Mastra** (TypeScript · Apache-2.0 core, enterprise code separately licensed) <https://mastra.ai/docs>: A TypeScript framework for agents and AI apps: agents, a graph-based workflow engine, suspend-and-resume human-in-the-loop, memory, RAG, evals and observability, and routing to 40+ model providers through one interface. It can also publish your agents and tools as MCP servers. Our take, best for: TypeScript teams who want workflows, memory and evals in one package. Source: https://github.com/mastra-ai/mastra
+
+### Python-first and minimal
+- **Pydantic AI** (Python · MIT) <https://pydantic.dev/docs/ai/overview/>: From the Pydantic team: a typed agent loop where switching models is a one-string change. Companion packages add a harness (memory, guardrails, sub-agents), evals that grade tool-call trajectories, and graphs. Our take, best for: Python devs who want type-checked inputs and outputs and testable agents. Source: https://github.com/pydantic/pydantic-ai
+- **smolagents** (Python · Apache-2.0) <https://huggingface.co/docs/smolagents/index>: Hugging Face's minimal agent library: the core logic fits in about 1,000 lines. Its CodeAgent writes its actions as code, which you can run in sandboxes such as E2B, Modal, Blaxel or Docker. It works with any model, including local ones, and can use tools from MCP servers or the Hugging Face Hub. Our take, best for: Learning how agents work, and experiments with open or local models. Source: https://github.com/huggingface/smolagents
+
+FAQ:
+- Q: What is an AI agent framework?
+  A: A library for building software where a model decides which tools to call, in a loop, until a task is done. Frameworks handle the loop, tool calling, memory and state, and usually tracing and human approval steps.
+- Q: Do I need an agent framework at all?
+  A: Our take: not always. One model with a few tools works fine with a lab SDK or even a hand-written loop. Reach for an orchestration framework when runs are long, have many steps, need approvals, or must resume after a crash.
+- Q: What happened to Microsoft AutoGen?
+  A: Microsoft has put AutoGen in maintenance mode, limited to bug fixes, security patches and docs. It recommends new users start with Microsoft Agent Framework and publishes a migration guide.
+- Q: Which agent frameworks support MCP?
+  A: The OpenAI Agents SDK, Claude Agent SDK, Google ADK and smolagents all list MCP tools in their docs, and Mastra can publish agents and tools as MCP servers. Check each project's docs for the transports it supports.
+- Q: What's the best agent framework for TypeScript?
+  A: Our take: the AI SDK if you are adding AI features to a web app, Mastra if you want workflows, memory and evals in one package. The OpenAI Agents SDK, Claude Agent SDK, ADK, LangGraph and Strands also have TypeScript versions.
+
+## MCP servers worth knowing for builders (October 2026)
+URL: https://hotfixdaily.com/guides/mcp-servers/ · Last reviewed: 2026-10-21
+
+MCP, the Model Context Protocol, is an open standard for connecting AI apps to outside tools and data. Its own docs call it a USB-C port for AI applications. Claude, ChatGPT, VS Code, Cursor and many other apps support it, and the current version of the spec is dated July 28, 2026. An MCP server is the plug-in side: it gives your agent tools like "open a pull request" or "query this table". Below are the servers we think are worth knowing, grouped by job, each described from its own docs.
+
+### Code and project tools
+- **GitHub MCP Server** (Hosted by GitHub, or run locally · MIT) <https://github.com/github/github-mcp-server>: GitHub's official server. Agents can browse and search code, manage issues and pull requests, check GitHub Actions runs and build failures, and review security findings and Dependabot alerts. The hosted version is at api.githubcopilot.com/mcp/. Our take, best for: Any agent that needs to read or act on your repos. Source: https://github.com/github/github-mcp-server
+- **Linear MCP server** (Hosted by Linear) <https://linear.app/docs/mcp>: Find, create and update Linear issues, projects and comments. Setup uses OAuth, and a read-only endpoint (mcp.linear.app/mcp/readonly) exposes only read tools. Our take, best for: Letting your coding agent pick up and update tickets. Source: https://linear.app/docs/mcp
+- **Sentry MCP** (Hosted by Sentry, or self-hosted) <https://mcp.sentry.dev/>: Built mainly for human-in-the-loop coding agents like Cursor and Claude Code. Its tools focus on developer debugging workflows rather than all of Sentry. Our take, best for: Fixing production errors with the real stack trace in front of the agent. Source: https://github.com/getsentry/toolkit
+
+### Browsers and testing
+- **Playwright MCP** (Local (Node.js) · Apache-2.0) <https://github.com/microsoft/playwright-mcp>: Browser automation through Playwright using the page's accessibility tree instead of screenshots, so no vision model is needed. Microsoft notes that coding agents may use fewer tokens with its Playwright CLI and skills, and suggests MCP for long-running, stateful browser loops. Our take, best for: Letting an agent click through your app to test a flow. Source: https://github.com/microsoft/playwright-mcp
+- **Chrome DevTools MCP** (Local · Apache-2.0) <https://developer.chrome.com/docs/devtools/agents>: Lets a coding agent control and inspect a live Chrome browser: record performance traces, analyze network requests, read console messages with source-mapped stack traces, and take screenshots. It is also available as a CLI. Our take, best for: Debugging front-end bugs and slow pages. Source: https://github.com/ChromeDevTools/chrome-devtools-mcp
+
+### Up-to-date docs
+- **Context7** (Hosted by Upstash, plus open-source server · MIT) <https://context7.com/>: Pulls current, version-specific library docs and code examples into your agent, so it stops guessing at old APIs. Codex's docs use it as their example of adding an MCP server. Our take, best for: Fast-moving libraries that your model's training data is behind on. Source: https://github.com/upstash/context7
+
+### Backend, payments and hosting
+- **Supabase MCP server** (Hosted at mcp.supabase.com · Apache-2.0) <https://supabase.com/docs/guides/getting-started/mcp>: Connects an agent to your Supabase project to manage tables, fetch config and query data. Supabase asks you to read its security best practices first. The local Supabase CLI exposes a smaller set of tools. Our take, best for: Vibe coders on Supabase who want the agent to set up the schema. Source: https://github.com/supabase/mcp
+- **Stripe MCP server** (Hosted at mcp.stripe.com (public preview)) <https://docs.stripe.com/mcp>: Lets agents work with the Stripe API and search Stripe's docs and support articles. It connects with OAuth, and Stripe's agent plugins can set it up for you. Our take, best for: Building and testing payment flows, ideally in test mode first. Source: https://docs.stripe.com/mcp
+- **Cloudflare MCP servers** (Hosted by Cloudflare · Apache-2.0) <https://github.com/cloudflare/mcp-server-cloudflare>: Cloudflare runs several remote MCP servers. It recommends its Cloudflare API server (mcp.cloudflare.com/mcp) for broad API access, with separate servers for docs, sandbox containers and browser rendering. Some older servers are deprecated. Our take, best for: Builders on Workers and Pages. Source: https://github.com/cloudflare/mcp-server-cloudflare
+
+### Design and docs workspaces
+- **Figma MCP server** (Hosted (recommended) or desktop app) <https://developers.figma.com/docs/figma-mcp-server/>: Gives agents design context to generate code from your Figma files, and can write native Figma content back to the canvas. Writing outside your drafts needs the remote server and a Full seat. Our take, best for: Turning designs into front-end code that matches your design system. Source: https://developers.figma.com/docs/figma-mcp-server/
+- **Notion MCP** (Hosted by Notion) <https://developers.notion.com/docs/mcp>: Notion's hosted server uses OAuth and your existing Notion permissions to search, read and edit pages in Markdown. Notion says its older self-hosted server is no longer actively maintained. Our take, best for: Agents that read specs or write notes in your Notion workspace. Source: https://github.com/makenotion/notion-mcp-server
+
+### Finding, testing and building servers
+- **Official MCP Registry** (Web directory and API) <https://registry.modelcontextprotocol.io/>: The project's own list of published MCP servers, which it describes as an app store for MCP servers. It launched in preview in September 2025. Our take, best for: Checking whether an official server exists before you install a random one. Source: https://github.com/modelcontextprotocol/registry
+- **MCP Inspector** (Web UI, CLI or terminal UI) <https://github.com/modelcontextprotocol/inspector>: The official developer tool for inspecting MCP servers. Run npx @modelcontextprotocol/inspector to list a server's tools and try them by hand. Our take, best for: Seeing exactly what a server exposes before you give it to an agent. Source: https://github.com/modelcontextprotocol/inspector
+- **Reference servers** (Examples from the MCP steering group) <https://github.com/modelcontextprotocol/servers>: A small set of reference servers (Everything, Fetch, Filesystem, Git, Memory, Sequential Thinking, Time). The repo says they are educational examples, not production-ready tools. Our take, best for: Learning how to build your own server. Source: https://github.com/modelcontextprotocol/servers
+
+FAQ:
+- Q: What is MCP (Model Context Protocol)?
+  A: An open-source standard for connecting AI applications to external systems such as files, databases, tools and workflows. An app that supports MCP (the client) can use any MCP server, so a tool is built once and works in many agents.
+- Q: Which apps support MCP?
+  A: Claude, ChatGPT, Claude Code, Cursor, VS Code with Copilot and Codex all document MCP support, along with many other clients and agent frameworks.
+- Q: What's the difference between a local and a remote MCP server?
+  A: A local server runs on your machine, usually started by your agent with a command like npx. A remote server is hosted by the vendor at a URL and usually signs you in with OAuth. Many vendors, including GitHub, Linear, Stripe and Notion, now recommend their hosted servers.
+- Q: Are MCP servers safe?
+  A: They act with whatever access you give them, so treat them like any integration. Use official servers, read-only scopes and test accounts where you can, and review the tool list first. The MCP project publishes security best practices.
+- Q: Is MCP being replaced by CLIs and skills?
+  A: Not replaced, but some teams now suggest both. Microsoft's Playwright docs say coding agents increasingly favor a CLI plus skills because it uses fewer tokens, while MCP still suits long-running, stateful work.
+
 ## Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more
 URL: https://hotfixdaily.com/issues/001/ · Date: 2026-10-21
 
@@ -104,26 +183,31 @@ Five things from the last 48 hours worth your attention if you build with AI. No
 
 ---
 
+[MODEL]
 **1. Inception ships Mercury 3, a diffusion model built for speed**
 Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception's own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.
 *Why builders care:* It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.
 [source](https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/)
 
+[AGENTS]
 **2. Mistral launches Voxtral 3 and a voice agent SDK**
 New speech-to-text and text-to-speech models plus an SDK built on LiveKit. It runs listening, reasoning, tool calls, and speech as one streaming pipeline, and Mistral says each turn finishes in under a second. It works over WebRTC in browsers and over SIP for phone calls.
 *Why builders care:* Voice agents used to mean wiring three vendors together. Now it's one SDK priced per minute, and you can still swap out the LLM.
 [source](https://mistral.ai/news/voxtral-3/)
 
+[CODING]
 **3. Beacon: shared memory for your coding agents**
 Asymptote Labs raised a $5.5M seed round for Beacon, an MIT-licensed open-source layer. It records sessions across Claude Code, Codex, Cursor, and 20+ other agent tools, and it lets lessons from earlier sessions carry over instead of disappearing.
 *Why builders care:* If you hop between Cursor and Claude Code, you can stop re-explaining your project to each one.
 [source](https://www.asymptotelabs.ai/blog/asymptote-labs-raises-5-5m-seed-round)
 
+[GAME DEV]
 **4. Game studios use AI everywhere, but not deeply**
 Vivrato interviewed 101 studio leaders: 94% use AI in at least one production stage, yet 52% rate how deeply it's built into their pipeline at 3/10 or lower. European studios reported deeper adoption than North American ones.
 *Why builders care:* The gap is in the pipeline. Studios have picked up AI tools but haven't built them into how they work, and that's an opening for tools that fit real game dev workflows.
 [source](https://gamesbeat.com/adam-boyes-vivrato-issues-report-based-on-101-game-leaders-views-on-ai-in-gaming-exclusive/)
 
+[REPO]
 **5. Repo of the day: Google's Harness²**
 This trending open-source framework (Apache 2.0) improves the setup around an agent while the agent works: prompts, memory, tools, skills, and subagents. The model itself stays the same. Google reports gains of up to 11.5 points on WorkBuddy-Bench. It supports OpenCode and Codex as executors.
 *Why builders care:* You can get better results by improving the setup around your model, without switching to a new one.
@@ -131,6 +215,6 @@ This trending open-source framework (Apache 2.0) improves the setup around an ag
 
 ---
 
-### 🛠 Try this today
+### Hotfix of the Day
 Before you accept "done" from your coding agent, make it **show proof**: run the tests, the build, or a screenshot. Then have a fresh-context subagent review the diff. The Claude Code team says that's the first layer of their review process. From June to September, their merged PRs more than doubled while the share needing reverts fell by over 40%. Put your run-able checks in a short `CLAUDE.md` (or `.cursorrules`).
 [source](https://claude.dev/blog/solving-code-review-at-anthropic/)

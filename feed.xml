@@ -17,32 +17,32 @@
 <updated>2026-10-21T11:00:00Z</updated>
 <summary>Hotfix Daily #1: Inception&#x27;s Mercury 3, Mistral&#x27;s Voxtral 3 voice agent SDK, Beacon shared agent memory, AI in game studios, and Google&#x27;s Harness².</summary>
 <content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/issues/001/&quot; rel=&quot;noopener&quot;&gt;Read this issue on the web&lt;/a&gt; · &lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
-&lt;article class=&quot;item&quot;&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Inception ships Mercury 3, a diffusion model built for speed&lt;/h2&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Inception ships Mercury 3, a diffusion model built for speed&lt;/h2&gt;
 &lt;p&gt;Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception&#x27;s own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.&lt;/p&gt;
 &lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.&lt;/p&gt;
 &lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;/article&gt;
-&lt;article class=&quot;item&quot;&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; Mistral launches Voxtral 3 and a voice agent SDK&lt;/h2&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;AGENTS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; Mistral launches Voxtral 3 and a voice agent SDK&lt;/h2&gt;
 &lt;p&gt;New speech-to-text and text-to-speech models plus an SDK built on LiveKit. It runs listening, reasoning, tool calls, and speech as one streaming pipeline, and Mistral says each turn finishes in under a second. It works over WebRTC in browsers and over SIP for phone calls.&lt;/p&gt;
 &lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Voice agents used to mean wiring three vendors together. Now it&#x27;s one SDK priced per minute, and you can still swap out the LLM.&lt;/p&gt;
 &lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://mistral.ai/news/voxtral-3/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;/article&gt;
-&lt;article class=&quot;item&quot;&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; Beacon: shared memory for your coding agents&lt;/h2&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;CODING&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; Beacon: shared memory for your coding agents&lt;/h2&gt;
 &lt;p&gt;Asymptote Labs raised a $5.5M seed round for Beacon, an MIT-licensed open-source layer. It records sessions across Claude Code, Codex, Cursor, and 20+ other agent tools, and it lets lessons from earlier sessions carry over instead of disappearing.&lt;/p&gt;
 &lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; If you hop between Cursor and Claude Code, you can stop re-explaining your project to each one.&lt;/p&gt;
 &lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.asymptotelabs.ai/blog/asymptote-labs-raises-5-5m-seed-round&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;/article&gt;
-&lt;article class=&quot;item&quot;&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; Game studios use AI everywhere, but not deeply&lt;/h2&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; Game studios use AI everywhere, but not deeply&lt;/h2&gt;
 &lt;p&gt;Vivrato interviewed 101 studio leaders: 94% use AI in at least one production stage, yet 52% rate how deeply it&#x27;s built into their pipeline at 3/10 or lower. European studios reported deeper adoption than North American ones.&lt;/p&gt;
 &lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; The gap is in the pipeline. Studios have picked up AI tools but haven&#x27;t built them into how they work, and that&#x27;s an opening for tools that fit real game dev workflows.&lt;/p&gt;
 &lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://gamesbeat.com/adam-boyes-vivrato-issues-report-based-on-101-game-leaders-views-on-ai-in-gaming-exclusive/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;/article&gt;
-&lt;article class=&quot;item&quot;&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Repo of the day: Google&#x27;s Harness²&lt;/h2&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Repo of the day: Google&#x27;s Harness²&lt;/h2&gt;
 &lt;p&gt;This trending open-source framework (Apache 2.0) improves the setup around an agent while the agent works: prompts, memory, tools, skills, and subagents. The model itself stays the same. Google reports gains of up to 11.5 points on WorkBuddy-Bench. It supports OpenCode and Codex as executors.&lt;/p&gt;
 &lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; You can get better results by improving the setup around your model, without switching to a new one.&lt;/p&gt;
 &lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/google-research/harness2&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;/article&gt;
-&lt;aside class=&quot;tip&quot;&gt;&lt;h2&gt;🛠 Try this today&lt;/h2&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
 &lt;p&gt;Before you accept &quot;done&quot; from your coding agent, make it &lt;strong&gt;show proof&lt;/strong&gt;: run the tests, the build, or a screenshot. Then have a fresh-context subagent review the diff. The Claude Code team says that&#x27;s the first layer of their review process. From June to September, their merged PRs more than doubled while the share needing reverts fell by over 40%. Put your run-able checks in a short &lt;code&gt;CLAUDE.md&lt;/code&gt; (or &lt;code&gt;.cursorrules&lt;/code&gt;).&lt;/p&gt;
 &lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://claude.dev/blog/solving-code-review-at-anthropic/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;/aside&gt;
