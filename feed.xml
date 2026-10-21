@@ -16,7 +16,8 @@
 <published>2026-10-21T11:00:00Z</published>
 <updated>2026-10-21T11:00:00Z</updated>
 <summary>Hotfix Daily #1: Inception&#x27;s Mercury 3, Mistral&#x27;s Voxtral 3 voice agent SDK, Beacon shared agent memory, AI in game studios, and Google&#x27;s Harness².</summary>
-<content type="html">&lt;article class=&quot;item&quot;&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Inception ships Mercury 3, a diffusion model built for speed&lt;/h2&gt;
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/issues/001/&quot; rel=&quot;noopener&quot;&gt;Read this issue on the web&lt;/a&gt; · &lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot;&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Inception ships Mercury 3, a diffusion model built for speed&lt;/h2&gt;
 &lt;p&gt;Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception&#x27;s own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.&lt;/p&gt;
 &lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.&lt;/p&gt;
 &lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;

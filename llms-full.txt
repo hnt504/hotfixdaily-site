@@ -100,6 +100,8 @@ URL: https://hotfixdaily.com/issues/001/ · Date: 2026-10-21
 
 Five things from the last 48 hours worth your attention if you build with AI. No fluff.
 
+[Read this issue on the web](https://hotfixdaily.com/issues/001/) · [Sponsor Hotfix Daily](https://hotfixdaily.com/sponsor/)
+
 ---
 
 **1. Inception ships Mercury 3, a diffusion model built for speed**

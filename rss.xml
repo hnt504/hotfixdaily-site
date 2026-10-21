@@ -12,7 +12,8 @@
 <link>https://hotfixdaily.com/issues/001/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/001/</guid>
 <pubDate>Wed, 21 Oct 2026 11:00:00 +0000</pubDate>
-<description><![CDATA[<article class="item"><h2><span class="n">1</span> Inception ships Mercury 3, a diffusion model built for speed</h2>
+<description><![CDATA[<p><a href="https://hotfixdaily.com/issues/001/" rel="noopener">Read this issue on the web</a> · <a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item"><h2><span class="n">1</span> Inception ships Mercury 3, a diffusion model built for speed</h2>
 <p>Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception's own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.</p>
 <p class="why"><strong>Why builders care:</strong> It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.</p>
 <p class="src"><a href="https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/" rel="noopener">Source</a></p>
