@@ -23,6 +23,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .signup button,.btn{display:inline-block;padding:14px 22px;font:700 16px/1 inherit;font-family:inherit;color:#fff;background:var(--accent);border:0;border-radius:10px;cursor:pointer;text-decoration:none}
 .signup button:hover,.btn:hover{filter:brightness(1.08)}.signup button[disabled]{opacity:.6;cursor:wait}
 .formnote{flex-basis:100%;margin:2px 0 0;font-size:14px;color:var(--muted)}
+.rssnote{margin:6px 0 0;font-size:13px;color:var(--muted)}.rssnote a{color:var(--muted)}
 .formnote.ok{color:var(--ok)}.formnote.err{color:var(--err)}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:24px auto 48px}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:24px 0 40px}

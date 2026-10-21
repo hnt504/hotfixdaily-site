@@ -58,7 +58,8 @@
 <input id="email-g1" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
 <button type="submit">Subscribe free</button>
 <p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
-</form></section>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
 
 <h2 id="g0">Before you start: local or remote?</h2><p class="muted">MCP servers use one of two transports. <strong>Stdio</strong> runs the server as a local process on your machine and typically serves a single client. <strong>Streamable HTTP</strong> connects to a server at a URL, supports standard HTTP auth such as bearer tokens, API keys and custom headers, and typically serves many clients. The current spec release is dated July 28, 2026.</p><article class="tool" id="how-to-tell-which-one-you-have"><h3><a href="https://modelcontextprotocol.io/docs/learn/architecture" rel="noopener">How to tell which one you have</a></h3><ul><li>If the vendor gives you a <strong>URL</strong> (like <code>https://mcp.notion.com/mcp</code>), it's a remote HTTP server, and it usually signs you in with OAuth.</li><li>If the vendor gives you a <strong>command</strong> (like <code>npx -y @playwright/mcp@latest</code>), it's a local stdio server, and you need its runtime, such as Node.js.</li><li><strong>SSE</strong> is the older remote transport. Claude Code's docs call it deprecated and say to use HTTP servers where available.</li></ul><p class="src"><a href="https://modelcontextprotocol.io/docs/learn/architecture" rel="noopener">MCP architecture</a> · <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/releases" rel="noopener">Spec releases</a></p></article>
 
@@ -122,7 +123,8 @@ npx @modelcontextprotocol/inspector --tui  # terminal UI</code></pre><ul><li>The
 <input id="email-g2" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
 <button type="submit">Subscribe free</button>
 <p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
-</form></section>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
 
 </div>
 </main>
