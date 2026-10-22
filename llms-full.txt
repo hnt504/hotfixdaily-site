@@ -3,7 +3,7 @@
 > Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.
 > Website: https://hotfixdaily.com/ · Subscribe: https://hotfixdaily.com/#subscribe
 
-## The best AI coding agents for builders (October 2026)
+## What are the best AI coding agents? Compared (October 2026)
 URL: https://hotfixdaily.com/guides/ai-coding-agents/ · Last reviewed: 2026-10-21
 
 Coding agents now live in three places: inside your editor, in your terminal, and in the cloud working on your repo while you do something else. Most builders end up using one from each group. Below is what each tool is (from its own docs), plus our take on who it suits. We left out pricing because it changes monthly; check each link before you pay.
@@ -87,7 +87,7 @@ FAQ:
 - Q: Why is Cursor's pricing tied to Grok?
   A: Cursor's pricing page shows individual plans that share one usage pool across Cursor and Grok, and the plans also bundle Grok and X features. The $8 Plus plan includes Grok models only; on Premium and above, other providers' models are available at API list price, billed separately. Check the page for the current details.
 
-## Vibe coding tools: build apps by describing them (October 2026)
+## What are the best vibe coding tools? App builders compared (Oct 2026)
 URL: https://hotfixdaily.com/guides/vibe-coding-tools/ · Last reviewed: 2026-10-21
 
 "Vibe coding" means describing what you want in plain language and letting an AI write the code. Andrej Karpathy coined the term in February 2025, and Merriam-Webster listed it as trending slang a month later. Today there are two kinds of vibe coding tools: browser app builders that host everything for you, and coding agents that work on real code on your machine. This guide covers the first kind and tells you when to move to the second.
@@ -109,7 +109,7 @@ FAQ:
 - Q: Is vibe-coded software safe to launch?
   A: It can be, but only if you review it like any other code: secrets, authentication and database permissions especially. Use the checklist on this page before real users sign up.
 
-## The vibe coding workflow: from idea to shipped app (October 2026)
+## How to vibe code an app from idea to launch: the workflow (Oct 2026)
 URL: https://hotfixdaily.com/guides/vibe-coding-workflow/ · Last reviewed: 2026-10-21
 
 Getting a first version out of a vibe coding tool is easy. Getting it to the point where strangers can sign up, pay and trust it with their data takes more work. This guide walks through that one step at a time and names the feature or tool that handles each step, based on each tool's own docs. Haven't picked a builder yet? Start with our vibe coding tools guide, then come back.
@@ -164,7 +164,7 @@ FAQ:
 - Q: Do I need to know how to code?
   A: Not for steps 1 to 4, or for step 8 on builder hosting. For steps 5 and 6 it helps to read diffs and test results, or to have someone who can.
 
-## AI game dev tools in 2026: engines, assets, NPCs and prototyping
+## What AI tools can game developers use in 2026? Engines, assets, NPCs
 URL: https://hotfixdaily.com/guides/ai-game-dev-tools/ · Last reviewed: 2026-10-21
 
 AI in game dev has moved from novelty generators into the engines themselves. Unity, Unreal and Roblox now all let AI agents act inside the editor, and the common plug is MCP (Model Context Protocol). Adoption is wide but shallow: in a Vivrato survey of 101 studio leaders, 94% use AI in at least one production stage, yet 52% rate how deeply it's integrated at 3 out of 10 or lower.
@@ -195,7 +195,7 @@ FAQ:
 - Q: Can I connect Claude or another agent to Unreal Engine?
   A: Yes, experimentally. Unreal Engine 5.8 added an Experimental MCP plugin that connects models like Claude or Gemini to UE projects.
 
-## AI agent frameworks compared (October 2026)
+## Which AI agent framework should you use? (October 2026)
 URL: https://hotfixdaily.com/guides/ai-agent-frameworks/ · Last reviewed: 2026-10-21
 
 A coding agent writes your code. An agent framework is what you reach for when the agent is your product: it runs the loop of model calls and tool calls, keeps state, and lets a human step in. Most of these now work with more than one model provider, so the real differences are language, how much control you get over each step, and which ecosystem you already use. Licenses below come from each project's GitHub repo. We left out stars and pricing because they change every week.
@@ -231,7 +231,7 @@ FAQ:
 - Q: What's the best agent framework for TypeScript?
   A: Our take: the AI SDK if you are adding AI features to a web app, Mastra if you want workflows, memory and evals in one package. The OpenAI Agents SDK, Claude Agent SDK, ADK, LangGraph and Strands also have TypeScript versions.
 
-## MCP servers worth knowing for builders (October 2026)
+## What is MCP, and which MCP servers are worth adding? (Oct 2026)
 URL: https://hotfixdaily.com/guides/mcp-servers/ · Last reviewed: 2026-10-21
 
 MCP, the Model Context Protocol, is an open standard for connecting AI apps to outside tools and data. Its own docs call it a USB-C port for AI applications. Claude, ChatGPT, VS Code, Cursor and many other apps support it, and the current version of the spec is dated July 28, 2026. An MCP server is the plug-in side: it gives your agent tools like "open a pull request" or "query this table". Below are the servers we think are worth knowing, grouped by job, each described from its own docs.

@@ -62,3 +62,20 @@ pre{background:var(--panel);border:1px solid var(--line);border-radius:8px;paddi
 .hotd{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:14px 18px;margin:24px 0 32px}
 .hotd h2{margin:0 0 4px;font:700 12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}.hotd p{margin:6px 0}
 .hotd-mini{font-size:15.5px;color:var(--muted);border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:14px 0}.hotd-mini a{text-decoration:none}
+/* growth 2026-10-22: lead magnet, end prompt, exit intent, prompts page */
+.ctabox .gift{font-size:15px}
+.ctabox .gift strong{color:var(--accent)}
+.ctabox.compact{padding:14px 18px;margin:18px 0 26px}
+.ctabox.compact h2{font-size:18px}
+.endprompt{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:28px 0 8px;font-size:16px}
+.endprompt a{font-weight:700}
+.prompt{margin:26px 0}
+.prompt h2{font-size:20px;margin:6px 0}
+.prompt pre code{white-space:pre-wrap}
+.copybtn{font:600 14px/1 inherit;font-family:inherit;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+.copybtn:hover{border-color:var(--accent)}
+dialog.exitbox{max-width:480px;width:calc(100% - 40px);background:var(--panel);color:var(--fg);border:1px solid var(--accent);border-radius:14px;padding:22px 24px}
+dialog.exitbox::backdrop{background:rgba(0,0,0,.55)}
+dialog.exitbox h2{margin:0 0 8px;font-size:21px}
+dialog.exitbox .x{position:absolute;top:8px;right:10px;background:none;border:0;color:var(--muted);font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
+dialog.exitbox .signup{margin-top:12px}

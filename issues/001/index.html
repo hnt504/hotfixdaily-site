@@ -50,6 +50,13 @@
 <h1>Hotfix Daily #1</h1>
 <p class="lede">Five things from the last 48 hours worth your attention if you build with AI. No fluff.</p>
 <p><a href="https://hotfixdaily.com/issues/001/" rel="noopener">Read this issue on the web</a> · <a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<section class="ctabox compact" aria-label="Subscribe" data-growth="1"><h2>Get this in your inbox every weekday</h2><p>Five things worth your attention if you build with AI, about 3 minutes. <span class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</span></p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-issue-top">Email address</label>
+<input id="email-issue-top" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form></section>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Inception ships Mercury 3, a diffusion model built for speed</h2>
 <p>Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception's own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.</p>
 <p class="why"><strong>Why builders care:</strong> It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.</p>
@@ -79,7 +86,8 @@
 <p>Before you accept "done" from your coding agent, make it <strong>show proof</strong>: run the tests, the build, or a screenshot. Then have a fresh-context subagent review the diff. The Claude Code team says that's the first layer of their review process. From June to September, their merged PRs more than doubled while the share needing reverts fell by over 40%. Put your run-able checks in a short <code>CLAUDE.md</code> (or <code>.cursorrules</code>).</p>
 <p class="src"><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" rel="noopener">Source</a></p>
 </aside>
-<section class="ctabox" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus the free AI Builder Starter Stack PDF when you join.</p>
+<p class="endprompt">That&#x27;s the issue. Know a builder who&#x27;d use this? <a href="https://x.com/intent/post?text=Hotfix%20Daily%20%231%3A%20Mercury%203%2C%20Voxtral%203%2C%20Beacon%20and%20more%20%28via%20%40hotfixdaily%29&amp;url=https%3A%2F%2Fhotfixdaily.com%2Fissues%2F001%2F" rel="noopener">Share it on X</a> or forward them this page. New here? <a href="#subscribe-end">Subscribe free</a> for tomorrow&#x27;s.</p>
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
 <form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
 <label class="sr" for="email-issue">Email address</label>
 <input id="email-issue" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">

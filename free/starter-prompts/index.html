@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name='impact-site-verification' value='61a18ed7-af0a-4189-8c9e-f49d709af4ea'>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your 13 free Starter Prompts | Hotfix Daily</title>
+<meta name="description" content="13 ready-to-paste prompts for AI coding agents, vibe coding, debugging, proof of done, game dev and agent builders. A free sample of the Hotfix Builder Pack.">
+<link rel="canonical" href="https://hotfixdaily.com/free/starter-prompts/">
+<meta name="theme-color" content="#0b0f14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="Hotfix Daily (Atom)" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Hotfix Daily (RSS)" href="/rss.xml">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:site_name" content="Hotfix Daily">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your 13 free Starter Prompts | Hotfix Daily">
+<meta property="og:description" content="13 ready-to-paste prompts for AI coding agents, vibe coding, debugging, proof of done, game dev and agent builders. A free sample of the Hotfix Builder Pack.">
+<meta property="og:url" content="https://hotfixdaily.com/free/starter-prompts/">
+<meta property="og:image" content="https://hotfixdaily.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hotfix Daily: the daily AI builder digest">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hotfixdaily">
+<meta name="twitter:title" content="Your 13 free Starter Prompts | Hotfix Daily">
+<meta name="twitter:description" content="13 ready-to-paste prompts for AI coding agents, vibe coding, debugging, proof of done, game dev and agent builders. A free sample of the Hotfix Builder Pack.">
+<meta name="twitter:image" content="https://hotfixdaily.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hotfixdaily.com/#org","name":"Hotfix Daily","url":"https://hotfixdaily.com/","logo":"https://hotfixdaily.com/assets/icon-512.png","email":"hello@hotfixdaily.com","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","sameAs":["https://x.com/hotfixdaily"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://hotfixdaily.com/#website","name":"Hotfix Daily","alternateName":"Hotfix Daily newsletter","url":"https://hotfixdaily.com/","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","inLanguage":"en-US","publisher":{"@id":"https://hotfixdaily.com/#org"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap row">
+<a class="brand" href="/" aria-label="Hotfix Daily home"><img src="/favicon.svg" width="28" height="28" alt=""> <span>Hotfix Daily</span></a>
+<nav aria-label="Main"><a href="/issues/">Issues</a><a href="/guides/">Guides</a><a href="/starter-stack/" class="hide-s">Starter Stack</a><a href="/#subscribe" class="navcta">Subscribe</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap prose">
+<p class="kicker">Free for Hotfix Daily readers · Version 1.0 · October 2026</p>
+<h1>13 Starter Prompts for AI builders</h1>
+<p class="lede">Ready-to-paste prompts for the moments where coding agents and app builders usually go wrong: skipping the plan, guessing at bugs, and saying &quot;done&quot; when it isn&#x27;t. Replace anything in &lt;angle brackets&gt; before you paste. They work in Claude Code, Cursor, Codex, Copilot, Gemini CLI, and browser builders like Lovable, Bolt, v0 and Replit.</p>
+<p><a class="btn" href="/downloads/hotfix-starter-prompts.md" download>Download all 13 (Markdown)</a></p>
+<nav class="toc" aria-label="Prompts"><strong>Prompts:</strong> <a href="#p1">Kickoff: understand before touching</a> · <a href="#p2">Plan first</a> · <a href="#p3">Small slice</a> · <a href="#p4">Spec from a fuzzy idea</a> · <a href="#p5">Launch-blocker review of an app you didn&#x27;t write</a> · <a href="#p6">Review this diff</a> · <a href="#p7">Reproduce first</a> · <a href="#p8">Find the cause, not a cause</a> · <a href="#p9">When the agent goes in circles</a> · <a href="#p10">The universal proof request</a> · <a href="#p11">Session handoff</a> · <a href="#p12">Gameplay change you can test in the editor</a> · <a href="#p13">Tool-design review for your own agent</a></nav>
+<article class="prompt" id="p1"><p class="lbl"><span class="chip">PLAN &amp; BUILD</span></p><h2><span class="n">1</span> Kickoff: understand before touching</h2><p class="muted"><strong>Use it:</strong> Start of any task in a codebase you (or the agent) don&#x27;t know yet.</p><pre><code>Before writing any code, investigate and report back:
+1. The files and functions involved in &lt;feature/area&gt;, with paths.
+2. How data flows through them today, in 5 bullets max.
+3. Existing tests that cover this area, and how to run just those.
+4. Anything surprising or risky you noticed.
+Don&#x27;t edit anything yet.</code></pre><p><button type="button" class="copybtn" data-copy="p1">Copy prompt</button></p></article>
+<article class="prompt" id="p2"><p class="lbl"><span class="chip">PLAN &amp; BUILD</span></p><h2><span class="n">2</span> Plan first</h2><p class="muted"><strong>Use it:</strong> Any change bigger than a one-liner. Most bad agent output comes from skipping the plan.</p><pre><code>Task: &lt;describe the outcome, not the implementation&gt;.
+
+Write a plan before coding:
+- Goal in one sentence, and what &quot;done&quot; looks like from a user&#x27;s point of view.
+- Files you&#x27;ll change or create, and why each one.
+- Steps in order, each small enough to verify on its own.
+- How you&#x27;ll verify each step (test, command, or what to click).
+- Open questions or assumptions. Mark any that are hard to undo.
+Stop after the plan. I&#x27;ll reply &quot;go&quot; or adjust it.</code></pre><p><button type="button" class="copybtn" data-copy="p2">Copy prompt</button></p></article>
+<article class="prompt" id="p3"><p class="lbl"><span class="chip">PLAN &amp; BUILD</span></p><h2><span class="n">3</span> Small slice</h2><p class="muted"><strong>Use it:</strong> After the plan is approved. Keeps each step reviewable.</p><pre><code>Do only step &lt;n&gt; of the plan. When it&#x27;s done:
+- Show `git diff --stat`.
+- Run &lt;test/typecheck command&gt; and paste the result.
+- Tell me how you verified the behavior.
+Then stop. Don&#x27;t start the next step.</code></pre><p><button type="button" class="copybtn" data-copy="p3">Copy prompt</button></p></article>
+<article class="prompt" id="p4"><p class="lbl"><span class="chip">VIBE CODING</span></p><h2><span class="n">4</span> Spec from a fuzzy idea</h2><p class="muted"><strong>Use it:</strong> Before your first prompt in Lovable, Bolt, v0, Replit or a coding agent.</p><pre><code>I want: &lt;rough idea in plain words&gt;.
+Turn this into a one-page spec:
+- User stories (max 5), each with acceptance criteria I can test by hand.
+- What&#x27;s explicitly out of scope for v1.
+- Data the feature needs to store, as a table: field, type, who can read, who can write.
+- Edge cases: empty state, errors, slow network, a user without permission.
+Ask me up to 3 questions where my idea is ambiguous. Don&#x27;t write code.</code></pre><p><button type="button" class="copybtn" data-copy="p4">Copy prompt</button></p></article>
+<article class="prompt" id="p5"><p class="lbl"><span class="chip">VIBE CODING</span></p><h2><span class="n">5</span> Launch-blocker review of an app you didn&#x27;t write</h2><p class="muted"><strong>Use it:</strong> Before real users touch an app a builder tool generated.</p><pre><code>This app was generated by a builder tool and I&#x27;m about to put real users on it.
+Give me a launch-blocker review:
+1. Where auth happens, and any route or API that works without being signed in but shouldn&#x27;t.
+2. Every place data is read or written, and whether access is limited to the owner.
+3. Every secret or API key, and whether any reach the browser.
+4. What happens when the payment, email or AI provider is down.
+Output: a list of blockers with file:line, then a list of &quot;fix soon&quot; items. Don&#x27;t fix anything yet.</code></pre><p><button type="button" class="copybtn" data-copy="p5">Copy prompt</button></p></article>
+<article class="prompt" id="p6"><p class="lbl"><span class="chip">REVIEW</span></p><h2><span class="n">6</span> Review this diff</h2><p class="muted"><strong>Use it:</strong> Before you merge anything an agent wrote.</p><pre><code>Review the changes on this branch against &lt;main&gt;: run `git diff &lt;main&gt;...HEAD`.
+Report findings as a table: severity (blocker / should fix / nit), file:line, problem, suggested fix.
+Check for:
+- Bugs: wrong conditions, off-by-one, null/undefined paths, unhandled promise or exception, race conditions.
+- Behavior changes that the task didn&#x27;t ask for.
+- Missing tests for new branches of logic.
+- Error handling that swallows errors or shows users raw error messages.
+Only report real problems. If there are no blockers, say &quot;No blockers&quot; first.
+Don&#x27;t edit any files.</code></pre><p><button type="button" class="copybtn" data-copy="p6">Copy prompt</button></p></article>
+<article class="prompt" id="p7"><p class="lbl"><span class="chip">DEBUGGING</span></p><h2><span class="n">7</span> Reproduce first</h2><p class="muted"><strong>Use it:</strong> Something is broken. Stops the agent from guessing a fix.</p><pre><code>Bug: &lt;what happens&gt; when &lt;steps&gt;. Expected: &lt;what should happen&gt;.
+Before changing any code:
+1. Reproduce it. Write a failing test or a script that shows the bug, and run it. Paste the output.
+2. If you can&#x27;t reproduce it, tell me what you tried and what extra information you need. Don&#x27;t guess a fix.</code></pre><p><button type="button" class="copybtn" data-copy="p7">Copy prompt</button></p></article>
+<article class="prompt" id="p8"><p class="lbl"><span class="chip">DEBUGGING</span></p><h2><span class="n">8</span> Find the cause, not a cause</h2><p class="muted"><strong>Use it:</strong> Right after the bug reproduces.</p><pre><code>The bug reproduces. Now find the root cause:
+- Trace the path from &lt;input/entry point&gt; to &lt;where it goes wrong&gt;, with file:line for each hop.
+- Add temporary logging if you need it, and show the actual values at each step.
+- State the root cause in one sentence, and the evidence for it.
+Then propose the smallest fix. Don&#x27;t apply it yet.</code></pre><p><button type="button" class="copybtn" data-copy="p8">Copy prompt</button></p></article>
+<article class="prompt" id="p9"><p class="lbl"><span class="chip">DEBUGGING</span></p><h2><span class="n">9</span> When the agent goes in circles</h2><p class="muted"><strong>Use it:</strong> The third failed attempt at the same fix.</p><pre><code>Stop. You&#x27;ve tried &lt;n&gt; times and it&#x27;s still failing.
+Don&#x27;t try another fix yet. Instead:
+1. List every assumption you&#x27;ve been making about why this fails.
+2. For each one, say how you could check it in one command or one log line.
+3. Run those checks and report what&#x27;s actually true.
+Then propose one fix based on what you found.</code></pre><p><button type="button" class="copybtn" data-copy="p9">Copy prompt</button></p></article>
+<article class="prompt" id="p10"><p class="lbl"><span class="chip">PROOF</span></p><h2><span class="n">10</span> The universal proof request</h2><p class="muted"><strong>Use it:</strong> Paste this every time an agent says &quot;done&quot;.</p><pre><code>Before I accept this, show proof:
+1. The exact commands you ran to check it, and the last 20 lines of each output. Run them again now if you didn&#x27;t keep the output.
+2. `git status` and `git diff --stat`.
+3. For each requirement in the task: done / not done / not verified, and the evidence for each.
+If anything wasn&#x27;t actually run, say &quot;not verified&quot;. That&#x27;s fine, I just need to know.</code></pre><p><button type="button" class="copybtn" data-copy="p10">Copy prompt</button></p></article>
+<article class="prompt" id="p11"><p class="lbl"><span class="chip">SESSIONS</span></p><h2><span class="n">11</span> Session handoff</h2><p class="muted"><strong>Use it:</strong> End of a work session, so tomorrow&#x27;s session (or another agent) can pick up cleanly.</p><pre><code>We&#x27;re stopping here. Write a handoff note to `NOTES.md` (append, don&#x27;t overwrite):
+- What we were trying to do.
+- What&#x27;s done and verified, and how it was verified.
+- What&#x27;s in progress, with the exact file and function.
+- What&#x27;s broken or untested right now.
+- The next 3 steps.
+- Commands to get back to this state (branch, dev server, test command).
+Keep it under 25 lines.</code></pre><p><button type="button" class="copybtn" data-copy="p11">Copy prompt</button></p></article>
+<article class="prompt" id="p12"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">12</span> Gameplay change you can test in the editor</h2><p class="muted"><strong>Use it:</strong> Asking an agent to change a Godot or Unity game without breaking scenes.</p><pre><code>Engine: &lt;Godot 4.x with GDScript | Unity &lt;version&gt; with C#&gt;. Check this version before using any API.
+Change: &lt;the gameplay behavior you want, e.g. &quot;double jump with a 0.2 s coyote time&quot;&gt;.
+Rules:
+- Edit scripts only. Don&#x27;t edit scene or prefab files (.tscn, .unity, .prefab) as raw text; describe any editor change and I&#x27;ll make it.
+- Put tunable values (speeds, timers, damage) in exported/serialized fields, not hard-coded numbers.
+- No per-frame allocations in update loops; cache node and component lookups.
+When done, tell me exactly how to test it: which scene to open, what input to press, and what I should see.</code></pre><p><button type="button" class="copybtn" data-copy="p12">Copy prompt</button></p></article>
+<article class="prompt" id="p13"><p class="lbl"><span class="chip">AGENT BUILDERS</span></p><h2><span class="n">13</span> Tool-design review for your own agent</h2><p class="muted"><strong>Use it:</strong> Before you give an LLM agent new tools or wire in outside content.</p><pre><code>Here are the tools my agent can call: &lt;paste tool names, descriptions and parameter schemas&gt;.
+Review them as if you were the model using them:
+1. For each tool: is the description clear enough to know when to call it and when not to? Rewrite any that are vague.
+2. Which tools can change or delete things, spend money, or send messages? Mark each one &quot;needs human approval&quot; or &quot;safe to auto-run&quot;, and say why.
+3. Which tools return outside content (web pages, emails, files, user input)? For each, describe one prompt-injection attempt it could carry and how my code should contain it.
+4. Any two tools that overlap and will confuse the model? Suggest a merge or a clearer split.
+Output a table, then the rewritten descriptions. Don&#x27;t change any code.</code></pre><p><button type="button" class="copybtn" data-copy="p13">Copy prompt</button></p></article>
+<div class="ctabox"><h2>Want the next ones?</h2><p>These are a sample of the Hotfix Builder Pack. Every weekday, Hotfix Daily sends five things worth your attention in AI, agents, vibe coding and game dev, plus one Hotfix of the Day tip you can use in minutes.</p>
+<p>Not subscribed yet? <a href="/#subscribe">Join free</a>. Already in? Check your inbox for the confirmation email.</p>
+<p class="muted small">Related guides: <a href="/guides/which-ai-coding-agent/">Which AI coding agent should you use?</a> · <a href="/guides/vibe-coding-workflow/">The vibe coding workflow</a> · <a href="/guides/how-to-add-mcp-servers/">How to add MCP servers</a></p></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+<ul class="footnav" aria-label="Footer"><li><a href="/issues/">Issues</a></li><li><a href="/guides/">Guides</a></li><li><a href="/sponsor/">Sponsor</a></li><li><a href="/about/">About</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/feed.xml">RSS</a></li><li><a href="https://x.com/hotfixdaily" rel="me noopener">X</a></li><li><a href="/privacy/">Privacy</a></li></ul>
+<p>© 2026 Hotfix Daily · The daily AI builder digest, free on weekdays · <a href="mailto:hello@hotfixdaily.com">hello@hotfixdaily.com</a></p>
+</div></footer>
+<script src="/assets/subscribe.js" defer></script>
+<script data-goatcounter="https://hotfixdaily.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
