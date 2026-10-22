@@ -1,0 +1,27 @@
+<div class="wrap issue">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/issues/">Issues</a> / <span aria-current="page">Issue #{{ d.num }}</span></nav>
+<p class="kicker">Issue #{{ d.num }} · <time datetime="{{ d.date.isoformat() }}">{{ d.date_h|tesc }}</time></p>
+<h1>Hotfix Daily #{{ d.num }}</h1>
+<p class="lede">{{ lede|safe }}</p>
+{% for p in intro_links %}{{ p|safe }}
+{% endfor %}
+<section class="ctabox compact" aria-label="Subscribe" data-growth="1"><h2>Get this in your inbox every weekday</h2><p>Five things worth your attention if you build with AI, about 3 minutes. <span class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</span></p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-issue-top">Email address</label>
+<input id="email-issue-top" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form></section>
+{{ items_html|safe }}
+<p class="endprompt">That&#x27;s the issue. Know a builder who&#x27;d use this? <a href="{{ share|esc }}" rel="noopener">Share it on X</a> or forward them this page. New here? <a href="#subscribe-end">Subscribe free</a> for tomorrow&#x27;s.</p>
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-issue">Email address</label>
+<input id="email-issue" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+{{ pager|safe }}
+<p class="muted small">Want the bigger picture? Read our guides to <a href="/guides/ai-coding-agents/">AI coding agents</a>, <a href="/guides/vibe-coding-tools/">vibe coding tools</a>, <a href="/guides/ai-game-dev-tools/">AI game dev tools</a>, <a href="/guides/ai-agent-frameworks/">agent frameworks</a> and <a href="/guides/mcp-servers/">MCP servers</a>, or <a href="/guides/">all guides</a>.</p>
+</div>

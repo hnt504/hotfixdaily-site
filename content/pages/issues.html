@@ -1,0 +1,22 @@
+---
+title: 'All issues: the Hotfix Daily archive'
+description: Every issue of Hotfix Daily, the free weekday AI builder digest. {{ issues|length }} issue{{ '' if issues|length == 1 else 's' }} so far, newest first, each with five sourced items on AI, agents, vibe coding and game dev.
+jsonld:
+- '{{ archive_ld }}'
+- '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"Issues","item":"https://hotfixdaily.com/issues/"}]}'
+dynamic: true
+---
+<div class="wrap prose wide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Issues</span></nav>
+<h1>The Hotfix Daily archive</h1>
+<p class="lede">Every issue, newest first. Each has five sourced items and one Hotfix of the Day. Prefer a feed reader? Use the <a href="/feed.xml">Atom feed</a> or <a href="/rss.xml">RSS feed</a>.</p>
+{% for a in archive_items %}{{ a }}
+{% endfor %}<section class="ctabox" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-archive">Email address</label>
+<input id="email-archive" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+</div>

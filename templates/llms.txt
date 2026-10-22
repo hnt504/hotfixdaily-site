@@ -1,0 +1,50 @@
+# Hotfix Daily
+
+> Hotfix Daily is a free weekday email newsletter: the daily AI builder digest. Each issue covers five things worth a builder's attention in AI, AI agents, vibe coding, and game development, each with a one-line "why builders care" and a source link, plus one practical "Hotfix of the Day" tip. Each item carries a topic label: MODEL, AGENTS, CODING, GAME DEV, DEVTOOLS or REPO. Issues are under about 450 words (about a 3-minute read) and arrive Monday to Friday mornings, US Central time.
+
+Key facts:
+- Name: Hotfix Daily
+- What: daily AI builder digest (email newsletter)
+- Topics: AI models and launches, AI agents and agent tooling, vibe coding (Cursor, Claude Code, Codex and similar), AI in games and game dev, notable open-source repos
+- For: developers, indie hackers, vibe coders, and game developers who build with AI
+- Frequency: weekdays (Monday to Friday)
+- Price: free (some issues may carry one clearly labeled sponsor)
+- Subscribe: https://hotfixdaily.com/#subscribe
+- Archive: https://hotfixdaily.com/issues/
+- Feeds: https://hotfixdaily.com/feed.xml (Atom), https://hotfixdaily.com/rss.xml (RSS)
+- Contact: hello@hotfixdaily.com · Sponsorships: sponsors@hotfixdaily.com
+- X (Twitter): https://x.com/hotfixdaily (@hotfixdaily)
+
+## Tools
+
+- [AI API cost calculator: what will GPT, Claude or Gemini cost you? (Oct 2026)](https://hotfixdaily.com/tools/ai-api-cost-calculator/): Compare per-request, daily and monthly API costs across OpenAI, Anthropic and Google models. Official list prices, checked 2026-10-22, each linked to its source.
+
+## Guides (sourced, last reviewed 2026-10-21)
+
+- [What are the best AI coding agents? Compared (October 2026)](https://hotfixdaily.com/guides/ai-coding-agents/): A sourced guide to AI coding agents (Oct 2026): Cursor, Claude Code, Codex, Copilot, Devin Desktop, Gemini CLI, Jules, Kiro, Cline and more, by where they run.
+- [Which AI coding agent should you use? A pick-by-budget guide (October 2026)](https://hotfixdaily.com/guides/which-ai-coding-agent/): Which AI coding agent should you pick? Free options and paid prices (checked Oct 21, 2026) for Copilot, Cursor, Claude Code, Codex, Kiro, Devin and more.
+- [What are the best vibe coding tools? App builders compared (Oct 2026)](https://hotfixdaily.com/guides/vibe-coding-tools/): A sourced guide to vibe coding tools (Oct 2026): Lovable, Bolt, v0, Replit, Base44, Rork and Firebase Studio, when to graduate, and a pre-launch checklist.
+- [How to vibe code an app from idea to launch: the workflow (Oct 2026)](https://hotfixdaily.com/guides/vibe-coding-workflow/): A step-by-step vibe coding workflow (Oct 2026): plan, build, add data and logins, sync to GitHub, test, take payments and ship, with a tool for each step.
+- [What AI tools can game developers use in 2026? Engines, assets, NPCs](https://hotfixdaily.com/guides/ai-game-dev-tools/): A sourced guide to AI game dev tools (Oct 2026): Unity's AI tools, Unreal 5.8 MCP, Roblox Assistant, plus Scenario, Meshy, Ludo.ai, Inworld and more.
+- [Which AI agent framework should you use? (October 2026)](https://hotfixdaily.com/guides/ai-agent-frameworks/): Sourced comparison of AI agent frameworks (Oct 2026): OpenAI Agents SDK, Claude Agent SDK, Google ADK, LangGraph, CrewAI, Mastra, AI SDK, Pydantic AI.
+- [What is MCP, and which MCP servers are worth adding? (Oct 2026)](https://hotfixdaily.com/guides/mcp-servers/): A sourced guide to MCP (Oct 2026): what the Model Context Protocol is, and the MCP servers worth adding for GitHub, browsers, docs, data, payments and design.
+- [How to add an MCP server: Claude Code, Cursor, Codex, VS Code (2026)](https://hotfixdaily.com/guides/how-to-add-mcp-servers/): How to add an MCP server (Oct 2026): commands and config files for Claude Code, Cursor, Codex, VS Code, Gemini CLI and Cline, plus testing and safety tips.
+- [Starter stacks for solo builders: 4 opinionated AI stacks (October 2026)](https://hotfixdaily.com/guides/starter-stacks-solo-builders/): Four opinionated AI starter stacks for solo builders (Oct 2026): no-code founder, TypeScript web SaaS, Python AI app and indie game dev. Prices checked Oct 22.
+- [The AI Builder Starter Stack](https://hotfixdaily.com/starter-stack/): A free one-page starter stack for building with AI in 2026: coding agents, app builders, models, hosting and game tools, plus 5 rules for shipping agent code.
+
+## Issues (newest first)
+
+{% for d in issues %}- [{{ d.title }}]({{ d.url }}) ({{ d.date.isoformat() }}): {{ d.headlines }}
+{% endfor %}
+
+## About
+
+- [About Hotfix Daily](https://hotfixdaily.com/about/): how issues are researched and sourced; sponsor and corrections policy
+- [Sponsor Hotfix Daily](https://hotfixdaily.com/sponsor/): ad formats and founding-sponsor rates
+- [Privacy policy](https://hotfixdaily.com/privacy/)
+
+## Optional
+
+- [Full text of guides and recent issues](https://hotfixdaily.com/llms-full.txt)
+- [Hotfix Daily on X](https://x.com/hotfixdaily)
+- [Sitemap](https://hotfixdaily.com/sitemap.xml)

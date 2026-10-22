@@ -1,0 +1,44 @@
+---
+title: The AI Builder Starter Stack (free guide + PDF)
+description: 'A free one-page starter stack for building with AI in 2026: coding agents, app builders, models, hosting and game tools, plus 5 rules for shipping agent code.'
+og_type: article
+jsonld:
+- '{"@context":"https://schema.org","@type":"Article","headline":"The AI Builder Starter Stack","description":"A free one-page starter stack for building with AI in 2026: coding agents, app builders, models, hosting and game tools, plus 5 rules for shipping agent code.","url":"https://hotfixdaily.com/starter-stack/","datePublished":"2026-10-21","dateModified":"2026-10-21","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"}}'
+- '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"AI Builder Starter Stack","item":"https://hotfixdaily.com/starter-stack/"}]}'
+updated: 2026-10-21
+---
+<div class="wrap prose wide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">AI Builder Starter Stack</span></nav>
+<p class="kicker">Free guide · Last reviewed <time datetime="2026-10-21">October 21, 2026</time></p>
+<h1>The AI Builder Starter Stack</h1>
+<p class="lede">The short list of tools to start building with AI in 2026, one layer at a time, plus five workflow rules that keep agent-written code shippable. Read it here, or subscribe and get the one-page PDF to keep.</p>
+<section class="ctabox" aria-label="Subscribe"><h2>Get the PDF + the daily digest</h2><p>Subscribe free and we'll send you to the PDF download right away. Then you'll get Hotfix Daily every weekday morning.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-starter-top">Email address</label>
+<input id="email-starter-top" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+
+<h2>The stack, layer by layer</h2>
+<section class="layer"><h3>1. A coding agent</h3><p class="muted">Pick one editor agent and one terminal agent. <a href="/guides/ai-coding-agents/">Compare options →</a></p><ul><li><a href="https://cursor.com">Cursor</a></li><li><a href="https://github.com/features/copilot">GitHub Copilot</a></li><li><a href="https://www.claude.com/product/claude-code">Claude Code</a></li><li><a href="https://github.com/openai/codex">Codex CLI</a></li><li><a href="https://github.com/google-gemini/gemini-cli">Gemini CLI (open source)</a></li></ul></section>
+<section class="layer"><h3>2. A browser app builder (for prototypes)</h3><p class="muted">For a quick demo, or if you don&#x27;t code yet. <a href="/guides/vibe-coding-tools/">Compare options →</a></p><ul><li><a href="https://lovable.dev">Lovable</a></li><li><a href="https://bolt.new">Bolt</a></li><li><a href="https://v0.app">v0</a></li><li><a href="https://replit.com">Replit</a></li></ul></section>
+<section class="layer"><h3>3. Model access</h3><p class="muted">One API key for many models, or run open models on your machine.</p><ul><li><a href="https://openrouter.ai">OpenRouter (one API, many models)</a></li><li><a href="https://ollama.com">Ollama (local models)</a></li><li><a href="https://huggingface.co">Hugging Face (open models)</a></li></ul></section>
+<section class="layer"><h3>4. Agent plumbing</h3><p class="muted">Shared instructions and tool connections.</p><ul><li><a href="https://agents.md">AGENTS.md (instructions file)</a></li><li><a href="https://modelcontextprotocol.io">Model Context Protocol (MCP)</a></li></ul></section>
+<section class="layer"><h3>5. Ship it</h3><p class="muted">Free or cheap hosting and a database.</p><ul><li><a href="https://pages.github.com">GitHub Pages (static sites)</a></li><li><a href="https://vercel.com">Vercel</a></li><li><a href="https://www.netlify.com">Netlify</a></li><li><a href="https://supabase.com">Supabase (Postgres, auth, storage)</a></li></ul></section>
+<section class="layer"><h3>6. Talk to users</h3><p class="muted">An email list you own.</p><ul><li><a href="https://kit.com">Kit (newsletter, what we use)</a></li></ul></section>
+<section class="layer"><h3>7. If you make games</h3><p class="muted">Engine agents and asset tools. <a href="/guides/ai-game-dev-tools/">Compare options →</a></p><ul><li><a href="https://unity.com/features/ai">Unity&#x27;s AI tools + MCP</a></li><li><a href="https://create.roblox.com/docs/assistant/guide">Roblox Assistant</a></li><li><a href="https://www.scenario.com">Scenario</a></li><li><a href="https://www.meshy.ai">Meshy</a></li><li><a href="https://elevenlabs.io">ElevenLabs (voice)</a></li></ul></section>
+<h2>The 5 rules</h2>
+<ol><li><strong>Write the rules once.</strong> Put build, test and style commands in AGENTS.md (or CLAUDE.md) so every agent follows them. <a href="https://agents.md">Source</a></li><li><strong>Checkpoint before every task.</strong> Commit before and after each agent task so any change can be undone. <a href="https://learn.chatgpt.com/docs/codex/cli">Source</a></li><li><strong>No proof, no merge.</strong> The agent runs tests or the build and shows the output before it says &quot;done&quot;. <a href="https://claude.dev/blog/solving-code-review-at-anthropic/">Source</a></li><li><strong>Fresh eyes on every diff.</strong> Have a second, fresh-context session review the change. <a href="https://claude.dev/blog/solving-code-review-at-anthropic/">Source</a></li><li><strong>Secrets stay secret.</strong> Keep API keys out of front-end code and chat prompts; use environment variables.</li></ol>
+<p class="muted small">No tool paid to be listed, and none of these are affiliate links. If that ever changes, links will be clearly labeled.</p>
+<section class="ctabox" aria-label="Subscribe"><h2>Want the printable PDF?</h2><p>Subscribe free. You'll get the PDF link right after signing up, plus five sourced items every weekday.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-starter-bottom">Email address</label>
+<input id="email-starter-bottom" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+
+</div>
