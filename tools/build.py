@@ -337,6 +337,8 @@ def build(dry: bool) -> tuple[list[str], list[str]]:
             page["description"] = render_str(p["description"])
             page["jsonld"] = [render_str(j) for j in p.get("jsonld") or []]
             body = render_str(p["body"])
+            if "{{" in body or "{%" in body:
+                raise SystemExit(f"ERROR: {p['source'].relative_to(ROOT)} left a {{{{ }}}} placeholder unfilled")
         else:
             body = p["body"]
         out = base.render(site=site, page=page, main=body.rstrip("\n"), css_query=css_query)
