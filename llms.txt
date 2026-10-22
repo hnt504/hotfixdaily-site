@@ -25,6 +25,7 @@ Key facts:
 - [AI agent frameworks compared (October 2026)](https://hotfixdaily.com/guides/ai-agent-frameworks/): Sourced comparison of AI agent frameworks (Oct 2026): OpenAI Agents SDK, Claude Agent SDK, Google ADK, LangGraph, CrewAI, Mastra, AI SDK, Pydantic AI.
 - [MCP servers worth knowing for builders (October 2026)](https://hotfixdaily.com/guides/mcp-servers/): A sourced guide to MCP (Oct 2026): what the Model Context Protocol is, and the MCP servers worth adding for GitHub, browsers, docs, data, payments and design.
 - [How to add an MCP server: Claude Code, Cursor, Codex, VS Code (2026)](https://hotfixdaily.com/guides/how-to-add-mcp-servers/): How to add an MCP server (Oct 2026): exact commands and config files for Claude Code, Cursor, Codex, VS Code, Gemini CLI and Cline, plus testing and safety tips.
+- [Starter stacks for solo builders: 4 opinionated AI stacks (October 2026)](https://hotfixdaily.com/guides/starter-stacks-solo-builders/): Four opinionated AI starter stacks for solo builders (Oct 2026): no-code founder, TypeScript web SaaS, Python AI app and indie game dev. Prices checked Oct 22.
 - [The AI Builder Starter Stack](https://hotfixdaily.com/starter-stack/): A free one-page starter stack for building with AI in 2026: coding agents, app builders, models, hosting and game tools, plus 5 rules for shipping agent code.
 
 ## Issues (newest first)

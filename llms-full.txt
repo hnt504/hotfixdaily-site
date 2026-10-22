@@ -360,6 +360,58 @@ FAQ:
 - Q: Is it safe to commit .mcp.json?
   A: Yes, if it has no secrets. Use environment variable references or OAuth. Claude Code prompts for approval before using project-scoped servers in interactive sessions, but not in claude -p runs.
 
+## Starter stacks for solo builders: 4 opinionated AI stacks (October 2026)
+URL: https://hotfixdaily.com/guides/starter-stacks-solo-builders/ · Last reviewed: 2026-10-22
+
+Most "AI tool lists" leave you with twenty tabs open. This page does the opposite: four complete stacks, one per kind of solo builder, with one pick per layer. Every stack starts at $0 and tells you the first thing worth paying for. If you want the generic layer-by-layer version, see the AI Builder Starter Stack.
+
+### Stack 1: The no-code founder
+- **Build and host: Lovable** (Free: 5 build credits a day (up to 30 a month) + 20 Cloud credits a month) <https://lovable.dev/pricing>: Lovable says hosting most small or new apps is covered by the grant that comes with your plan; apps with significant traffic or size draw on your credit balance. You own the code and apps you build. Our take: Alternatives (Bolt, v0, Replit and more) are in our vibe coding tools guide. Source: https://lovable.dev/pricing
+- **Payments: Stripe** (No monthly fee · 2.9% + 30¢ per successful domestic card charge) <https://stripe.com/pricing>: Stripe lists no setup, monthly or closure fees on standard pricing. International cards and other payment methods are priced differently. Source: https://stripe.com/pricing
+- **Email list: Kit** (Free up to 10,000 subscribers · Creator $33/month (at 1,000 subscribers)) <https://kit.com/pricing>: The Free plan includes unlimited landing pages, forms and broadcasts. Creator adds visual automations and email sequences. Our take: Start on Free; pay when you want an automated welcome sequence. Source: https://kit.com/pricing
+
+### Stack 2: The TypeScript web SaaS
+- **Coding agent: Claude Code or GitHub Copilot** (Copilot Free (CLI and agent mode, limited) · Copilot Pro $10 · Claude Pro $20 ($17 billed annually)) <https://github.com/features/copilot/plans>: Claude Code comes with Claude Pro and Max, not the Free plan. Copilot's Free plan supports the CLI and agent mode with limited usage. Our take: Compare all of them in which AI coding agent and AI coding agents. Source: https://github.com/features/copilot/plans, https://claude.com/pricing
+- **Framework: Next.js + AI SDK** (Free, open source (Next.js: MIT; AI SDK: Apache-2.0)) <https://github.com/vercel/next.js>: Next.js for the app, and Vercel's AI SDK for chat and tool-calling features. Our take: Mastra is the pick if you want workflows and memory built in; see AI agent frameworks. Source: https://github.com/vercel/next.js, https://github.com/vercel/ai
+- **Database and auth: Supabase** (Free: 500 MB database, 50,000 monthly active users, 2 active projects · Pro from $25) <https://supabase.com/pricing>: Free projects pause after 1 week of inactivity. Pro includes $10/month in compute credits, which covers one Micro project, and has spend caps on by default. Source: https://supabase.com/pricing
+- **Hosting: Vercel** (Hobby $0 (personal, non-commercial use) · Pro $20 per developer seat) <https://vercel.com/pricing>: Vercel says Hobby is for personal, non-commercial use and Pro is for professionals and businesses. New teams get spend management with a default on-demand budget. Our take: Charging customers? Plan on Pro. Source: https://vercel.com/pricing
+- **Payments and email: Stripe and Kit** (Stripe 2.9% + 30¢ per domestic card charge · Kit free to 10,000 subscribers) <https://stripe.com/pricing>: Same picks as Stack 1. See Kit's pricing for paid plans. Source: https://stripe.com/pricing, https://kit.com/pricing
+- **MCP servers to connect** (Supabase MCP · Stripe MCP · Playwright MCP): Supabase MCP has a read-only option. Stripe MCP lets you grant access to live mode or a sandbox separately. Playwright MCP lets the agent click through your app in a browser. Our take: Use Supabase read-only on production and connect Stripe to a sandbox first. More in MCP servers worth knowing. Source: https://supabase.com/docs/guides/getting-started/mcp, https://docs.stripe.com/mcp, https://github.com/microsoft/playwright-mcp
+
+### Stack 3: The Python AI app
+- **Coding agent: Codex or Claude Code** (Codex in ChatGPT Free for quick tasks · CLI and IDE extension from Plus ($20) · or an API key at API rates) <https://learn.chatgpt.com/docs/pricing>: OpenAI lists Codex in ChatGPT Free for quick coding tasks in the desktop app (subject to rollout). Codex on the web, in the CLI and in the IDE extension starts with Plus. With an API key you pay API rates, which OpenAI suggests for automation like CI. Claude Code needs Claude Pro or Max. Source: https://learn.chatgpt.com/docs/pricing, https://claude.com/pricing
+- **Agent framework: Pydantic AI** (Free, open source (MIT)) <https://github.com/pydantic/pydantic-ai>: Type-checked inputs and outputs and testable agents. Prefer a vendor SDK? The OpenAI Agents SDK is MIT too. Our take: The full comparison is in AI agent frameworks. Source: https://github.com/pydantic/pydantic-ai, https://github.com/openai/openai-agents-python
+- **API: FastAPI + uv** (Free, open source (FastAPI: MIT; uv: MIT or Apache-2.0)) <https://github.com/fastapi/fastapi>: FastAPI for the API, and uv to manage Python versions and dependencies. Source: https://github.com/fastapi/fastapi, https://github.com/astral-sh/uv
+- **Models: OpenRouter or Ollama** (OpenRouter Free: 25+ free models, 50 requests/day · pay-as-you-go: 5.5% fee on credit purchases · Ollama: free locally) <https://openrouter.ai/pricing>: OpenRouter gives you one API across providers and bills models at the provider's list price; budgets and spend controls come with pay-as-you-go. For local development, Ollama runs models on your machine for free (MIT-licensed); its paid plans, from $20/month, add usage credits for its cloud models. Source: https://openrouter.ai/pricing, https://ollama.com/pricing, https://github.com/ollama/ollama
+- **Hosting: Render** (Free web service (512 MB RAM, usage limits) · paid instances from $7/month) <https://render.com/pricing>: Render's Hobby workspace is $0 plus compute. Free compute plans have usage limits and are meant for personal projects and prototypes. Managed Postgres has a free tier too. Source: https://render.com/pricing
+- **Tools for your agent: MCP** (): If your agent needs tools, expose them as an MCP server so the same tools work in your coding agent and in the app. Our take: Start with how to add MCP servers.
+
+### Stack 4: The indie game dev
+- **Engine, option A: Unity Personal + your coding agent** (Unity Personal: free up to $200,000 in revenue and funding · CLI, MCP server and plugin free (Unity 6+)) <https://unity.com/features/ai>: Unity offers an official plugin for Claude Code, Codex and Grok, plus a Unity CLI with an MCP server. Unity's FAQ says all three are free with no concurrency limits. Only the in-editor assistant costs extra: on Personal, its free trial converts to $10/month. Source: https://unity.com/features/ai, https://unity.com/products/pricing-updates
+- **Engine, option B: Godot** (Free and open source (MIT)) <https://godotengine.org/license/>: Godot's license terms don't apply to the games you make, so you can license them however you like. Our take: Its scripts and scenes are plain text files, which coding agents handle well, but there's no official AI plugin like Unity's, so you wire up the agent yourself. Source: https://godotengine.org/license/
+- **3D assets: Meshy** (Free: 100 credits a month · Pro $20/month billed monthly (1,000 credits)) <https://www.meshy.ai/pricing>: Free-plan assets are licensed CC BY 4.0, so commercial use is allowed with attribution to Meshy. On paid plans you own the assets you create. Source: https://www.meshy.ai/pricing
+- **Voice and sound: ElevenLabs** (Free: 10,000 credits a month · Starter $6/month (30,000 credits, commercial license)) <https://elevenlabs.io/pricing>: The commercial license starts on the Starter plan. All products (text to speech, sound effects, music) draw from one shared credit pool. Source: https://elevenlabs.io/pricing
+- **Ship it: itch.io** (Free to publish · you set the revenue share (default 10%)) <https://itch.io/docs/creators/faq>: itch.io says it costs nothing to use and never places ads on your pages. You choose what share of sales goes to itch.io; the default is 10%, and payment processor fees come out separately. Source: https://itch.io/docs/creators/faq, https://itch.io/docs/creators/payments
+
+### Rules for every stack (our take)
+- One agent, one instructions file. Put build, test and style commands in AGENTS.md so you can switch agents later. See the Starter Stack rules.
+- No proof, no merge. The agent shows passing tests, a clean build or a screenshot before you accept "done".
+- Secrets stay out of the front end. API keys go in environment variables, never in client code or prompts.
+- Cap your spend. Supabase Pro has spend caps on by default, and Vercel and OpenRouter (pay-as-you-go) have budget controls. Turn them on before launch.
+- Upgrade one layer at a time, and only when you hit a limit every week.
+
+FAQ:
+- Q: What's the cheapest stack to start with?
+  A: All four can start at $0. The cheapest paid coding agent in this guide is GitHub Copilot Pro at $10/month. Our take: spend your first dollars on the coding agent, not on hosting.
+- Q: Can I use the TypeScript stack for a commercial app on free tiers?
+  A: Not on Vercel's free plan: Vercel says Hobby is for personal, non-commercial use, so move to Pro ($20/month) before you charge customers. Also note that Supabase Free projects pause after a week of inactivity.
+- Q: Which stack should a non-coder pick?
+  A: Stack 1. When you outgrow the browser builder, sync to GitHub and move to Stack 2. Our vibe coding workflow covers the handoff.
+- Q: Do I need an agent framework for a simple AI feature?
+  A: Usually not. In a web app, the AI SDK is enough for chat and tool calls. Our take: reach for a framework when the agent itself is the product. See AI agent frameworks.
+- Q: Can I sell a game made with free Meshy and ElevenLabs plans?
+  A: Meshy's Free plan allows commercial use with attribution (CC BY 4.0). ElevenLabs lists its commercial license from the $6 Starter plan, not on Free.
+
 ## Hotfix Daily #2: MiniMax M3.1 Flash, Claude Duet, Flint and more
 URL: https://hotfixdaily.com/issues/002/ · Date: 2026-10-22
 
