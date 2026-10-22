@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="/rss.css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Hotfix Daily</title>
 <subtitle>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</subtitle>
