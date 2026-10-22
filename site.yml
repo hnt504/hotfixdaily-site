@@ -1,0 +1,29 @@
+# Site-wide settings for Hotfix Daily. Most chrome (header, footer, signup
+# forms) lives in templates/ and content/pages/; this file holds the rest.
+
+name: Hotfix Daily
+url: https://hotfixdaily.com
+impact_verification: 61a18ed7-af0a-4189-8c9e-f49d709af4ea
+
+# Sitemap order, change frequency and priority. "guides/*" places any guide
+# not listed by name; "issues/*" places every issue, newest first.
+sitemap:
+  - [index, daily, "1.0"]
+  - [issues, daily, "0.8"]
+  - [guides, weekly, "0.8"]
+  - [guides/ai-coding-agents, weekly, "0.9"]
+  - [guides/which-ai-coding-agent, weekly, "0.9"]
+  - [guides/vibe-coding-tools, weekly, "0.9"]
+  - [guides/vibe-coding-workflow, weekly, "0.9"]
+  - [guides/ai-game-dev-tools, weekly, "0.9"]
+  - [guides/ai-agent-frameworks, weekly, "0.9"]
+  - [guides/mcp-servers, weekly, "0.9"]
+  - [guides/how-to-add-mcp-servers, weekly, "0.9"]
+  - [guides/starter-stacks-solo-builders, weekly, "0.9"]
+  - [guides/*, weekly, "0.9"]
+  - [starter-stack, monthly, "0.8"]
+  - [about, monthly, "0.5"]
+  - [sponsor, monthly, "0.5"]
+  - [privacy, yearly, "0.2"]
+  - [issues/*, monthly, "0.7"]
+  - [tools/*, weekly, "0.8"]

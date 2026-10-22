@@ -1,0 +1,106 @@
+name: Build and publish
+
+# Runs on every push to main. Rebuilds the site from content/, templates/ and
+# site.yml, validates it, commits the generated pages, and tells search engines
+# about new or updated pages. If the build or validation fails, nothing new
+# goes live, and GitHub emails the repo owner the reason.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('check-{0}', github.ref) || 'build-site' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  check:
+    # On pull requests: run every check and show what would change, publish nothing.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python3 tools/build.py --no-adopt
+      - run: python3 tools/validate_site.py
+      - name: Show what the build would change
+        run: git status --short
+
+  build:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build the site
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -n "$BEFORE" ] && git cat-file -e "$BEFORE" 2>/dev/null; then
+            python3 tools/build.py --reimport-from "$BEFORE"
+          else
+            python3 tools/build.py
+          fi
+          python3 tools/validate_site.py
+
+      - name: Commit the generated pages
+        id: commit
+        run: |
+          git config user.name "Hotfix Daily builder"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "base=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to publish."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Build site from ${GITHUB_SHA::7}"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Someone pushed while this was building; picking up their change and retrying."
+            git pull --rebase origin main
+            python3 tools/build.py --no-adopt && python3 tools/validate_site.py || exit 1
+            git add -A
+            git diff --cached --quiet || git commit -m "Build site (rebuild after concurrent push)"
+          done
+          exit 1
+
+      - name: Ask GitHub Pages to deploy
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" || echo "Pages will pick up the push on its own."
+
+      - name: Tell search engines (IndexNow)
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          RANGE_START="${BEFORE}"
+          git cat-file -e "$RANGE_START" 2>/dev/null || RANGE_START="${{ steps.commit.outputs.base }}"
+          python3 tools/indexnow.py --since "$RANGE_START" || echo "IndexNow ping failed; not critical."

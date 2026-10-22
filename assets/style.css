@@ -85,3 +85,6 @@ dialog.exitbox .signup{margin-top:12px}
 .calcform label{display:flex;flex-direction:column;gap:.3rem;font-weight:600;font-size:.95rem}
 .calcform input,.calcform select{font:inherit;padding:.5rem .6rem;border-radius:8px;border:1px solid currentColor;background:transparent;color:inherit}
 .calcform select option{color:#000}
+
+/* breadcrumbs: the header nav spacing rule was also spacing out crumb links */
+.crumbs a{margin-left:0}

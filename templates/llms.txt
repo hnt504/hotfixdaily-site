@@ -1,0 +1,43 @@
+# Hotfix Daily
+
+> Hotfix Daily is a free weekday email newsletter: the daily AI builder digest. Each issue covers five things worth a builder's attention in AI, AI agents, vibe coding, and game development, each with a one-line "why builders care" and a source link, plus one practical "Hotfix of the Day" tip. Each item carries a topic label: MODEL, AGENTS, CODING, GAME DEV, DEVTOOLS or REPO. Issues are under about 450 words (about a 3-minute read) and arrive Monday to Friday mornings, US Central time.
+
+Key facts:
+- Name: Hotfix Daily
+- What: daily AI builder digest (email newsletter)
+- Topics: AI models and launches, AI agents and agent tooling, vibe coding (Cursor, Claude Code, Codex and similar), AI in games and game dev, notable open-source repos
+- For: developers, indie hackers, vibe coders, and game developers who build with AI
+- Frequency: weekdays (Monday to Friday)
+- Price: free (some issues may carry one clearly labeled sponsor)
+- Subscribe: https://hotfixdaily.com/#subscribe
+- Archive: https://hotfixdaily.com/issues/
+- Feeds: https://hotfixdaily.com/feed.xml (Atom), https://hotfixdaily.com/rss.xml (RSS)
+- Contact: hello@hotfixdaily.com · Sponsorships: sponsors@hotfixdaily.com
+- X (Twitter): https://x.com/hotfixdaily (@hotfixdaily)
+
+## Tools
+
+{% for g in tools %}- [{{ g.llms_title }}]({{ g.url }}): {{ g.llms_blurb }}
+{% endfor %}
+
+## Guides (sourced, last reviewed 2026-10-21)
+
+{% for g in guides_and_extras %}- [{{ g.llms_title }}]({{ g.url }}): {{ g.llms_blurb }}
+{% endfor %}
+
+## Issues (newest first)
+
+{% for d in issues %}- [{{ d.title }}]({{ d.url }}) ({{ d.date.isoformat() }}): {{ d.headlines }}
+{% endfor %}
+
+## About
+
+- [About Hotfix Daily](https://hotfixdaily.com/about/): how issues are researched and sourced; sponsor and corrections policy
+- [Sponsor Hotfix Daily](https://hotfixdaily.com/sponsor/): ad formats and founding-sponsor rates
+- [Privacy policy](https://hotfixdaily.com/privacy/)
+
+## Optional
+
+- [Full text of guides and recent issues](https://hotfixdaily.com/llms-full.txt)
+- [Hotfix Daily on X](https://x.com/hotfixdaily)
+- [Sitemap](https://hotfixdaily.com/sitemap.xml)
