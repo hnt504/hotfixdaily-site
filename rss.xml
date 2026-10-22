@@ -14,7 +14,7 @@
 <guid isPermaLink="true">https://hotfixdaily.com/issues/002/</guid>
 <pubDate>Thu, 22 Oct 2026 11:00:00 +0000</pubDate>
 <description>Hotfix Daily #2: MiniMax M3.1 Flash pricing, Anthropic&#x27;s Claude Duet agent, Recursive&#x27;s local Flint coding model, AI at Steam Next Fest, and OPAL.</description>
-<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/issues/002/" rel="noopener">Read this issue on the web</a> · <a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> MiniMax ships M3.1 Flash at $0.15 per million input tokens</h2>
 <p>MiniMax says its new Flash model runs agent tasks nearly 3x faster and about 70% cheaper than its predecessor, with a 1M-token context. Pricing is flat: $0.15 per million input tokens and $0.60 per million output. Weights are promised later.</p>
 <p class="why"><strong>Why builders care:</strong> If you tried the free <code>:free</code> variant on OpenRouter, it ends today at 12:00 UTC (7 AM CT). Switch to the base slug <code>minimax/minimax-m3.1-flash</code> so nothing breaks.</p>
@@ -52,7 +52,7 @@
 <guid isPermaLink="true">https://hotfixdaily.com/issues/001/</guid>
 <pubDate>Wed, 21 Oct 2026 11:00:00 +0000</pubDate>
 <description>Hotfix Daily #1: Inception&#x27;s Mercury 3, Mistral&#x27;s Voxtral 3 voice agent SDK, Beacon shared agent memory, AI in game studios, and Google&#x27;s Harness².</description>
-<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/issues/001/" rel="noopener">Read this issue on the web</a> · <a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Inception ships Mercury 3, a diffusion model built for speed</h2>
 <p>Mercury 3 drafts the whole response at once and then refines it, instead of writing one token at a time. On Inception's own benchmarks it beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests at 1,068 tokens/sec, and it has a 1M-token context. No one outside the company has published results yet.</p>
 <p class="why"><strong>Why builders care:</strong> It is on OpenRouter and Vercel, and OpenAI-API code needs only minor changes, so testing it is cheap.</p>

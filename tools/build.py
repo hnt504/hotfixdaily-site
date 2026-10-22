@@ -149,6 +149,25 @@ def adopt_stray_html(reimport_from: str | None) -> list[str]:
 
 # ------------------------------------------------------------------ issue pieces (formats match the old pipeline)
 
+def web_intro(d: dict) -> list[str]:
+    """Intro paragraphs for the web page and feeds.
+
+    The Markdown carries a "Read this issue on the web" link for the email. On
+    the web page itself that link points at the page you're already on, so it's
+    dropped there (the email keeps it).
+    """
+    out = []
+    for para in d["intro_extra"]:
+        parts = [part for part in para.split(" · ") if f"]({d['url']})" not in part]
+        if parts:
+            out.append("<p>%s</p>" % iss.inline(" · ".join(parts)))
+    return out
+
+
+def feed_content(d: dict) -> str:
+    return "\n".join(web_intro(d) + iss.render_items_html(d)) + "\n"
+
+
 def archive_item(d: dict) -> str:
     return '<article class="arch"><h2><a href="%s">Hotfix Daily #%d</a></h2><p class="muted"><time datetime="%s">%s</time></p><ul>%s</ul></article>' % (
         d["path"], d["num"], d["date"].isoformat(), iss.tesc(d["date_h"]),
@@ -184,7 +203,7 @@ def feed_entry(d: dict) -> str:
     ts = d["date"].isoformat() + "T11:00:00Z"
     return ("<entry>\n<title>%s</title>\n<link rel=\"alternate\" type=\"text/html\" href=\"%s\"/>\n<id>%s</id>\n<published>%s</published>\n<updated>%s</updated>\n"
             "<summary>%s</summary>\n<content type=\"html\">%s</content>\n</entry>\n") % (
-        iss.esc(d["title"]), d["url"], d["url"], ts, ts, iss.esc(d["description"]), iss.esc(iss.feed_content(d)))
+        iss.esc(d["title"]), d["url"], d["url"], ts, ts, iss.esc(d["description"]), iss.esc(feed_content(d)))
 
 
 def rfc822(d: dict) -> str:
@@ -194,10 +213,33 @@ def rfc822(d: dict) -> str:
 def rss_item(d: dict) -> str:
     return ("<item>\n<title>%s</title>\n<link>%s</link>\n<guid isPermaLink=\"true\">%s</guid>\n<pubDate>%s</pubDate>\n<description>%s</description>\n"
             "<content:encoded><![CDATA[%s]]></content:encoded>\n</item>\n") % (
-        iss.esc(d["title"]), d["url"], d["url"], rfc822(d), iss.esc(d["description"]), iss.feed_content(d))
+        iss.esc(d["title"]), d["url"], d["url"], rfc822(d), iss.esc(d["description"]), feed_content(d))
 
 
 # ------------------------------------------------------------------ build
+
+def _text(fragment: str) -> str:
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", fragment))).strip()
+
+
+def sync_faq_jsonld(raw: str, body: str) -> str:
+    """Keep FAQPage structured data identical to the FAQ visitors see.
+
+    The questions and answers come from the page's <details><summary> FAQ, so
+    editing the FAQ on the page is enough; the JSON-LD follows.
+    """
+    if '"FAQPage"' not in raw:
+        return raw
+    pairs = re.findall(r"<details[^>]*><summary>([\s\S]*?)</summary>([\s\S]*?)</details>", body)
+    if not pairs:
+        return raw
+    data = json.loads(raw)
+    data["mainEntity"] = [{"@type": "Question", "name": _text(q),
+                           "acceptedAnswer": {"@type": "Answer", "text": _text(a)}} for q, a in pairs]
+    if '": "' in raw:
+        return json.dumps(data, ensure_ascii="\\u" in raw)
+    return json.dumps(data, ensure_ascii="\\u" in raw, separators=(",", ":"))
+
 
 def make_env() -> jinja2.Environment:
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(ROOT / "templates"), autoescape=False,
@@ -248,7 +290,7 @@ def build(dry: bool) -> tuple[list[str], list[str]]:
     env = make_env()
     changed: list[str] = []
     base = env.get_template("base.html")
-    css_query = ""
+    css_query = "?v=" + hashlib.sha256((ROOT / "assets" / "style.css").read_bytes()).hexdigest()[:8]
 
     ctx = {
         "site": site, "issues": issues, "latest": latest, "latest_block": latest_block(latest),
@@ -260,11 +302,35 @@ def build(dry: bool) -> tuple[list[str], list[str]]:
                                      for k, d in enumerate(issues)]}}),
     }
 
+    # guide and tool listings, from each page's `listing:` front matter
+    listed = sorted((p for p in pages.values() if p.get("listing")), key=lambda p: p["listing"].get("order", 0))
+    for p in listed:
+        L = p["listing"]
+        p["path"] = p["url"][len(BASE):]
+        p["llms_title"] = L.get("llms_title", p["title"])
+        p["llms_blurb"] = L.get("llms_blurb", p["description"])
+    ctx["home_guide_cards"] = "".join(
+        '<a class="card link" href="%s"><h3>%s</h3><p>%s</p></a>' % (p["path"], iss.esc(p["listing"]["home_title"]), iss.esc(p["description"]))
+        for p in listed if p["listing"].get("home_title"))
+    ctx["index_guide_cards"] = "".join(
+        '<a class="card link" href="%s"><h2>%s</h2><p>%s</p></a>' % (
+            p["path"], iss.esc(p["listing"].get("index_title", p["title"])), iss.esc(p["listing"].get("index_blurb", p["description"])))
+        for p in listed)
+    guides_only = [p for p in listed if p["listing"]["kind"] == "guide"]
+    ctx["guides_ld"] = iss.jdump({"@context": "https://schema.org", "@type": "CollectionPage", "name": "Hotfix Daily guides",
+                                  "url": BASE + "/guides/", "mainEntity": {"@type": "ItemList", "itemListElement": [
+                                      {"@type": "ListItem", "position": k + 1, "url": p["url"], "name": p["title"]}
+                                      for k, p in enumerate(guides_only)]}})
+    ctx["tools"] = [p for p in listed if p["listing"]["kind"] == "tool"]
+    ctx["guides_and_extras"] = [p for p in listed if p["listing"]["kind"] in ("guide", "extra")]
+
     def render_str(s, **extra):
         return env.from_string(s).render(**ctx, **extra)
 
     # pages
     for route, p in pages.items():
+        if p.get("jsonld"):
+            p["jsonld"] = [sync_faq_jsonld(j, p["body"]) for j in p["jsonld"]]
         page = dict(p)
         if p.get("dynamic"):
             page["title"] = render_str(p["title"])
@@ -283,7 +349,7 @@ def build(dry: bool) -> tuple[list[str], list[str]]:
         older = issues[k + 1]["num"] if k + 1 < len(issues) else None
         share = "https://x.com/intent/post?text=%s&url=%s" % (
             urllib.parse.quote(d["title"] + " (via @hotfixdaily)", safe=""), urllib.parse.quote(d["url"], safe=""))
-        main = tpl.render(d=d, lede=iss.inline(d["lede"]), intro_links=iss.intro_links_html(d),
+        main = tpl.render(d=d, lede=iss.inline(d["lede"]), intro_links=web_intro(d),
                           items_html="\n".join(iss.render_items_html(d)), share=share,
                           pager=iss.pager(d["num"], older, newer))
         page = {"title": d["title"], "description": d["description"], "url": d["url"], "og_type": "article",
@@ -297,7 +363,7 @@ def build(dry: bool) -> tuple[list[str], list[str]]:
     write(ROOT / "rss.xml", env.get_template("rss.xml").render(
         last_build=rfc822(latest), items="".join(rss_item(d) for d in issues)), changed, dry)
     write(ROOT / "sitemap.xml", sitemap(site, pages, issues), changed, dry)
-    write(ROOT / "llms.txt", env.get_template("llms.txt").render(issues=issues), changed, dry)
+    write(ROOT / "llms.txt", env.get_template("llms.txt").render(**ctx), changed, dry)
     write(ROOT / "llms-full.txt", env.get_template("llms-full.txt").render(
         llms_full_issues="\n".join(iss.llms_full_section(d) for d in issues)), changed, dry)
     return changed, list(iss.WARN)
