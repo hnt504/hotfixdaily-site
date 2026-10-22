@@ -7,7 +7,45 @@
 <description>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</description>
 <language>en-us</language>
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Wed, 21 Oct 2026 11:00:00 +0000</lastBuildDate>
+<lastBuildDate>Thu, 22 Oct 2026 11:00:00 +0000</lastBuildDate>
+<item>
+<title>Hotfix Daily #2: MiniMax M3.1 Flash, Claude Duet, Flint and more</title>
+<link>https://hotfixdaily.com/issues/002/</link>
+<guid isPermaLink="true">https://hotfixdaily.com/issues/002/</guid>
+<pubDate>Thu, 22 Oct 2026 11:00:00 +0000</pubDate>
+<description>Hotfix Daily #2: MiniMax M3.1 Flash pricing, Anthropic&#x27;s Claude Duet agent, Recursive&#x27;s local Flint coding model, AI at Steam Next Fest, and OPAL.</description>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/issues/002/" rel="noopener">Read this issue on the web</a> · <a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> MiniMax ships M3.1 Flash at $0.15 per million input tokens</h2>
+<p>MiniMax says its new Flash model runs agent tasks nearly 3x faster and about 70% cheaper than its predecessor, with a 1M-token context. Pricing is flat: $0.15 per million input tokens and $0.60 per million output. Weights are promised later.</p>
+<p class="why"><strong>Why builders care:</strong> If you tried the free <code>:free</code> variant on OpenRouter, it ends today at 12:00 UTC (7 AM CT). Switch to the base slug <code>minimax/minimax-m3.1-flash</code> so nothing breaks.</p>
+<p class="src"><a href="https://www.minimax.io/blog/minimax-m31f" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">2</span> Anthropic previews Claude Duet, an agent that comes to you first</h2>
+<p>Duet is a separate app (iOS, Android, claude.ai) that checks your connected apps every few hours, sends a morning brief, and keeps working on its own cloud computer after you close it. It asks for approval before it sends, pays, signs, or deletes anything. It's waitlist-only for US Pro and Max users.</p>
+<p class="why"><strong>Why builders care:</strong> Its background checks count against your plan's usage limits, which is a useful model for how to budget an always-on agent of your own.</p>
+<p class="src"><a href="https://claude.com/resources/articles/claude-duet" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">3</span> Recursive's Flint: a coding model that runs on your laptop</h2>
+<p>Flint is a 40B mixture-of-experts model that uses about 2.5B parameters per token. Recursive reports 74.2% on SWE-bench Verified and more than 125 tokens/sec on an M4 Pro MacBook Pro. It's Apache 2.0 on Hugging Face and works with Ollama, LM Studio, llama.cpp and vLLM.</p>
+<p class="why"><strong>Why builders care:</strong> A private, offline coding agent with no usage bill. Compare it with the hosted options in our <a href="https://hotfixdaily.com/guides/which-ai-coding-agent/" rel="noopener">coding agent guide</a>.</p>
+<p class="src"><a href="https://recursive.com/updates/introducing-recursive-flint" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">4</span> More than a third of Steam Next Fest games now use generative AI</h2>
+<p>TheGamer's count of SteamDB data found 2,595 of the 7,145 games in October's Next Fest (over 36%) carry Steam's AI tag, up from just over 19% in June. Players are pushing back, and many of the top-charting demos are AI-free.</p>
+<p class="why"><strong>Why builders care:</strong> Disclosed AI use is now normal on Steam, and players are watching. Being clear about how you used it can help you stand out.</p>
+<p class="src"><a href="https://www.thegamer.com/steam-next-fest-ai-usage-has-jumped-from-one-in-five-to-one-in-three/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Repo of the day: OPAL, an optimizer an agent rewrites mid-training</h2>
+<p>From MIT researchers: wrap your PyTorch optimizer in one line, and a coding agent (Claude Code by default) watches the run and rewrites the update rule, schedules, and loss-spike guards as it trains. MIT-licensed, with a cost cap you set.</p>
+<p class="why"><strong>Why builders care:</strong> For a new task with no tuned recipe, the authors report it matches or beats the best off-the-shelf recipe across their image and language tests.</p>
+<p class="src"><a href="https://github.com/xingjian-bai/opal" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Match reasoning effort to the step. On MiniMax-M3.1-Flash, <code>effort</code> defaults to <code>max</code> if you leave it out. Set it to <code>low</code> for routing, classification, and simple tool calls, and keep <code>high</code> or <code>max</code> for planning and debugging. Check what your provider defaults to.</p>
+<p class="src"><a href="https://platform.minimax.io/docs/guides/text-generation" rel="noopener">Source</a></p>
+</aside>
+]]></content:encoded>
+</item>
 <item>
 <title>Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more</title>
 <link>https://hotfixdaily.com/issues/001/</link>

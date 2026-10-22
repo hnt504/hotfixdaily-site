@@ -6,10 +6,49 @@
 <link rel="self" type="application/atom+xml" href="https://hotfixdaily.com/feed.xml"/>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/"/>
 <id>https://hotfixdaily.com/</id>
-<updated>2026-10-21T11:00:00Z</updated>
+<updated>2026-10-22T11:00:00Z</updated>
 <author><name>Hotfix Daily</name><email>hello@hotfixdaily.com</email><uri>https://hotfixdaily.com/</uri></author>
 <icon>https://hotfixdaily.com/favicon.ico</icon>
 <logo>https://hotfixdaily.com/assets/icon-512.png</logo>
+<entry>
+<title>Hotfix Daily #2: MiniMax M3.1 Flash, Claude Duet, Flint and more</title>
+<link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/002/"/>
+<id>https://hotfixdaily.com/issues/002/</id>
+<published>2026-10-22T11:00:00Z</published>
+<updated>2026-10-22T11:00:00Z</updated>
+<summary>Hotfix Daily #2: MiniMax M3.1 Flash pricing, Anthropic&#x27;s Claude Duet agent, Recursive&#x27;s local Flint coding model, AI at Steam Next Fest, and OPAL.</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/issues/002/&quot; rel=&quot;noopener&quot;&gt;Read this issue on the web&lt;/a&gt; · &lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; MiniMax ships M3.1 Flash at $0.15 per million input tokens&lt;/h2&gt;
+&lt;p&gt;MiniMax says its new Flash model runs agent tasks nearly 3x faster and about 70% cheaper than its predecessor, with a 1M-token context. Pricing is flat: $0.15 per million input tokens and $0.60 per million output. Weights are promised later.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; If you tried the free &lt;code&gt;:free&lt;/code&gt; variant on OpenRouter, it ends today at 12:00 UTC (7 AM CT). Switch to the base slug &lt;code&gt;minimax/minimax-m3.1-flash&lt;/code&gt; so nothing breaks.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.minimax.io/blog/minimax-m31f&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;AGENTS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; Anthropic previews Claude Duet, an agent that comes to you first&lt;/h2&gt;
+&lt;p&gt;Duet is a separate app (iOS, Android, claude.ai) that checks your connected apps every few hours, sends a morning brief, and keeps working on its own cloud computer after you close it. It asks for approval before it sends, pays, signs, or deletes anything. It&#x27;s waitlist-only for US Pro and Max users.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Its background checks count against your plan&#x27;s usage limits, which is a useful model for how to budget an always-on agent of your own.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://claude.com/resources/articles/claude-duet&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;CODING&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; Recursive&#x27;s Flint: a coding model that runs on your laptop&lt;/h2&gt;
+&lt;p&gt;Flint is a 40B mixture-of-experts model that uses about 2.5B parameters per token. Recursive reports 74.2% on SWE-bench Verified and more than 125 tokens/sec on an M4 Pro MacBook Pro. It&#x27;s Apache 2.0 on Hugging Face and works with Ollama, LM Studio, llama.cpp and vLLM.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; A private, offline coding agent with no usage bill. Compare it with the hosted options in our &lt;a href=&quot;https://hotfixdaily.com/guides/which-ai-coding-agent/&quot; rel=&quot;noopener&quot;&gt;coding agent guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://recursive.com/updates/introducing-recursive-flint&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; More than a third of Steam Next Fest games now use generative AI&lt;/h2&gt;
+&lt;p&gt;TheGamer&#x27;s count of SteamDB data found 2,595 of the 7,145 games in October&#x27;s Next Fest (over 36%) carry Steam&#x27;s AI tag, up from just over 19% in June. Players are pushing back, and many of the top-charting demos are AI-free.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Disclosed AI use is now normal on Steam, and players are watching. Being clear about how you used it can help you stand out.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.thegamer.com/steam-next-fest-ai-usage-has-jumped-from-one-in-five-to-one-in-three/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Repo of the day: OPAL, an optimizer an agent rewrites mid-training&lt;/h2&gt;
+&lt;p&gt;From MIT researchers: wrap your PyTorch optimizer in one line, and a coding agent (Claude Code by default) watches the run and rewrites the update rule, schedules, and loss-spike guards as it trains. MIT-licensed, with a cost cap you set.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; For a new task with no tuned recipe, the authors report it matches or beats the best off-the-shelf recipe across their image and language tests.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/xingjian-bai/opal&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
+&lt;p&gt;Match reasoning effort to the step. On MiniMax-M3.1-Flash, &lt;code&gt;effort&lt;/code&gt; defaults to &lt;code&gt;max&lt;/code&gt; if you leave it out. Set it to &lt;code&gt;low&lt;/code&gt; for routing, classification, and simple tool calls, and keep &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;max&lt;/code&gt; for planning and debugging. Check what your provider defaults to.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://platform.minimax.io/docs/guides/text-generation&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+</entry>
 <entry>
 <title>Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more</title>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/001/"/>
