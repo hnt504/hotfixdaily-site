@@ -360,6 +360,45 @@ FAQ:
 - Q: Is it safe to commit .mcp.json?
   A: Yes, if it has no secrets. Use environment variable references or OAuth. Claude Code prompts for approval before using project-scoped servers in interactive sessions, but not in claude -p runs.
 
+## Best web scraping and crawling tools for AI agents (Oct 2026)
+URL: https://hotfixdaily.com/guides/web-scraping-for-ai-agents/ · Last reviewed: 2026-10-22
+
+Your agent is only as good as what it can read. These tools turn web pages into LLM-ready data in different ways: some turn one URL into clean Markdown, some crawl a whole site, some search the web for you, and some drive a real browser that can click and log in. Prices are in US dollars, from each vendor's own page on October 22, 2026. Every tool here has an MCP server.
+
+### Tool by tool
+- **Firecrawl** (Hosted scrape, crawl, map and search API, AGPL-3.0 core · Free: 1,000 credits a month, no card · Hobby $19/month) <https://www.firecrawl.dev/pricing>: Scrape and crawl cost 1 credit per page, map 1 credit per call, search 2 credits per 10 results, and JSON output adds 4 credits per page. Free plan: 2 concurrent requests, 10 requests a minute for scrape, map and search, 2 a minute for crawl. Paid plans: Hobby $19 (5,000 credits), Standard $99 (100,000), Growth $399 (500,000), Scale $749 (1,000,000). A page that returns 403 or 404 still costs a credit. The hosted MCP server has a keyless option. Self-hosting leaves out Fire-engine, screenshots and page actions. Our take: the best all-round hosted option. Source: https://www.firecrawl.dev/pricing, https://docs.firecrawl.dev/mcp-server, https://docs.firecrawl.dev/contributing/self-host
+- **Crawl4AI** (Open-source Python crawler, Apache-2.0 · library free; cloud Free 1,000 credits a month, no card · Starter $10/month) <https://github.com/unclecode/crawl4ai>: Runs as a Python library or a Docker server with MCP. Crawl4AI Cloud (soft launch) offers /scrape, /extract, /search, /serp and /answer and a hosted MCP endpoint at https://api.crawl4ai.com/mcp. Cloud plans: Starter $10 (10,000 credits), Builder $99 (125,000), Scale $499 (750,000); browser-rendered pages cost 2x and pages that fight back 4x. Our take: the pick when you want to own the crawler. Source: https://github.com/unclecode/crawl4ai, https://crawl4ai.com/docs#pricing
+- **Jina Reader** (URL-to-Markdown and search API · works without an API key at 20 requests a minute) <https://jina.ai/reader/>: Prefix a URL with https://r.jina.ai/ to get clean text; s.jina.ai searches the web (key required). 500 requests a minute with a free or paid key, 5,000 with a premium key. Billed in output tokens; new keys get free tokens. Jina says Reader doesn't bypass anti-bot systems, and it may ask for a key from networks with a poor reputation. MCP at mcp.jina.ai. Our take: the fastest way to give an agent "read this link". Source: https://jina.ai/reader/, https://github.com/jina-ai/reader
+- **Apify** (Scraper marketplace and cloud platform · Free: $5 of usage a month, no card · Starter $19/month) <https://apify.com/pricing>: Ready-made Actors for specific sites in the Apify Store. Hosted MCP at mcp.apify.com. Scale $199/month, Business $999/month. Compute $0.20 per compute unit on Free and Starter; residential proxy $8 per GB. Our take: best when the job is getting data from one specific site. Source: https://apify.com/pricing, https://docs.apify.com/platform/integrations/mcp
+- **Browserbase and Stagehand** (Hosted headless browsers + open-source AI browser SDK, MIT · Free: 1 browser hour, 3 concurrent browsers · Developer $20/month) <https://www.browserbase.com/pricing>: Stagehand (TypeScript, Python, Go) mixes act, extract and observe with Playwright-style page commands. Developer: 25 browsers, 100 hours then $0.12 an hour, captcha solving. Startup $99/month: 100 browsers, 500 hours then $0.10 an hour. Open-source MCP server (mcp-server-browserbase). Our take: the pick for agents that must log in, click and fill forms. Source: https://www.browserbase.com/pricing, https://github.com/browserbase/stagehand
+- **Exa** (AI search API · Free: $10 of credits every month, no card · pay as you go) <https://exa.ai/pricing>: Search $4 per 1,000 (lite) or $7 per 1,000 (auto), Deep Search $12 to $15 per 1,000, Contents $1 per 1,000 pages, Answer $5 per 1,000. Hosted MCP at https://mcp.exa.ai/mcp. Our take: the best search API when relevance matters. Source: https://exa.ai/pricing
+- **Tavily** (Search API with extract, map, crawl and research · Free: 1,000 credits a month, no card · Project $30/month) <https://docs.tavily.com/documentation/api-credits>: Basic search 1 credit, advanced 2; extract 1 credit per 5 successful URLs. Plans: Project $30 (4,000 credits), Bootstrap $100 (15,000), Startup $220 (38,000), Growth $500 (100,000); pay as you go $0.008 per credit. Hosted MCP at https://mcp.tavily.com/mcp/ with OAuth and keyless Search and Extract. Our take: the easiest one-tool search-and-read setup. Source: https://docs.tavily.com/documentation/api-credits, https://docs.tavily.com/documentation/mcp
+
+### Picks by use case (our take)
+- Most builders, hosted, one API: Firecrawl.
+- Free and self-hosted, or big docs crawls: Crawl4AI.
+- "Read this URL" with zero setup: Jina Reader.
+- Data from a specific site (Maps, Amazon, social): Apify Store Actors.
+- Logging in, clicking, filling forms: Browserbase with Stagehand.
+- Search by meaning, research agents: Exa.
+- Search plus light extraction in one MCP server: Tavily.
+
+FAQ:
+- Q: What's the best web scraping tool for AI agents?
+  A: It depends on the job. Our take: for most builders who want a hosted API, Firecrawl covers reading, crawling and search in one place. For free self-hosting, use Crawl4AI. For agents that must click and log in, use Browserbase with Stagehand.
+- Q: Firecrawl or Crawl4AI?
+  A: Firecrawl if you want it hosted with no infrastructure, and Crawl4AI if you want to run it yourself for free under Apache-2.0. Firecrawl's own self-hosted version is AGPL-3.0 and leaves out some cloud features, such as its Fire-engine anti-bot service, screenshots and page actions.
+- Q: How do I turn a URL into Markdown for an LLM?
+  A: The quickest way is https://r.jina.ai/ followed by the URL, which works without an API key at up to 20 requests a minute (Jina may ask for a free key if you call it from a cloud server). Firecrawl's /scrape endpoint and Crawl4AI do the same with more options.
+- Q: Is there a free web scraping API?
+  A: Yes. Firecrawl, Tavily and Crawl4AI Cloud each give 1,000 free credits a month, Exa gives $10 of credits a month, Apify gives $5 of usage a month, and Browserbase gives 1 browser hour. Crawl4AI's library is free to self-host, and Jina Reader works without a key.
+- Q: Which of these tools have an MCP server?
+  A: All seven: Firecrawl, Crawl4AI, Jina (mcp.jina.ai), Apify (mcp.apify.com), Browserbase, Exa (mcp.exa.ai) and Tavily (mcp.tavily.com). Firecrawl and Tavily have keyless options you can try before you create an account, and Apify lets you search its Store without one.
+- Q: Exa or Tavily?
+  A: Both are search APIs for agents with free tiers. Exa is pay-as-you-go and focuses on search quality and research. Tavily bundles search with extract, map and crawl, and has monthly plans.
+- Q: Do I need a headless browser?
+  A: Only if your agent has to interact with the page (log in, click, scroll an app). Firecrawl, Jina Reader and Crawl4AI already render pages in a browser when they need to read JavaScript-heavy sites.
+
 ## Starter stacks for solo builders: 4 opinionated AI stacks (October 2026)
 URL: https://hotfixdaily.com/guides/starter-stacks-solo-builders/ · Last reviewed: 2026-10-22
 
