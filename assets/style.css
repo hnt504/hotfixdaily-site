@@ -79,3 +79,9 @@ dialog.exitbox::backdrop{background:rgba(0,0,0,.55)}
 dialog.exitbox h2{margin:0 0 8px;font-size:21px}
 dialog.exitbox .x{position:absolute;top:8px;right:10px;background:none;border:0;color:var(--muted);font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
 dialog.exitbox .signup{margin-top:12px}
+
+/* AI API cost calculator */
+.calcform{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem;margin:1rem 0}
+.calcform label{display:flex;flex-direction:column;gap:.3rem;font-weight:600;font-size:.95rem}
+.calcform input,.calcform select{font:inherit;padding:.5rem .6rem;border-radius:8px;border:1px solid currentColor;background:transparent;color:inherit}
+.calcform select option{color:#000}
