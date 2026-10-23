@@ -7,7 +7,45 @@
 <description>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</description>
 <language>en-us</language>
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Thu, 22 Oct 2026 11:00:00 +0000</lastBuildDate>
+<lastBuildDate>Fri, 23 Oct 2026 11:00:00 +0000</lastBuildDate>
+<item>
+<title>Hotfix Daily #3: Agent Skills goes neutral, Canva Craft, Coding Agent Index v2.0 and more</title>
+<link>https://hotfixdaily.com/issues/003/</link>
+<guid isPermaLink="true">https://hotfixdaily.com/issues/003/</guid>
+<pubDate>Fri, 23 Oct 2026 11:00:00 +0000</pubDate>
+<description>Hotfix Daily #3: Anthropic donates Agent Skills to the Agentic AI Foundation, Canva&#x27;s Craft image model hits the API, Coding Agent Index v2.0, Epic&#x27;s AI MegaJam, and Base Labs&#x27; decision models.</description>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item" id="i1"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">1</span> Anthropic hands Agent Skills to the Agentic AI Foundation</h2>
+<p>The SKILL.md folder format now lives at the Linux Foundation's AAIF, next to MCP and AGENTS.md, with maintainers from Anthropic, Google, OpenAI and others. Anthropic says more than 70 agent platforms support it, with 1 million skills published and nearly 280 million installs. The proposed roadmap covers versioned releases, a formal proposal process and security guidance.</p>
+<p class="why"><strong>Why builders care:</strong> Skills you write once should keep working across Claude Code, Cursor, Copilot and the rest, with no single vendor steering the spec.</p>
+<p class="src"><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">2</span> Canva ships Craft, its first in-house image model</h2>
+<p>Craft plans the layout and text first, then renders at up to 2K in more than 30 aspect ratios. It's live for all Canva users and in the API as <code>craft_v1_2k</code>, with text in 55 languages.</p>
+<p class="why"><strong>Why builders care:</strong> It's built for posters, infographics and social graphics with readable text. Jobs take roughly 50 to 60 seconds, so poll with backoff.</p>
+<p class="src"><a href="https://community.canva.dev/t/connect-api-canva-craft-is-now-available-for-image-generation/8999" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">3</span> Artificial Analysis resets its Coding Agent Index</h2>
+<p>Version 2.0 scores model-plus-harness pairs on 290 tasks, swapping in Cognition's FrontierCode, which grades whether a maintainer would merge the change. Claude Opus 5.5 in Claude Code leads at 61.7. Scores fell for 20 of 21 setups tested on both versions, with the mean dropping from 54.8 to 47.4.</p>
+<p class="why"><strong>Why builders care:</strong> Don't compare v2.0 numbers with older charts. Check the per-benchmark and cost-per-task columns for your kind of work.</p>
+<p class="src"><a href="https://x.com/ArtificialAnlys/status/2113424551396934134" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">4</span> Epic announces the AI MegaJam, with grants up to $50,000</h2>
+<p>From November 12 to 15, teams of up to five build an Unreal Engine or UEFN game with as many AI agents as they like. There's $65,000 in cash prizes plus continuation grants. Epic first said AI was required, then walked that back: AI is optional.</p>
+<p class="why"><strong>Why builders care:</strong> Epic's tip is to get your agents and Unreal MCP working before kickoff, since setup on day one eats build time.</p>
+<p class="src"><a href="https://itch.io/jam/2026-epic-ai-megajam" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Repo of the day: Base Labs' open decision models</h2>
+<p>Mammoth-1 (27B) and Elephant-1 (9B) take a state plus a set of questions and return a calibrated probability for every option in one pass, with no text to parse. Mammoth-1 ranks first of 208 models on the Jev Decision Index 0.4. Weights are on Hugging Face, and Elephant-1 is free on Baseten's API until Oct 27.</p>
+<p class="why"><strong>Why builders care:</strong> Routing, spam checks and yes/no gates get faster and cheaper than calling a full reasoning model.</p>
+<p class="src"><a href="https://huggingface.co/baselabs/mammoth-1" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Write skill descriptions for the agent, not for people. Agents load only each skill's <code>name</code> and <code>description</code> at startup and open the full SKILL.md when a task matches, so say what the skill does, when to use it, and the keywords a request would contain. "Helps with PDFs" won't get picked.</p>
+<p class="src"><a href="https://agentskills.io/specification" rel="noopener">Source</a></p>
+</aside>
+]]></content:encoded>
+</item>
 <item>
 <title>Hotfix Daily #2: MiniMax M3.1 Flash, Claude Duet, Flint and more</title>
 <link>https://hotfixdaily.com/issues/002/</link>

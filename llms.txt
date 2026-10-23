@@ -35,6 +35,7 @@ Key facts:
 
 ## Issues (newest first)
 
+- [Hotfix Daily #3: Agent Skills goes neutral, Canva Craft, Coding Agent Index v2.0 and more](https://hotfixdaily.com/issues/003/) (2026-10-23): Anthropic hands Agent Skills to the Agentic AI Foundation; Canva ships Craft, its first in-house image model; Artificial Analysis resets its Coding Agent Index; Epic announces the AI MegaJam, with grants up to $50,000; Repo of the day: Base Labs' open decision models
 - [Hotfix Daily #2: MiniMax M3.1 Flash, Claude Duet, Flint and more](https://hotfixdaily.com/issues/002/) (2026-10-22): MiniMax ships M3.1 Flash at $0.15 per million input tokens; Anthropic previews Claude Duet, an agent that comes to you first; Recursive's Flint: a coding model that runs on your laptop; More than a third of Steam Next Fest games now use generative AI; Repo of the day: OPAL, an optimizer an agent rewrites mid-training
 - [Hotfix Daily #1: Mercury 3, Voxtral 3, Beacon and more](https://hotfixdaily.com/issues/001/) (2026-10-21): Inception ships Mercury 3, a diffusion model built for speed; Mistral launches Voxtral 3 and a voice agent SDK; Beacon: shared memory for your coding agents; Game studios use AI everywhere, but not deeply; Repo of the day: Google's Harness²
 
