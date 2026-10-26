@@ -6,10 +6,49 @@
 <link rel="self" type="application/atom+xml" href="https://hotfixdaily.com/feed.xml"/>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/"/>
 <id>https://hotfixdaily.com/</id>
-<updated>2026-10-23T11:00:00Z</updated>
+<updated>2026-10-26T11:00:00Z</updated>
 <author><name>Hotfix Daily</name><email>hello@hotfixdaily.com</email><uri>https://hotfixdaily.com/</uri></author>
 <icon>https://hotfixdaily.com/favicon.ico</icon>
 <logo>https://hotfixdaily.com/assets/icon-512.png</logo>
+<entry>
+<title>Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam&#x27;s AI label fight and more</title>
+<link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/004/"/>
+<id>https://hotfixdaily.com/issues/004/</id>
+<published>2026-10-26T11:00:00Z</published>
+<updated>2026-10-26T11:00:00Z</updated>
+<summary>Hotfix Daily #4: Moonshot&#x27;s Kimi K3.1 Pro nears Claude Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes open under Apache 2.0, Pomerado turns websites into MCP tools, Tim Sweeney vs Steam&#x27;s AI label, and Anthropic&#x27;s kit for folding subagents.</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Moonshot ships Kimi K3.1 Pro, with open weights due by Nov 4&lt;/h2&gt;
+&lt;p&gt;It&#x27;s a 2.8T-parameter mixture-of-experts model (104B active) with a 1M-token context window. On Terminal-Bench 4.0 it scores 65.7%, just behind Claude Opus 5.5 at 66.4% and ahead of GPT-6 Astra at 58.2%.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; It&#x27;s live now in the Kimi API and in Kimi Code (pick it with &lt;code&gt;/model&lt;/code&gt;), so you can test it on your agent tasks before the weights land.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.kimi.ai/blog/kimi-k3-1-pro&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;CODING&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; Nanbeige4.3-33B: an open coding agent model in the 30B class&lt;/h2&gt;
+&lt;p&gt;The Nanbeige team released a dense 33B model under Apache 2.0 with a 512K context window. On its own comparison it scores 65.5 on DeepSWE against 42.5 for Qwen3.8-27B, though Qwen edges it on SWE-Bench Pro (61.7 vs 60.3).&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; For agent work, the team recommends &lt;code&gt;preserve_thinking=True&lt;/code&gt; and XML tool calls. The BF16 weights are about 66 GB, so most laptops will want a quantized build.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://huggingface.co/Nanbeige/Nanbeige4.3-33B&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;AGENTS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; Pomerado turns websites into MCP tools for your agent&lt;/h2&gt;
+&lt;p&gt;Describe a task in plain language and the YC startup&#x27;s open-source tool (MIT) builds a reusable API or MCP integration for that site, even behind a login and two-factor auth.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; A repeat chore on a site with no API becomes a fast, predictable tool call instead of a browser agent clicking through it every run.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/Pomerado/pomerado&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; Tim Sweeney calls Steam&#x27;s AI disclosure &quot;abhorrent&quot;&lt;/h2&gt;
+&lt;p&gt;Steam&#x27;s content survey asks developers to describe generative AI in content players see, like art, sound, writing and store assets, and shows it on the store page. Epic&#x27;s CEO wrote that forcing developers to write &quot;a political statement to be used against them by the hate mob&quot; is abhorrent.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Valve says AI tools used only for efficiency aren&#x27;t the focus. Generated art, voice or text that ships is what you disclose.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/TimSweeneyEpic/status/2113639717690638483&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Repo of the day: Anthropic&#x27;s single agent loop kit&lt;/h2&gt;
+&lt;p&gt;A reference kit (Apache 2.0) for Anthropic&#x27;s new advice: fold subagents into your main loop one at a time, turning their prompts into skills and their API calls into MCP tools, and compare evals after each step. It ships compare and coverage scripts plus a support-desk example.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; One customer saw runtime roughly halve with a single loop. Keep a subagent only for context bloat, parallel throwaway work, or conflicting instructions.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/anthropics/single-agent-loop-kit&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
+&lt;p&gt;Group your agent&#x27;s tools by what the user is trying to do, not one per API endpoint. Anthropic finds tool choice degrades past 30 to 50 tool definitions.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+</entry>
 <entry>
 <title>Hotfix Daily #3: Agent Skills goes neutral, Canva Craft, Coding Agent Index v2.0 and more</title>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/003/"/>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name='impact-site-verification' value='61a18ed7-af0a-4189-8c9e-f49d709af4ea'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam&#x27;s AI label fight and more</title>
+<meta name="description" content="Hotfix Daily #4: Moonshot&#x27;s Kimi K3.1 Pro nears Claude Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes open under Apache 2.0, Pomerado turns websites into MCP tools, Tim Sweeney vs Steam&#x27;s AI label, and Anthropic&#x27;s kit for folding subagents.">
+<link rel="canonical" href="https://hotfixdaily.com/issues/004/">
+<meta name="theme-color" content="#0b0f14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="Hotfix Daily (Atom)" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Hotfix Daily (RSS)" href="/rss.xml">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="stylesheet" href="/assets/style.css?v=eff47e18">
+<meta property="og:site_name" content="Hotfix Daily">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam&#x27;s AI label fight and more">
+<meta property="og:description" content="Hotfix Daily #4: Moonshot&#x27;s Kimi K3.1 Pro nears Claude Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes open under Apache 2.0, Pomerado turns websites into MCP tools, Tim Sweeney vs Steam&#x27;s AI label, and Anthropic&#x27;s kit for folding subagents.">
+<meta property="og:url" content="https://hotfixdaily.com/issues/004/">
+<meta property="og:image" content="https://hotfixdaily.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hotfix Daily: the daily AI builder digest">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hotfixdaily">
+<meta name="twitter:title" content="Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam&#x27;s AI label fight and more">
+<meta name="twitter:description" content="Hotfix Daily #4: Moonshot&#x27;s Kimi K3.1 Pro nears Claude Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes open under Apache 2.0, Pomerado turns websites into MCP tools, Tim Sweeney vs Steam&#x27;s AI label, and Anthropic&#x27;s kit for folding subagents.">
+<meta name="twitter:image" content="https://hotfixdaily.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hotfixdaily.com/#org","name":"Hotfix Daily","url":"https://hotfixdaily.com/","logo":"https://hotfixdaily.com/assets/icon-512.png","email":"hello@hotfixdaily.com","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","sameAs":["https://x.com/hotfixdaily"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://hotfixdaily.com/#website","name":"Hotfix Daily","alternateName":"Hotfix Daily newsletter","url":"https://hotfixdaily.com/","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","inLanguage":"en-US","publisher":{"@id":"https://hotfixdaily.com/#org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam's AI label fight and more","description":"Hotfix Daily #4: Moonshot's Kimi K3.1 Pro nears Claude Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes open under Apache 2.0, Pomerado turns websites into MCP tools, Tim Sweeney vs Steam's AI label, and Anthropic's kit for folding subagents.","datePublished":"2026-10-26","dateModified":"2026-10-26","url":"https://hotfixdaily.com/issues/004/","mainEntityOfPage":"https://hotfixdaily.com/issues/004/","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"},"isPartOf":{"@id":"https://hotfixdaily.com/#website"},"about":["Moonshot ships Kimi K3.1 Pro, with open weights due by Nov 4","Nanbeige4.3-33B: an open coding agent model in the 30B class","Pomerado turns websites into MCP tools for your agent","Tim Sweeney calls Steam's AI disclosure \"abhorrent\"","Repo of the day: Anthropic's single agent loop kit"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"Issues","item":"https://hotfixdaily.com/issues/"},{"@type":"ListItem","position":3,"name":"Issue #4","item":"https://hotfixdaily.com/issues/004/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap row">
+<a class="brand" href="/" aria-label="Hotfix Daily home"><img src="/favicon.svg" width="28" height="28" alt=""> <span>Hotfix Daily</span></a>
+<nav aria-label="Main"><a href="/issues/">Issues</a><a href="/guides/">Guides</a><a href="/starter-stack/" class="hide-s">Starter Stack</a><a href="/#subscribe" class="navcta">Subscribe</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap issue">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/issues/">Issues</a> / <span aria-current="page">Issue #4</span></nav>
+<p class="kicker">Issue #4 · <time datetime="2026-10-26">Monday, Oct 26, 2026</time></p>
+<h1>Hotfix Daily #4</h1>
+<p class="lede">Five things from the last few days worth your attention if you build with AI. No fluff.</p>
+<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<section class="ctabox compact" aria-label="Subscribe" data-growth="1"><h2>Get this in your inbox every weekday</h2><p>Five things worth your attention if you build with AI, about 3 minutes. <span class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</span></p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-issue-top">Email address</label>
+<input id="email-issue-top" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form></section>
+<article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Moonshot ships Kimi K3.1 Pro, with open weights due by Nov 4</h2>
+<p>It's a 2.8T-parameter mixture-of-experts model (104B active) with a 1M-token context window. On Terminal-Bench 4.0 it scores 65.7%, just behind Claude Opus 5.5 at 66.4% and ahead of GPT-6 Astra at 58.2%.</p>
+<p class="why"><strong>Why builders care:</strong> It's live now in the Kimi API and in Kimi Code (pick it with <code>/model</code>), so you can test it on your agent tasks before the weights land.</p>
+<p class="src"><a href="https://www.kimi.ai/blog/kimi-k3-1-pro" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">2</span> Nanbeige4.3-33B: an open coding agent model in the 30B class</h2>
+<p>The Nanbeige team released a dense 33B model under Apache 2.0 with a 512K context window. On its own comparison it scores 65.5 on DeepSWE against 42.5 for Qwen3.8-27B, though Qwen edges it on SWE-Bench Pro (61.7 vs 60.3).</p>
+<p class="why"><strong>Why builders care:</strong> For agent work, the team recommends <code>preserve_thinking=True</code> and XML tool calls. The BF16 weights are about 66 GB, so most laptops will want a quantized build.</p>
+<p class="src"><a href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">3</span> Pomerado turns websites into MCP tools for your agent</h2>
+<p>Describe a task in plain language and the YC startup's open-source tool (MIT) builds a reusable API or MCP integration for that site, even behind a login and two-factor auth.</p>
+<p class="why"><strong>Why builders care:</strong> A repeat chore on a site with no API becomes a fast, predictable tool call instead of a browser agent clicking through it every run.</p>
+<p class="src"><a href="https://github.com/Pomerado/pomerado" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">4</span> Tim Sweeney calls Steam's AI disclosure "abhorrent"</h2>
+<p>Steam's content survey asks developers to describe generative AI in content players see, like art, sound, writing and store assets, and shows it on the store page. Epic's CEO wrote that forcing developers to write "a political statement to be used against them by the hate mob" is abhorrent.</p>
+<p class="why"><strong>Why builders care:</strong> Valve says AI tools used only for efficiency aren't the focus. Generated art, voice or text that ships is what you disclose.</p>
+<p class="src"><a href="https://x.com/TimSweeneyEpic/status/2113639717690638483" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Repo of the day: Anthropic's single agent loop kit</h2>
+<p>A reference kit (Apache 2.0) for Anthropic's new advice: fold subagents into your main loop one at a time, turning their prompts into skills and their API calls into MCP tools, and compare evals after each step. It ships compare and coverage scripts plus a support-desk example.</p>
+<p class="why"><strong>Why builders care:</strong> One customer saw runtime roughly halve with a single loop. Keep a subagent only for context bloat, parallel throwaway work, or conflicting instructions.</p>
+<p class="src"><a href="https://github.com/anthropics/single-agent-loop-kit" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Group your agent's tools by what the user is trying to do, not one per API endpoint. Anthropic finds tool choice degrades past 30 to 50 tool definitions.</p>
+<p class="src"><a href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop" rel="noopener">Source</a></p>
+</aside>
+<p class="endprompt">That&#x27;s the issue. Know a builder who&#x27;d use this? <a href="https://x.com/intent/post?text=Hotfix%20Daily%20%234%3A%20Kimi%20K3.1%20Pro%2C%20Nanbeige4.3-33B%2C%20Pomerado%2C%20Steam%27s%20AI%20label%20fight%20and%20more%20%28via%20%40hotfixdaily%29&amp;url=https%3A%2F%2Fhotfixdaily.com%2Fissues%2F004%2F" rel="noopener">Share it on X</a> or forward them this page. New here? <a href="#subscribe-end">Subscribe free</a> for tomorrow&#x27;s.</p>
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-issue">Email address</label>
+<input id="email-issue" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+<nav class="pager" aria-label="More issues"><a href="/issues/003/">← Issue #3</a><a href="/issues/">All issues</a><span></span></nav>
+<p class="muted small">Want the bigger picture? Read our guides to <a href="/guides/ai-coding-agents/">AI coding agents</a>, <a href="/guides/vibe-coding-tools/">vibe coding tools</a>, <a href="/guides/ai-game-dev-tools/">AI game dev tools</a>, <a href="/guides/ai-agent-frameworks/">agent frameworks</a>, <a href="/guides/mcp-servers/">MCP servers</a> and <a href="/guides/web-scraping-for-ai-agents/">web scraping tools</a>, or <a href="/guides/">all guides</a>.</p>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+<ul class="footnav" aria-label="Footer"><li><a href="/issues/">Issues</a></li><li><a href="/guides/">Guides</a></li><li><a href="/sponsor/">Sponsor</a></li><li><a href="/about/">About</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/feed.xml">RSS</a></li><li><a href="https://x.com/hotfixdaily" rel="me noopener">X</a></li><li><a href="/privacy/">Privacy</a></li></ul>
+<p>© 2026 Hotfix Daily · The daily AI builder digest, free on weekdays · <a href="mailto:hello@hotfixdaily.com">hello@hotfixdaily.com</a></p>
+</div></footer>
+<script src="/assets/subscribe.js" defer></script>
+<script data-goatcounter="https://hotfixdaily.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
