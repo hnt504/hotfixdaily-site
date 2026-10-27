@@ -7,7 +7,45 @@
 <description>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</description>
 <language>en-us</language>
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Mon, 26 Oct 2026 11:00:00 +0000</lastBuildDate>
+<lastBuildDate>Tue, 27 Oct 2026 11:00:00 +0000</lastBuildDate>
+<item>
+<title>Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor&#x27;s Agent SDK, Uchikoshi on AI and tstack</title>
+<link>https://hotfixdaily.com/issues/005/</link>
+<guid isPermaLink="true">https://hotfixdaily.com/issues/005/</guid>
+<pubDate>Tue, 27 Oct 2026 11:00:00 +0000</pubDate>
+<description>Hotfix Daily #5: OpenAI&#x27;s GPT-6.1 Terra halves API prices, Mirendil&#x27;s Fern holds 10M tokens, Cursor&#x27;s Agent SDK turns agents into code, Kotaro Uchikoshi on AI after a canceled game, and Theo&#x27;s tstack skills.</description>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> OpenAI ships GPT-6.1 Terra at half the price</h2>
+<p>The new middle model targets computer use, visual reasoning and writing. API prices are $1 per million input tokens and $5 per million output, 50% below GPT-5.6 Terra and GPT-6.1 Sol. At max effort it solves 50.3% of Terminal-Bench 4.0, up from 21.5% for GPT-5.6 Terra.</p>
+<p class="why"><strong>Why builders care:</strong> It's <code>gpt-6.1-terra</code> in the API now. OpenAI still points you to Sol or Astra for the hardest coding work, so try Terra on high-volume agent and form-filling jobs first.</p>
+<p class="src"><a href="https://openai.com/index/introducing-gpt-6-1-terra/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">2</span> Mirendil's first model, Fern, holds 10M tokens of context</h2>
+<p>The new lab pretrained Fern from scratch for a window of up to 10 million tokens, which it puts at about half a million lines of code. Fern 0.1 is the first and smallest of three models, and access is listed as coming soon.</p>
+<p class="why"><strong>Why builders care:</strong> It's aimed at whole-repo work, long logs and agent traces. Retrieval at that length is one thing, reasoning across it is another, so wait for independent tests before planning around it.</p>
+<p class="src"><a href="https://mirendil.com/news/introducing-fern/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">3</span> Cursor's Agent SDK makes an agent a folder of code</h2>
+<p><code>instructions.md</code> is the prompt, each file in <code>tools/</code> is a typed action, and <code>agent-sdk eval</code> checks which tools ran and what the bot replied. Agents wake on GitHub, Slack, webhooks or cron, and deploy to Cursor or your own servers. Version 0.3.0 is the GA release.</p>
+<p class="why"><strong>Why builders care:</strong> Your review bots and triagers get version control and tests like the rest of your code. Start with <code>npx @cursor/agent-sdk init ./my-bot</code>.</p>
+<p class="src"><a href="https://cursor.com/changelog/agent-sdk" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">4</span> Kotaro Uchikoshi says mid-size studios now have to use AI</h2>
+<p>In a Famitsu interview, the Zero Escape writer said a game his team worked on for about a year and a half was fully canceled after a publisher change of direction. He argued mid-size teams now compete with small AI-assisted indies, and that ideas stay human while AI handles endless polish passes.</p>
+<p class="why"><strong>Why builders care:</strong> His pitch is using AI to sweat the details, not to cut corners. That framing works well with a skeptical team.</p>
+<p class="src"><a href="https://www.famitsu.com/article/202610/92056" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Repo of the day: tstack, Theo's everyday agent skills</h2>
+<p>Nine MIT-licensed skills for Claude Code and Codex covering the pull request lifecycle: proving a change, a three-model review "council," filing, babysitting CI, rebasing and merging.</p>
+<p class="why"><strong>Why builders care:</strong> Saying "full send" lets the agent merge on its own. Use <code>full-stop</code> if you want the last click.</p>
+<p class="src"><a href="https://github.com/t3dotgg/tstack" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Never start a coding agent in your Downloads folder. Forever Security found a planted <code>AGENTS.md</code> there that told Codex to install malware, and websites can drop files into Downloads. If you ever have, check <code>~/.codex/config.toml</code> for MCP servers you didn't add.</p>
+<p class="src"><a href="https://forever.security/blog/hijacking-ai-agents-via-downloads-folder/" rel="noopener">Source</a></p>
+</aside>
+]]></content:encoded>
+</item>
 <item>
 <title>Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam&#x27;s AI label fight and more</title>
 <link>https://hotfixdaily.com/issues/004/</link>

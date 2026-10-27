@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name='impact-site-verification' value='61a18ed7-af0a-4189-8c9e-f49d709af4ea'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor&#x27;s Agent SDK, Uchikoshi on AI and tstack</title>
+<meta name="description" content="Hotfix Daily #5: OpenAI&#x27;s GPT-6.1 Terra halves API prices, Mirendil&#x27;s Fern holds 10M tokens, Cursor&#x27;s Agent SDK turns agents into code, Kotaro Uchikoshi on AI after a canceled game, and Theo&#x27;s tstack skills.">
+<link rel="canonical" href="https://hotfixdaily.com/issues/005/">
+<meta name="theme-color" content="#0b0f14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="Hotfix Daily (Atom)" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Hotfix Daily (RSS)" href="/rss.xml">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="stylesheet" href="/assets/style.css?v=eff47e18">
+<meta property="og:site_name" content="Hotfix Daily">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor&#x27;s Agent SDK, Uchikoshi on AI and tstack">
+<meta property="og:description" content="Hotfix Daily #5: OpenAI&#x27;s GPT-6.1 Terra halves API prices, Mirendil&#x27;s Fern holds 10M tokens, Cursor&#x27;s Agent SDK turns agents into code, Kotaro Uchikoshi on AI after a canceled game, and Theo&#x27;s tstack skills.">
+<meta property="og:url" content="https://hotfixdaily.com/issues/005/">
+<meta property="og:image" content="https://hotfixdaily.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hotfix Daily: the daily AI builder digest">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hotfixdaily">
+<meta name="twitter:title" content="Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor&#x27;s Agent SDK, Uchikoshi on AI and tstack">
+<meta name="twitter:description" content="Hotfix Daily #5: OpenAI&#x27;s GPT-6.1 Terra halves API prices, Mirendil&#x27;s Fern holds 10M tokens, Cursor&#x27;s Agent SDK turns agents into code, Kotaro Uchikoshi on AI after a canceled game, and Theo&#x27;s tstack skills.">
+<meta name="twitter:image" content="https://hotfixdaily.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hotfixdaily.com/#org","name":"Hotfix Daily","url":"https://hotfixdaily.com/","logo":"https://hotfixdaily.com/assets/icon-512.png","email":"hello@hotfixdaily.com","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","sameAs":["https://x.com/hotfixdaily"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://hotfixdaily.com/#website","name":"Hotfix Daily","alternateName":"Hotfix Daily newsletter","url":"https://hotfixdaily.com/","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","inLanguage":"en-US","publisher":{"@id":"https://hotfixdaily.com/#org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor's Agent SDK, Uchikoshi on AI and tstack","description":"Hotfix Daily #5: OpenAI's GPT-6.1 Terra halves API prices, Mirendil's Fern holds 10M tokens, Cursor's Agent SDK turns agents into code, Kotaro Uchikoshi on AI after a canceled game, and Theo's tstack skills.","datePublished":"2026-10-27","dateModified":"2026-10-27","url":"https://hotfixdaily.com/issues/005/","mainEntityOfPage":"https://hotfixdaily.com/issues/005/","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"},"isPartOf":{"@id":"https://hotfixdaily.com/#website"},"about":["OpenAI ships GPT-6.1 Terra at half the price","Mirendil's first model, Fern, holds 10M tokens of context","Cursor's Agent SDK makes an agent a folder of code","Kotaro Uchikoshi says mid-size studios now have to use AI","Repo of the day: tstack, Theo's everyday agent skills"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"Issues","item":"https://hotfixdaily.com/issues/"},{"@type":"ListItem","position":3,"name":"Issue #5","item":"https://hotfixdaily.com/issues/005/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap row">
+<a class="brand" href="/" aria-label="Hotfix Daily home"><img src="/favicon.svg" width="28" height="28" alt=""> <span>Hotfix Daily</span></a>
+<nav aria-label="Main"><a href="/issues/">Issues</a><a href="/guides/">Guides</a><a href="/starter-stack/" class="hide-s">Starter Stack</a><a href="/#subscribe" class="navcta">Subscribe</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap issue">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/issues/">Issues</a> / <span aria-current="page">Issue #5</span></nav>
+<p class="kicker">Issue #5 · <time datetime="2026-10-27">Tuesday, Oct 27, 2026</time></p>
+<h1>Hotfix Daily #5</h1>
+<p class="lede">Five things from the last few days worth your attention if you build with AI. No fluff.</p>
+<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<section class="ctabox compact" aria-label="Subscribe" data-growth="1"><h2>Get this in your inbox every weekday</h2><p>Five things worth your attention if you build with AI, about 3 minutes. <span class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</span></p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-issue-top">Email address</label>
+<input id="email-issue-top" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form></section>
+<article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> OpenAI ships GPT-6.1 Terra at half the price</h2>
+<p>The new middle model targets computer use, visual reasoning and writing. API prices are $1 per million input tokens and $5 per million output, 50% below GPT-5.6 Terra and GPT-6.1 Sol. At max effort it solves 50.3% of Terminal-Bench 4.0, up from 21.5% for GPT-5.6 Terra.</p>
+<p class="why"><strong>Why builders care:</strong> It's <code>gpt-6.1-terra</code> in the API now. OpenAI still points you to Sol or Astra for the hardest coding work, so try Terra on high-volume agent and form-filling jobs first.</p>
+<p class="src"><a href="https://openai.com/index/introducing-gpt-6-1-terra/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">2</span> Mirendil's first model, Fern, holds 10M tokens of context</h2>
+<p>The new lab pretrained Fern from scratch for a window of up to 10 million tokens, which it puts at about half a million lines of code. Fern 0.1 is the first and smallest of three models, and access is listed as coming soon.</p>
+<p class="why"><strong>Why builders care:</strong> It's aimed at whole-repo work, long logs and agent traces. Retrieval at that length is one thing, reasoning across it is another, so wait for independent tests before planning around it.</p>
+<p class="src"><a href="https://mirendil.com/news/introducing-fern/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">3</span> Cursor's Agent SDK makes an agent a folder of code</h2>
+<p><code>instructions.md</code> is the prompt, each file in <code>tools/</code> is a typed action, and <code>agent-sdk eval</code> checks which tools ran and what the bot replied. Agents wake on GitHub, Slack, webhooks or cron, and deploy to Cursor or your own servers. Version 0.3.0 is the GA release.</p>
+<p class="why"><strong>Why builders care:</strong> Your review bots and triagers get version control and tests like the rest of your code. Start with <code>npx @cursor/agent-sdk init ./my-bot</code>.</p>
+<p class="src"><a href="https://cursor.com/changelog/agent-sdk" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">4</span> Kotaro Uchikoshi says mid-size studios now have to use AI</h2>
+<p>In a Famitsu interview, the Zero Escape writer said a game his team worked on for about a year and a half was fully canceled after a publisher change of direction. He argued mid-size teams now compete with small AI-assisted indies, and that ideas stay human while AI handles endless polish passes.</p>
+<p class="why"><strong>Why builders care:</strong> His pitch is using AI to sweat the details, not to cut corners. That framing works well with a skeptical team.</p>
+<p class="src"><a href="https://www.famitsu.com/article/202610/92056" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Repo of the day: tstack, Theo's everyday agent skills</h2>
+<p>Nine MIT-licensed skills for Claude Code and Codex covering the pull request lifecycle: proving a change, a three-model review "council," filing, babysitting CI, rebasing and merging.</p>
+<p class="why"><strong>Why builders care:</strong> Saying "full send" lets the agent merge on its own. Use <code>full-stop</code> if you want the last click.</p>
+<p class="src"><a href="https://github.com/t3dotgg/tstack" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Never start a coding agent in your Downloads folder. Forever Security found a planted <code>AGENTS.md</code> there that told Codex to install malware, and websites can drop files into Downloads. If you ever have, check <code>~/.codex/config.toml</code> for MCP servers you didn't add.</p>
+<p class="src"><a href="https://forever.security/blog/hijacking-ai-agents-via-downloads-folder/" rel="noopener">Source</a></p>
+</aside>
+<p class="endprompt">That&#x27;s the issue. Know a builder who&#x27;d use this? <a href="https://x.com/intent/post?text=Hotfix%20Daily%20%235%3A%20GPT-6.1%20Terra%2C%20Mirendil%20Fern%2C%20Cursor%27s%20Agent%20SDK%2C%20Uchikoshi%20on%20AI%20and%20tstack%20%28via%20%40hotfixdaily%29&amp;url=https%3A%2F%2Fhotfixdaily.com%2Fissues%2F005%2F" rel="noopener">Share it on X</a> or forward them this page. New here? <a href="#subscribe-end">Subscribe free</a> for tomorrow&#x27;s.</p>
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-issue">Email address</label>
+<input id="email-issue" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+<nav class="pager" aria-label="More issues"><a href="/issues/004/">← Issue #4</a><a href="/issues/">All issues</a><span></span></nav>
+<p class="muted small">Want the bigger picture? Read our guides to <a href="/guides/ai-coding-agents/">AI coding agents</a>, <a href="/guides/vibe-coding-tools/">vibe coding tools</a>, <a href="/guides/ai-game-dev-tools/">AI game dev tools</a>, <a href="/guides/ai-agent-frameworks/">agent frameworks</a>, <a href="/guides/mcp-servers/">MCP servers</a> and <a href="/guides/web-scraping-for-ai-agents/">web scraping tools</a>, or <a href="/guides/">all guides</a>.</p>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+<ul class="footnav" aria-label="Footer"><li><a href="/issues/">Issues</a></li><li><a href="/guides/">Guides</a></li><li><a href="/sponsor/">Sponsor</a></li><li><a href="/about/">About</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/feed.xml">RSS</a></li><li><a href="https://x.com/hotfixdaily" rel="me noopener">X</a></li><li><a href="/privacy/">Privacy</a></li></ul>
+<p>© 2026 Hotfix Daily · The daily AI builder digest, free on weekdays · <a href="mailto:hello@hotfixdaily.com">hello@hotfixdaily.com</a></p>
+</div></footer>
+<script src="/assets/subscribe.js" defer></script>
+<script data-goatcounter="https://hotfixdaily.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
