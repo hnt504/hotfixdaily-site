@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name='impact-site-verification' value='61a18ed7-af0a-4189-8c9e-f49d709af4ea'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to run AI coding agents safely: folders, sandboxes, approvals and secrets (October 2026)</title>
+<meta name="description" content="How to run AI coding agents safely: where to start them, sandboxes, approval settings for Claude Code, Cursor, Codex, Copilot, Cline and Gemini CLI.">
+<link rel="canonical" href="https://hotfixdaily.com/guides/run-ai-coding-agents-safely/">
+<meta name="theme-color" content="#0b0f14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="Hotfix Daily (Atom)" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Hotfix Daily (RSS)" href="/rss.xml">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="stylesheet" href="/assets/style.css?v=eff47e18">
+<meta property="og:site_name" content="Hotfix Daily">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to run AI coding agents safely: folders, sandboxes, approvals and secrets (October 2026)">
+<meta property="og:description" content="How to run AI coding agents safely: where to start them, sandboxes, approval settings for Claude Code, Cursor, Codex, Copilot, Cline and Gemini CLI.">
+<meta property="og:url" content="https://hotfixdaily.com/guides/run-ai-coding-agents-safely/">
+<meta property="og:image" content="https://hotfixdaily.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hotfix Daily: the daily AI builder digest">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hotfixdaily">
+<meta name="twitter:title" content="How to run AI coding agents safely: folders, sandboxes, approvals and secrets (October 2026)">
+<meta name="twitter:description" content="How to run AI coding agents safely: where to start them, sandboxes, approval settings for Claude Code, Cursor, Codex, Copilot, Cline and Gemini CLI.">
+<meta name="twitter:image" content="https://hotfixdaily.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hotfixdaily.com/#org","name":"Hotfix Daily","url":"https://hotfixdaily.com/","logo":"https://hotfixdaily.com/assets/icon-512.png","email":"hello@hotfixdaily.com","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","sameAs":["https://x.com/hotfixdaily"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://hotfixdaily.com/#website","name":"Hotfix Daily","alternateName":"Hotfix Daily newsletter","url":"https://hotfixdaily.com/","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","inLanguage":"en-US","publisher":{"@id":"https://hotfixdaily.com/#org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to run AI coding agents safely: folders, sandboxes, approvals and secrets (October 2026)","description":"How to run AI coding agents safely: where to start them, sandboxes, approval settings for Claude Code, Cursor, Codex, Copilot, Cline and Gemini CLI.","url":"https://hotfixdaily.com/guides/run-ai-coding-agents-safely/","mainEntityOfPage":"https://hotfixdaily.com/guides/run-ai-coding-agents-safely/","datePublished":"2026-10-27","dateModified":"2026-10-27","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"},"mentions":[{"@type":"SoftwareApplication","name":"Claude Code","url":"https://code.claude.com/docs/en/permissions"},{"@type":"SoftwareApplication","name":"Cursor","url":"https://cursor.com/docs/agent/security/run-modes"},{"@type":"SoftwareApplication","name":"Codex CLI","url":"https://developers.openai.com/codex/agent-approvals-security"},{"@type":"SoftwareApplication","name":"GitHub Copilot CLI","url":"https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/configure-copilot-cli"},{"@type":"SoftwareApplication","name":"Cline","url":"https://docs.cline.bot/features/auto-approve"},{"@type":"SoftwareApplication","name":"Gemini CLI","url":"https://geminicli.com/docs/cli/sandbox/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it safe to run an AI coding agent on my laptop?","acceptedAnswer":{"@type":"Answer","text":"It can be, if you start it in a project folder you trust, keep approvals on, and turn on the built-in sandbox where the agent has one. The risky setups are the hands-off modes (Claude Code bypassPermissions, Codex --yolo, Copilot --allow-all, Cursor Run Everything, Gemini CLI yolo approval mode) on your normal machine. Each tool's own docs say to keep those for isolated environments."}},{"@type":"Question","name":"Why shouldn't I start a coding agent in my Downloads folder?","acceptedAnswer":{"@type":"Answer","text":"Coding agents read instruction files such as AGENTS.md and CLAUDE.md from the folder you start them in. A website can drop a file into Downloads without you clicking anything. On Oct 22, 2026, Forever Security reported finding a planted AGENTS.md in a real customer's Downloads folder that tried to make the agent add an MCP server and install an npm package. Start agents in a project or scratch folder instead."}},{"@type":"Question","name":"Which AI coding agents have a built-in sandbox?","acceptedAnswer":{"@type":"Answer","text":"As of Oct 27, 2026: Codex CLI sandboxes by default (workspace writes, no network). Cursor sandboxes shell commands in its Auto-review and Allowlist modes. Claude Code, GitHub Copilot CLI and Gemini CLI have sandboxes you turn on yourself. Cline's auto-approve docs don't describe one, so use a container. Built-in sandboxes mostly cover shell commands, so a container or VM is still the stronger boundary."}},{"@type":"Question","name":"How do I keep my .env file away from an AI agent?","acceptedAnswer":{"@type":"Answer","text":"Keep .env out of git, then block it in the agent: a Read(./.env) deny rule in Claude Code, a .cursorignore entry in Cursor, or --deny-tool='read(.env)' in Copilot CLI. These rules don't stop every script the agent runs, so don't keep long-lived production keys in a folder an agent works in. Use scoped, short-lived tokens and turn on GitHub push protection."}},{"@type":"Question","name":"Do I still need CI if the agent says the tests pass?","acceptedAnswer":{"@type":"Answer","text":"Yes. An agent runs tests in your working copy, with your local files and caches. CI runs them on a fresh checkout of what you actually committed, which catches missing files, secrets that only exist on your machine, and steps the agent skipped. Make the CI check required before merging to main."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://hotfixdaily.com/guides/"},{"@type":"ListItem","position":3,"name":"How to run AI coding agents safely","item":"https://hotfixdaily.com/guides/run-ai-coding-agents-safely/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap row">
+<a class="brand" href="/" aria-label="Hotfix Daily home"><img src="/favicon.svg" width="28" height="28" alt=""> <span>Hotfix Daily</span></a>
+<nav aria-label="Main"><a href="/issues/">Issues</a><a href="/guides/">Guides</a><a href="/starter-stack/" class="hide-s">Starter Stack</a><a href="/#subscribe" class="navcta">Subscribe</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap prose wide guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">How to run AI coding agents safely</span></nav>
+
+<p class="kicker">Guide · Updated October 2026 · Last reviewed <time datetime="2026-10-27">October 27, 2026</time></p>
+<h1>How to run AI coding agents safely</h1>
+<p class="lede">A coding agent runs commands as you, with your files, your keys and your network. Most of the time that's the point. But it also reads whatever instruction files sit in the folder you start it in, and it can be talked into things. This guide covers the setup that keeps a bad file or a bad guess from turning into a bad day: where to start the agent, how to sandbox it, which approval settings to use in Claude Code, Cursor, Codex, Copilot, Cline and Gemini CLI, how to keep secrets out of reach, and how to check its work before it ships. Every setting name below comes from the tool's own docs, checked on October 27, 2026.</p>
+<nav class="toc" aria-label="On this page"><strong>On this page:</strong> <a href="#at-a-glance">At a glance</a> · <a href="#folder">Where to start</a> · <a href="#sandbox">Sandboxing basics</a> · <a href="#settings">Settings by agent</a> · <a href="#secrets">Secrets and .env</a> · <a href="#diffs">Review the diff</a> · <a href="#ci">CI is the gate</a> · <a href="#checklist">10-minute checklist</a> · <a href="#faq">FAQ</a></nav>
+
+<h2 id="at-a-glance">At a glance</h2><div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">Agent</th><th scope="col">Safer everyday setting</th><th scope="col">Hands-off setting (keep it in a container or VM)</th><th scope="col">Built-in sandbox (checked Oct 27, 2026)</th></tr></thead><tbody>
+<tr><th scope="row"><a href="#claude-code">Claude Code</a></th><td>Manual (<code>default</code>) or <code>acceptEdits</code>, plus <code>/sandbox</code></td><td><code>bypassPermissions</code> / <code>--dangerously-skip-permissions</code></td><td>Yes, for shell commands. Off until you turn it on. macOS, Linux and WSL2</td></tr>
+<tr><th scope="row"><a href="#cursor">Cursor</a></th><td>Auto-review (the default) or Allowlist, with Read Access set to Workspace</td><td>Run Everything</td><td>Yes, for shell commands. Network blocked by default</td></tr>
+<tr><th scope="row"><a href="#codex">Codex CLI</a></th><td>Auto (<code>--sandbox workspace-write --ask-for-approval on-request</code>)</td><td><code>--dangerously-bypass-approvals-and-sandbox</code> (<code>--yolo</code>)</td><td>Yes, on by default. Writes limited to the workspace, no network</td></tr>
+<tr><th scope="row"><a href="#copilot">GitHub Copilot CLI</a></th><td>Manual approval, trust the folder for this session only, <code>/sandbox enable</code></td><td><code>--allow-all</code> (<code>--yolo</code>)</td><td>Yes (local sandbox). Off until you turn it on</td></tr>
+<tr><th scope="row"><a href="#cline">Cline</a></th><td>Auto-approve "Read project files" only</td><td>"Execute all commands" plus everything else (YOLO)</td><td>Not described in Cline's auto-approve docs. Use a container</td></tr>
+<tr><th scope="row"><a href="#gemini-cli">Gemini CLI</a></th><td><code>--approval-mode default</code> plus <code>--sandbox</code></td><td><code>--approval-mode=yolo</code></td><td>Yes. Off by default (<code>-s</code> to turn it on)</td></tr>
+</tbody></table></div>
+<p class="muted small">Our take: the middle column is where most of the damage happens. Every one of those switches is fine inside a throwaway container. On your everyday laptop, at the top of your home folder, it's a bad idea.</p>
+
+<section class="ctabox" aria-label="Subscribe" data-growth="1"><h2>Agent settings change every few weeks</h2><p>Hotfix Daily flags the changes that matter, with the source. Free, weekdays, about 3 minutes.</p><p class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g1">Email address</label>
+<input id="email-g1" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Get the prompts free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+
+<h2 id="folder">1. Start the agent in the right folder</h2>
+<p>Agents read instruction files such as <code>AGENTS.md</code> and <code>CLAUDE.md</code> from the folder you launch them in, and treat what's inside as guidance from you. So the folder you start in decides what the agent believes it was told to do.</p>
+<p>That's why <a href="/issues/005/">issue #5's Hotfix of the Day</a> was "never start a coding agent in your Downloads folder." On October 22, 2026, <a href="https://forever.security/blog/hijacking-ai-agents-via-downloads-folder/" rel="noopener">Forever Security reported</a> finding a planted <code>AGENTS.md</code> in a real customer's <code>~/Downloads</code>. A website can drop a file there without a click. In their tests, the file got Codex to add an MCP server to <code>~/.codex/config.toml</code> and install an npm package in over 90% of runs, and a planted <code>CLAUDE.md</code> got Claude Code to write an <code>ANTHROPIC_BASE_URL</code> into <code>.claude/settings.json</code>, which could leak its login token, about half the time. They also say roughly half of their customers run an agent from Downloads.</p>
+<p>The tool makers say the same thing about broad folders. GitHub's Copilot CLI docs put it plainly: "<a href="https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-cli#security-considerations" rel="noopener">Typically, you should not launch Copilot CLI from your home directory</a>." Claude Code only lets you trust your home directory for the current session (<a href="https://code.claude.com/docs/en/permissions" rel="noopener">docs</a>), and Codex starts folders that aren't under version control in read-only mode (<a href="https://developers.openai.com/codex/agent-approvals-security" rel="noopener">docs</a>).</p>
+<ul class="check">
+<li><strong>Use one folder per project</strong>, inside a folder like <code>~/code/</code>, with <code>git init</code> and a first commit before the agent touches it.</li>
+<li><strong>For quick experiments, use a scratch folder</strong> such as <code>~/scratch/2026-10-27-test</code>, or a container. Never Downloads, Desktop or <code>$HOME</code> itself.</li>
+<li><strong>Read the instruction files in any repo you didn't write</strong> before you start an agent in it: <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>GEMINI.md</code>, <code>.cursor/rules</code>, <code>.github/copilot-instructions.md</code>.</li>
+<li><strong>Check agent config for things you didn't add.</strong> Forever Security suggests looking for unexpected <code>[mcp_servers.*]</code> blocks or a changed <code>chatgpt_base_url</code> in <code>~/.codex/config.toml</code>, and for <code>ANTHROPIC_BASE_URL</code> in <code>.claude/settings.json</code>. If you find one, remove it and rotate the token.</li>
+<li><strong>Don't click past the trust prompt.</strong> Copilot CLI, Claude Code and Gemini CLI all ask whether you trust a folder. Gemini CLI's <code>--skip-trust</code> flag skips that check (<a href="https://geminicli.com/docs/cli/cli-reference/" rel="noopener">reference</a>), so save it for folders you know.</li>
+</ul>
+
+<h2 id="sandbox">2. Sandboxing basics</h2>
+<p>A sandbox limits what the agent's commands can reach, so a bad command fails instead of doing damage. There are three levels, from lightest to strongest:</p>
+<ul>
+<li><strong>The agent's own sandbox.</strong> Codex sandboxes by default. Cursor sandboxes shell commands in Auto-review and Allowlist. Claude Code, Copilot CLI and Gemini CLI have one you switch on. These mostly cover <em>shell commands</em>. Claude Code's docs say file tools, MCP servers and hooks run outside its sandbox, and that by default sandboxed commands can still read most of your machine, including <code>~/.ssh</code> and <code>~/.aws/credentials</code>, unless you deny those paths (<a href="https://code.claude.com/docs/en/sandboxing" rel="noopener">docs</a>). GitHub calls its local sandbox "lighter-weight" isolation that doesn't use a VM or container (<a href="https://docs.github.com/en/copilot/concepts/about-cloud-and-local-sandboxes" rel="noopener">docs</a>).</li>
+<li><strong>A container or dev container.</strong> The whole agent runs inside, so everything it does stays inside. Claude Code has a <a href="https://code.claude.com/docs/en/devcontainer" rel="noopener">dev container guide</a>, Gemini CLI can run its sandbox in Docker or Podman (<code>GEMINI_SANDBOX=docker</code>, <a href="https://geminicli.com/docs/cli/sandbox/" rel="noopener">docs</a>), and OpenAI's Codex docs suggest a Dev Container as the outer boundary. One warning from Anthropic's page: with permissions skipped, a malicious project can still take anything inside the container, including the agent's own credentials, so don't mount <code>~/.ssh</code> or cloud credential files into it.</li>
+<li><strong>A remote sandbox.</strong> Cloud agents run on someone else's throwaway machine: Copilot cloud agent works in "an ephemeral cloud development environment" (<a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent" rel="noopener">docs</a>), Cursor Cloud Agents "run inside their own dedicated machine" (<a href="https://cursor.com/docs/agent/security/run-modes" rel="noopener">docs</a>), and Copilot CLI has cloud sandboxes in public preview. Your laptop is out of reach, but anything you give the session, like repo access or tokens, is not.</li>
+</ul>
+<p class="why"><strong>Our take:</strong> turn on the built-in sandbox everywhere you can, since it's free and costs you a few prompts. Move to a container the day you want to stop answering prompts.</p>
+
+<h2 id="settings">3. Approval and sandbox settings, agent by agent</h2>
+<p>Only settings we found in each tool's official docs today. Names change often, so check the linked page if a menu looks different.</p>
+
+<article class="tool" id="claude-code"><h3><a href="https://code.claude.com/docs/en/permissions" rel="noopener">Claude Code</a> <span class="where">Anthropic · terminal, IDE, desktop</span></h3>
+<p><strong>Approvals:</strong> <code>/permissions</code> manages allow, ask and deny rules, checked in that order: deny first, then ask, then allow. Permission modes are <code>default</code> (shown as Manual), <code>acceptEdits</code>, <code>plan</code>, <code>auto</code> (a classifier reviews actions), <code>dontAsk</code> and <code>bypassPermissions</code>. Set the starting one with <code>defaultMode</code>. The docs say to use <code>bypassPermissions</code> only "in isolated environments like containers or VMs", and admins can turn it off with <code>permissions.disableBypassPermissionsMode</code>.</p>
+<p><strong>Sandbox:</strong> off until you run <code>/sandbox</code> or set <code>sandbox.enabled</code>. It limits shell command writes to the working folder and sends network traffic through an allowlist (<code>network.allowedDomains</code>) that starts empty. Add <code>filesystem.denyRead</code> entries for secret folders. Set <code>failIfUnavailable</code> if you'd rather it refuse to start than run unsandboxed.</p>
+<p class="why"><strong>Our take:</strong> start in Manual or <code>acceptEdits</code> with the sandbox on. Add deny rules for <code>.env</code> and secrets (see <a href="#secrets">below</a>).</p>
+<p class="src"><a href="https://code.claude.com/docs/en/permissions" rel="noopener">Permissions docs</a> · <a href="https://code.claude.com/docs/en/sandboxing" rel="noopener">Sandboxing docs</a></p></article>
+
+<article class="tool" id="cursor"><h3><a href="https://cursor.com/docs/agent/security/run-modes" rel="noopener">Cursor</a> <span class="where">Anysphere · editor, CLI</span></h3>
+<p><strong>Approvals:</strong> Settings &gt; Agents &gt; Approvals &amp; Execution has three Run Modes. <strong>Auto-review</strong> (the recommended default since Cursor 3.6) runs allowlisted calls, sandboxes other shell commands when it can, and sends the rest to a classifier. <strong>Allowlist</strong> runs only what you've listed. <strong>Run Everything</strong> runs every call without checks. Cursor's docs say plainly that "Auto-review is not a security boundary." You can steer it with plain-English <code>block_instructions</code> in <code>~/.cursor/permissions.json</code> or <code>.cursor/permissions.json</code>.</p>
+<p><strong>Sandbox:</strong> sandboxed shell commands can read and write the workspace, can't touch protected paths like <code>.git/config</code>, <code>.git/hooks</code> and <code>.vscode</code>, and have network blocked except for your <code>sandbox.json</code> allowlist plus Cursor's package-manager defaults. Since 3.23 (Oct 1, 2026), <strong>Read Access: Workspace</strong> makes the agent ask before reading files outside the project. On Linux the sandbox needs kernel 6.2 or later with Landlock. Without it, Cursor asks before running commands.</p>
+<p class="why"><strong>Our take:</strong> keep Auto-review, switch Read Access to Workspace, and leave File-Deletion and External-File Protection on. The Cursor CLI has its own permission settings, so set those separately.</p>
+<p class="src"><a href="https://cursor.com/docs/agent/security/run-modes" rel="noopener">Run Modes docs</a></p></article>
+
+<article class="tool" id="codex"><h3><a href="https://developers.openai.com/codex/agent-approvals-security" rel="noopener">Codex CLI</a> <span class="where">OpenAI · terminal, IDE, app</span></h3>
+<p><strong>Approvals and sandbox:</strong> Codex has two layers, a sandbox mode and an approval policy. Locally it starts with no network and writes limited to the workspace. The <strong>Auto</strong> preset is <code>--sandbox workspace-write --ask-for-approval on-request</code>. There's also <code>read-only</code>, <code>--ask-for-approval never</code>, <code>--sandbox danger-full-access</code>, and <code>--dangerously-bypass-approvals-and-sandbox</code> (alias <code>--yolo</code>), which the docs label "not recommended." In <code>workspace-write</code>, <code>.git</code>, <code>.agents</code>, <code>.codex</code> and <code>.aws</code> stay read-only. Network stays off unless you set <code>network_access = true</code> under <code>[sandbox_workspace_write]</code>. Use <code>/permissions</code> to switch modes and <code>/status</code> to see which folders it can write.</p>
+<p class="why"><strong>Our take:</strong> Codex has the safest default of the six. Keep Auto, and don't turn on network access for a whole project when one command needs it. If an old config still says <code>approval_policy = "untrusted"</code>, change it, because the docs now list that value as retired.</p>
+<p class="src"><a href="https://developers.openai.com/codex/agent-approvals-security" rel="noopener">Agent approvals &amp; security docs</a></p></article>
+
+<article class="tool" id="copilot"><h3><a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/configure-copilot-cli" rel="noopener">GitHub Copilot CLI</a> <span class="where">GitHub · terminal</span></h3>
+<p><strong>Approvals:</strong> on launch, Copilot asks whether you trust the folder "for the currently running session only" or for future sessions too. Permanent trust goes in <code>trustedFolders</code> in <code>~/.copilot/config.json</code>. In manual approval mode it asks before tools that aren't already allowed. <code>--allow-tool</code> and <code>--deny-tool</code> take patterns like <code>shell(git:*)</code>, <code>write(src/*.ts)</code> or <code>read(.env)</code>, and deny always wins, even over <code>--allow-all</code>. <code>--allow-all</code> (or <code>--yolo</code>) equals <code>--allow-all-tools --allow-all-paths --allow-all-urls</code>. <code>/permissions assisted</code> lets a model approve requests it judges safe.</p>
+<p><strong>Sandbox:</strong> local sandboxing is off by default. Until you run <code>/sandbox enable</code>, Copilot's shell commands "can read, write, and delete wherever you can." GitHub's own risk advice is a sandbox, or "a virtual machine, container, or dedicated system."</p>
+<p class="why"><strong>Our take:</strong> trust per session, run <code>/sandbox enable</code> once, and add <code>--deny-tool='shell(git push)'</code> so pushing stays your job.</p>
+<p class="src"><a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools" rel="noopener">Allowing and denying tools</a> · <a href="https://docs.github.com/en/copilot/concepts/about-cloud-and-local-sandboxes" rel="noopener">Sandboxes</a> · <a href="https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-cli#security-considerations" rel="noopener">Security considerations</a></p></article>
+
+<article class="tool" id="cline"><h3><a href="https://docs.cline.bot/features/auto-approve" rel="noopener">Cline</a> <span class="where">open source · VS Code and more</span></h3>
+<p><strong>Approvals:</strong> Auto Approve has separate toggles: Read project files, Read all files, Edit project files, Edit all files, Execute safe commands, Execute all commands, Use the browser, Use MCP servers. "Safe" is decided by the model, which flags each command with <code>requires_approval</code>. Cline's docs say "Cline does not use a fixed allowlist." Their recommended start: enable Read project files and "leave edits, commands, browser, and MCP off until you have a specific reason," with Checkpoints on if you allow edits.</p>
+<p><strong>YOLO:</strong> Cline's docs still describe a YOLO Mode checkbox that auto-approves everything and "disables all safety checks." A change merged in August 2026 (<a href="https://github.com/cline/cline/pull/13126" rel="noopener">cline/cline#13126</a>) removed that toggle from the newer VS Code extension and turns on every auto-approve action for people who had it on. Either way, all toggles on means nothing asks first.</p>
+<p class="why"><strong>Our take:</strong> Cline's auto-approve docs don't describe an OS sandbox, so if you want commands to run unattended, run Cline inside a dev container.</p>
+<p class="src"><a href="https://docs.cline.bot/features/auto-approve" rel="noopener">Auto Approve docs</a></p></article>
+
+<article class="tool" id="gemini-cli"><h3><a href="https://geminicli.com/docs/cli/cli-reference/" rel="noopener">Gemini CLI</a> <span class="where">Google · terminal</span></h3>
+<p><strong>Approvals:</strong> <code>--approval-mode</code> takes <code>default</code>, <code>auto_edit</code>, <code>yolo</code> or <code>plan</code>. The old <code>--yolo</code> / <code>-y</code> flag is deprecated in favor of <code>--approval-mode=yolo</code>. Folder trust is checked on start unless you pass <code>--skip-trust</code>.</p>
+<p><strong>Sandbox:</strong> off by default. Turn it on with <code>-s</code> / <code>--sandbox</code>, the <code>GEMINI_SANDBOX</code> variable (<code>true</code>, <code>docker</code>, <code>podman</code>, <code>sandbox-exec</code>, <code>runsc</code> or <code>lxc</code>), or <code>"tools": {"sandbox": ...}</code> in <code>settings.json</code>. Note that the default macOS profile, <code>permissive-open</code>, limits writes to the project but allows network.</p>
+<p class="why"><strong>Our take:</strong> <code>GEMINI_SANDBOX=docker</code> is the easy win. Also note that Google's docs say Gemini CLI was replaced by Antigravity CLI for unpaid-tier and Google One users on June 18, 2026. We haven't checked Antigravity CLI's settings, so they aren't covered here.</p>
+<p class="src"><a href="https://geminicli.com/docs/cli/sandbox/" rel="noopener">Sandboxing docs</a> · <a href="https://geminicli.com/docs/cli/cli-reference/" rel="noopener">CLI reference</a></p></article>
+
+<h2 id="secrets">4. Secrets and .env hygiene</h2>
+<p>Assume anything the agent can read could end up in a prompt, a log or a commit. The fixes are boring and they work:</p>
+<ul class="check">
+<li><strong>Keep <code>.env</code> out of git.</strong> Put it in <code>.gitignore</code> and commit a <code>.env.example</code> with fake values instead.</li>
+<li><strong>Block it in the agent.</strong> Claude Code: deny rules like <code>Read(./.env)</code> and <code>Read(./secrets/**)</code>. Cursor: list it in <code>.cursorignore</code>, though Cursor's <a href="https://cursor.com/docs/reference/ignore-file" rel="noopener">docs</a> warn that terminal and MCP tools can't be blocked that way. Copilot CLI: <code>--deny-tool='read(.env)'</code>.</li>
+<li><strong>Know the limit.</strong> Claude Code's docs note that Read and Edit deny rules don't stop a script the agent runs from opening the file. Only the sandbox enforces that at the OS level. So don't keep production keys in a folder an agent works in.</li>
+<li><strong>Use small, short-lived keys.</strong> Give the agent a test key or a token scoped to one repo. Anthropic's dev container page says to prefer "repository-scoped or short-lived tokens" and not to mount <code>~/.ssh</code> or cloud credential files.</li>
+<li><strong>Redact in logs.</strong> Copilot CLI's <code>--secret-env-vars</code> hides named variables in output.</li>
+<li><strong>Turn on push protection.</strong> GitHub's <a href="https://docs.github.com/en/code-security/concepts/secret-security/about-push-protection" rel="noopener">push protection</a> blocks pushes that contain detected secrets before they reach the repo.</li>
+<li><strong>If a key leaks, rotate it.</strong> Deleting the commit doesn't make the key safe again.</li>
+</ul>
+
+<h2 id="diffs">5. Review the diff, not the summary</h2>
+<p>The agent's "Done! All tests pass" is a claim, not proof. OpenAI's Codex docs give the habit that works with any agent: work on a feature branch, start from a clean <code>git status</code>, commit often, and review the agent's diffs the way you'd review a pull request (<a href="https://developers.openai.com/codex/agent-approvals-security" rel="noopener">docs</a>).</p>
+<ul class="check">
+<li>Run <code>git status</code> and <code>git diff --stat</code> first. Files you didn't expect are the first warning sign.</li>
+<li>Look hard at changes to agent and build config: <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>.claude/</code>, <code>.cursor/</code>, <code>.codex/</code>, <code>.mcp.json</code>, <code>.github/workflows/</code>, <code>package.json</code> scripts and lockfiles. That's where a hijacked agent hides its changes.</li>
+<li>Check new dependencies by name. A package you've never heard of is worth a 30-second search.</li>
+<li>Keep pushes and merges for yourself, for example with a deny rule for <code>git push</code>.</li>
+</ul>
+
+<h2 id="ci">6. Make CI on a clean checkout the gate</h2>
+<p>Your laptop has caches, local files and keys that the repo doesn't. CI starts from a fresh checkout of what you actually committed, so it catches the file the agent forgot to add, the test that only passes with your <code>.env</code>, and the step it skipped. Then make that check required: with GitHub's <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging" rel="noopener">required status checks</a>, "all required status checks must pass" before changes merge into a protected branch.</p>
+<p>A minimal GitHub Actions workflow looks like this. Swap in your own install and test commands:</p>
+<pre><code>name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm test</code></pre>
+<p class="why"><strong>Our take:</strong> this is the one step that still protects you on the day you skip the others. Hotfix Daily's own site works this way: every change is built and validated on a clean runner before it goes live.</p>
+
+<h2 id="checklist">The 10-minute checklist</h2>
+<ul class="check">
+<li>Start agents in a git project folder or a scratch folder, never Downloads or <code>$HOME</code>.</li>
+<li>Read <code>AGENTS.md</code> / <code>CLAUDE.md</code> in repos you didn't write.</li>
+<li>Turn on the agent's sandbox: <code>/sandbox</code> (Claude Code), <code>/sandbox enable</code> (Copilot CLI), <code>-s</code> (Gemini CLI). Codex and Cursor have one on by default.</li>
+<li>Pick the middle approval setting, not the hands-off one.</li>
+<li>Block <code>.env</code> and secret folders. Use test keys.</li>
+<li>Check <code>~/.codex/config.toml</code> and <code>.claude/settings.json</code> for MCP servers or base URLs you didn't add.</li>
+<li>Branch, commit often, read the diff.</li>
+<li>Require CI to pass before merging.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2><details><summary>Is it safe to run an AI coding agent on my laptop?</summary><p>It can be, if you start it in a project folder you trust, keep approvals on, and turn on the built-in sandbox where the agent has one. The risky setups are the hands-off modes (Claude Code bypassPermissions, Codex --yolo, Copilot --allow-all, Cursor Run Everything, Gemini CLI yolo approval mode) on your normal machine. Each tool's own docs say to keep those for isolated environments.</p></details><details><summary>Why shouldn't I start a coding agent in my Downloads folder?</summary><p>Coding agents read instruction files such as AGENTS.md and CLAUDE.md from the folder you start them in. A website can drop a file into Downloads without you clicking anything. On Oct 22, 2026, Forever Security reported finding a planted AGENTS.md in a real customer's Downloads folder that tried to make the agent add an MCP server and install an npm package. Start agents in a project or scratch folder instead.</p></details><details><summary>Which AI coding agents have a built-in sandbox?</summary><p>As of Oct 27, 2026: Codex CLI sandboxes by default (workspace writes, no network). Cursor sandboxes shell commands in its Auto-review and Allowlist modes. Claude Code, GitHub Copilot CLI and Gemini CLI have sandboxes you turn on yourself. Cline's auto-approve docs don't describe one, so use a container. Built-in sandboxes mostly cover shell commands, so a container or VM is still the stronger boundary.</p></details><details><summary>How do I keep my .env file away from an AI agent?</summary><p>Keep .env out of git, then block it in the agent: a Read(./.env) deny rule in Claude Code, a .cursorignore entry in Cursor, or --deny-tool='read(.env)' in Copilot CLI. These rules don't stop every script the agent runs, so don't keep long-lived production keys in a folder an agent works in. Use scoped, short-lived tokens and turn on GitHub push protection.</p></details><details><summary>Do I still need CI if the agent says the tests pass?</summary><p>Yes. An agent runs tests in your working copy, with your local files and caches. CI runs them on a fresh checkout of what you actually committed, which catches missing files, secrets that only exist on your machine, and steps the agent skipped. Make the CI check required before merging to main.</p></details>
+
+<p class="endprompt">Found this useful? Hotfix Daily covers changes like these every weekday. <a href="#subscribe-end">Get the updates free</a>, plus 13 Starter Prompts. Or <a href="https://x.com/intent/post?text=How%20to%20run%20AI%20coding%20agents%20safely%3A%20folders%2C%20sandboxes%2C%20approvals%20and%20secrets%20%28via%20%40hotfixdaily%29&amp;url=https%3A%2F%2Fhotfixdaily.com%2Fguides%2Frun-ai-coding-agents-safely%2F" rel="noopener">share it on X</a>.</p>
+
+<h2>Related</h2><ul><li><a href="/guides/ai-coding-agents/">What are the best AI coding agents? Compared (October 2026)</a></li><li><a href="/guides/which-ai-coding-agent/">Which AI coding agent should you use? Pick by budget and use case</a></li><li><a href="/guides/how-to-add-mcp-servers/">How to add MCP servers to your coding agent</a></li><li><a href="/issues/005/">Issue #5: the Downloads-folder AGENTS.md attack</a></li></ul>
+
+<p class="muted small">How we write these: we read each tool's official docs on the date shown and link the page for every setting we name. "Our take" lines are our opinion. Settings change often, so check the linked page before you rely on a detail. This guide has no affiliate links.</p>
+
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g2">Email address</label>
+<input id="email-g2" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+<ul class="footnav" aria-label="Footer"><li><a href="/issues/">Issues</a></li><li><a href="/guides/">Guides</a></li><li><a href="/sponsor/">Sponsor</a></li><li><a href="/about/">About</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/feed.xml">RSS</a></li><li><a href="https://x.com/hotfixdaily" rel="me noopener">X</a></li><li><a href="/privacy/">Privacy</a></li></ul>
+<p>© 2026 Hotfix Daily · The daily AI builder digest, free on weekdays · <a href="mailto:hello@hotfixdaily.com">hello@hotfixdaily.com</a></p>
+</div></footer>
+<script src="/assets/subscribe.js" defer></script>
+<script data-goatcounter="https://hotfixdaily.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
