@@ -6,10 +6,49 @@
 <link rel="self" type="application/atom+xml" href="https://hotfixdaily.com/feed.xml"/>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/"/>
 <id>https://hotfixdaily.com/</id>
-<updated>2026-10-27T11:00:00Z</updated>
+<updated>2026-10-28T11:00:00Z</updated>
 <author><name>Hotfix Daily</name><email>hello@hotfixdaily.com</email><uri>https://hotfixdaily.com/</uri></author>
 <icon>https://hotfixdaily.com/favicon.ico</icon>
 <logo>https://hotfixdaily.com/assets/icon-512.png</logo>
+<entry>
+<title>Hotfix Daily #6: Liquid&#x27;s LFM3, Genie 4, Entire&#x27;s Trails, Judgment Labs and Ling 3.1 Flash</title>
+<link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/006/"/>
+<id>https://hotfixdaily.com/issues/006/</id>
+<published>2026-10-28T11:00:00Z</published>
+<updated>2026-10-28T11:00:00Z</updated>
+<summary>Hotfix Daily #6: Liquid AI&#x27;s LFM3 puts 2B-class agent models on-device, DeepMind&#x27;s Genie 4 adds audio to world simulation, ex-GitHub CEO&#x27;s Entire swaps pull requests for Trails, Judgment Labs opens agent monitoring, and Ling-3.1-flash-1019 ships MIT weights.</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Liquid AI&#x27;s LFM3 brings small agent models to your device&lt;/h2&gt;
+&lt;p&gt;Six open-weight models around 2B parameters (text, vision, audio, omni and two decision models) share one 1.7B backbone. The text model has a 256K context window, fits in about 1 GB at 4-bit, and Liquid says it beats Qwen3.5-9B on WebArena-Verified and AutomationBench. Every model can be fine-tuned on a single GPU.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Background agents that run on a laptop cost nothing per token. Liquid admits bigger models still win on agentic coding, so use it for tool calls and triage, not refactors.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.liquid.ai/blog/lfm3&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; DeepMind&#x27;s Genie 4 adds sound and dialogue to playable worlds&lt;/h2&gt;
+&lt;p&gt;The new world model generates photorealistic scenes you steer with the keyboard and text prompts, plus ambient audio, music and interactive dialogue. Trusted testers get it first; Google AI Ultra subscribers and early Gemini API partners are next.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Google pitches it for prototyping game ideas. It also warns that details and object permanence drift in longer sessions, so treat it as a sketchpad, not an engine.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;DEVTOOLS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; Ex-GitHub CEO&#x27;s Entire replaces pull requests with Trails&lt;/h2&gt;
+&lt;p&gt;Thomas Dohmke&#x27;s Git-compatible forge scores every push with agent-run evals (security, quality, &quot;slop&quot;) shown at the top of the page, so your coding agent can keep fixing until the scores settle. It also syncs agent sessions into the repo as searchable memory. It&#x27;s open to any developer now.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; If your agents open more PRs than you can read, this is a real alternative workflow. Merging on scores alone is a choice, so decide which evals you actually trust.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://entire.com/blog/the-git-forge-for-agent-human-collaboration&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;AGENTS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; Judgment Labs opens its agent monitoring platform to everyone&lt;/h2&gt;
+&lt;p&gt;It traces long-running agents down to subagents and tool calls, runs your own judges over the traces (filters, code checks or agentic judges), and lets you test fixes offline.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Most agent bugs show up in production as complaints. Turning traces into alerts finds them before your users do.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/alexshander03/status/2115111288066171211&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Repo of the day: Ling-3.1-flash-1019, MIT-licensed weights&lt;/h2&gt;
+&lt;p&gt;inclusionAI&#x27;s upgraded mixture-of-experts model has 560B total parameters, 25B active and a 1M-token context. The card reports AutomationBench-AA rising from 62% to 68% after more post-training.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; The recommended self-hosting setup is eight H200s, so most of us will try it through an API first.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://huggingface.co/inclusionAI/Ling-3.1-flash-1019&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
+&lt;p&gt;In Cursor&#x27;s Design Mode, Shift-click two components into one note and ask the agent to make one match the other. Turn on Batch edits to collect a round of notes and send them as one message.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://cursor.com/docs/agent/design-mode&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+</entry>
 <entry>
 <title>Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor&#x27;s Agent SDK, Uchikoshi on AI and tstack</title>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/005/"/>
