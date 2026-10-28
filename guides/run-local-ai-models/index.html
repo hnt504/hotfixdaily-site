@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name='impact-site-verification' value='61a18ed7-af0a-4189-8c9e-f49d709af4ea'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to run AI models locally: Ollama, LM Studio, llama.cpp and MLX (October 2026)</title>
+<meta name="description" content="How to run open AI models on your own computer with Ollama, LM Studio, llama.cpp or MLX, which small open models to try (Flint, LFM3, Nanbeige4.3) and what hardware you need.">
+<link rel="canonical" href="https://hotfixdaily.com/guides/run-local-ai-models/">
+<meta name="theme-color" content="#0b0f14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="Hotfix Daily (Atom)" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Hotfix Daily (RSS)" href="/rss.xml">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="stylesheet" href="/assets/style.css?v=eff47e18">
+<meta property="og:site_name" content="Hotfix Daily">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to run AI models locally: Ollama, LM Studio, llama.cpp and MLX (October 2026)">
+<meta property="og:description" content="How to run open AI models on your own computer with Ollama, LM Studio, llama.cpp or MLX, which small open models to try (Flint, LFM3, Nanbeige4.3) and what hardware you need.">
+<meta property="og:url" content="https://hotfixdaily.com/guides/run-local-ai-models/">
+<meta property="og:image" content="https://hotfixdaily.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hotfix Daily: the daily AI builder digest">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hotfixdaily">
+<meta name="twitter:title" content="How to run AI models locally: Ollama, LM Studio, llama.cpp and MLX (October 2026)">
+<meta name="twitter:description" content="How to run open AI models on your own computer with Ollama, LM Studio, llama.cpp or MLX, which small open models to try (Flint, LFM3, Nanbeige4.3) and what hardware you need.">
+<meta name="twitter:image" content="https://hotfixdaily.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hotfixdaily.com/#org","name":"Hotfix Daily","url":"https://hotfixdaily.com/","logo":"https://hotfixdaily.com/assets/icon-512.png","email":"hello@hotfixdaily.com","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","sameAs":["https://x.com/hotfixdaily"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://hotfixdaily.com/#website","name":"Hotfix Daily","alternateName":"Hotfix Daily newsletter","url":"https://hotfixdaily.com/","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","inLanguage":"en-US","publisher":{"@id":"https://hotfixdaily.com/#org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to run AI models locally: Ollama, LM Studio, llama.cpp and MLX (October 2026)","description":"How to run open AI models on your own computer with Ollama, LM Studio, llama.cpp or MLX, which small open models to try (Flint, LFM3, Nanbeige4.3) and what hardware you need.","url":"https://hotfixdaily.com/guides/run-local-ai-models/","mainEntityOfPage":"https://hotfixdaily.com/guides/run-local-ai-models/","datePublished":"2026-10-28","dateModified":"2026-10-28","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"},"mentions":[{"@type":"SoftwareApplication","name":"Ollama","url":"https://ollama.com/download"},{"@type":"SoftwareApplication","name":"LM Studio","url":"https://lmstudio.ai/download"},{"@type":"SoftwareApplication","name":"llama.cpp","url":"https://github.com/ggml-org/llama.cpp"},{"@type":"SoftwareApplication","name":"MLX","url":"https://github.com/ml-explore/mlx"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the easiest way to run an AI model locally?","acceptedAnswer":{"@type":"Answer","text":"Install Ollama or LM Studio. Ollama is a command line tool and local server: install it, then run a model with one command such as ollama run flint. LM Studio is a desktop app where you search for a model, download it and chat, and it can also serve the model to other apps. Both are free for local use as of Oct 28, 2026."}},{"@type":"Question","name":"Do I need a GPU to run AI models locally?","acceptedAnswer":{"@type":"Answer","text":"Not always. llama.cpp runs on plain CPUs and splits work between CPU and GPU when a model does not fit in video memory, and Apple silicon Macs use shared memory for the GPU. The limit is usually memory: a model has to fit in RAM or VRAM, and it gets slow when it does not. Small models like LFM3-1.7B fit in about 1 GB at 4-bit; Flint is a 23 GB download on Ollama."}},{"@type":"Question","name":"Which small open models are worth trying for coding agents?","acceptedAnswer":{"@type":"Answer","text":"From recent Hotfix Daily issues: Recursive Flint (40B mixture-of-experts, about 2.5B active, Apache 2.0) for local coding agents, Nanbeige4.3-33B (dense 33B, Apache 2.0, 512K context) if you have a big GPU, and Liquid AI LFM3-1.7B for tool calls and triage on almost any laptop. Their makers say bigger models still win on hard coding work."}},{"@type":"Question","name":"Is running a model locally really free?","acceptedAnswer":{"@type":"Answer","text":"The software is: Ollama, llama.cpp and MLX are MIT-licensed, and LM Studio has a $0 plan for local models. You pay in hardware, power and time. Ollama and LM Studio also sell optional cloud plans (Ollama Pro $20 a month, LM Studio Bionic+ $20 a month) for models too big to run at home, but you do not need them to run models locally."}},{"@type":"Question","name":"Can I use a local model with Claude Code or other coding agents?","acceptedAnswer":{"@type":"Answer","text":"Yes, through a local server. Ollama serves an OpenAI-compatible API at http://localhost:11434/v1 and its model pages list launch commands such as ollama launch claude --model flint. LM Studio offers OpenAI- and Anthropic-compatible endpoints from its local server, and llama.cpp has llama serve. Point the agent at that URL and pick the local model."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://hotfixdaily.com/guides/"},{"@type":"ListItem","position":3,"name":"How to run AI models locally","item":"https://hotfixdaily.com/guides/run-local-ai-models/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap row">
+<a class="brand" href="/" aria-label="Hotfix Daily home"><img src="/favicon.svg" width="28" height="28" alt=""> <span>Hotfix Daily</span></a>
+<nav aria-label="Main"><a href="/issues/">Issues</a><a href="/guides/">Guides</a><a href="/starter-stack/" class="hide-s">Starter Stack</a><a href="/#subscribe" class="navcta">Subscribe</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap prose wide guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">How to run AI models locally</span></nav>
+
+<p class="kicker">Guide · Updated October 2026 · Last reviewed <time datetime="2026-10-28">October 28, 2026</time></p>
+<h1>How to run AI models locally</h1>
+<p class="lede">Small open models got good enough this month that running one on your own machine is a real option, not a weekend project. A local model costs nothing per token, keeps your code and prompts on your computer, and still works when an API is down or a model gets retired. This guide covers the four tools most people use to run them (Ollama, LM Studio, llama.cpp and MLX), three open models from recent Hotfix Daily issues worth trying, how much memory you need, and how to plug a local model into a coding agent. Every version, price and command below comes from the maker's own page, checked on October 28, 2026.</p>
+<nav class="toc" aria-label="On this page"><strong>On this page:</strong> <a href="#at-a-glance">At a glance</a> · <a href="#tools">The four tools</a> · <a href="#models">Small open models to try</a> · <a href="#hardware">How much memory you need</a> · <a href="#agents">Use it with a coding agent</a> · <a href="#checklist">Quick-start checklist</a> · <a href="#faq">FAQ</a></nav>
+
+<h2 id="at-a-glance">At a glance</h2><div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">Tool</th><th scope="col">What it is</th><th scope="col">Runs on</th><th scope="col">Latest release (checked Oct 28, 2026)</th><th scope="col">Cost</th></tr></thead><tbody>
+<tr><th scope="row"><a href="#ollama">Ollama</a></th><td>Command line tool and local server with a model library</td><td>macOS, Linux, Windows</td><td>v0.40.12 (Oct 26, 2026)</td><td>Free locally (MIT). Optional cloud plans from $20/mo</td></tr>
+<tr><th scope="row"><a href="#lm-studio">LM Studio</a></th><td>Desktop app to find, download, chat with and serve models, plus the Bionic agent app</td><td>macOS, Windows, Linux</td><td>LM Studio 0.4.26 · Bionic 1.1.9 (Oct 21, 2026)</td><td>Free plan for local models. Optional cloud plans from $20/mo</td></tr>
+<tr><th scope="row"><a href="#llama-cpp">llama.cpp</a></th><td>The C/C++ engine many local apps build on, with its own CLI and server</td><td>CPUs, NVIDIA, AMD, Apple silicon, Vulkan and more</td><td>v0.8.0 (Oct 28, 2026)</td><td>Free (MIT)</td></tr>
+<tr><th scope="row"><a href="#mlx">MLX</a></th><td>Apple's machine learning framework, with mlx-lm for running and fine-tuning LLMs</td><td>Apple silicon. MLX also has CUDA and CPU builds for Linux</td><td>MLX v0.32.4 (Oct 14) · mlx-lm v0.32.2 (Oct 15, 2026)</td><td>Free (MIT)</td></tr>
+</tbody></table></div>
+<p class="muted small">Our take: start with Ollama if you live in a terminal, LM Studio if you'd rather click. Reach for llama.cpp when you want every knob, and MLX when you're on a Mac and want the fastest Apple-native path or plan to fine-tune.</p>
+
+<section class="ctabox" aria-label="Subscribe" data-growth="1"><h2>New open models ship every week</h2><p>Hotfix Daily tells you which ones are worth a download, with the source. Free, weekdays, about 3 minutes.</p><p class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g1">Email address</label>
+<input id="email-g1" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Get the prompts free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+
+<h2 id="tools">1. The four tools</h2>
+<p>All four run models on your own hardware. The difference is how much they do for you. Ollama and LM Studio pick a quantized build, download it and start a server. llama.cpp and MLX are the engines underneath: LM Studio says its runtime has "MLX and llama.cpp under the hood."</p>
+
+<article class="tool" id="ollama"><h3><a href="https://ollama.com/download" rel="noopener">Ollama</a> <span class="where">open source (MIT) · terminal, local server</span></h3>
+<p><strong>Install:</strong> <code>curl -fsSL https://ollama.com/install.sh | sh</code> on macOS or Linux, or <code>irm https://ollama.com/install.ps1 | iex</code> in Windows PowerShell. Then <code>ollama run flint</code> downloads and starts a model in one step.</p>
+<p><strong>What you get:</strong> a model library with ready-made builds (Flint is a 23 GB download with a 256K context), and a local server at <code>http://localhost:11434</code> with an OpenAI-compatible API at <code>/v1</code> (chat completions, responses, embeddings, tools and vision). To change the context size for OpenAI-style clients, set <code>PARAMETER num_ctx</code> in a Modelfile. The latest release, v0.40.12, added Liquid AI's LFM3 family, though its notes say LFM3 runs only on Apple hardware in that release, with Linux and Windows "coming soon."</p>
+<p><strong>Cost:</strong> running models on your own hardware "is always unlimited." Ollama also sells cloud access to bigger open models: pay as you go from $0, Pro at $20/month ($200/year), Max at $100/month and Team at $500/month. A cloud model's name ends in <code>:cloud</code>, so you always know which one you're using.</p>
+<p class="why"><strong>Our take:</strong> the shortest path from zero to a working local model and an API your other tools can call. Just watch which model names end in <code>:cloud</code> if you want everything to stay on your machine.</p>
+<p class="src"><a href="https://ollama.com/download" rel="noopener">Download page</a> · <a href="https://github.com/ollama/ollama/releases/tag/v0.40.12" rel="noopener">v0.40.12 release notes</a> · <a href="https://docs.ollama.com/api/openai-compatibility" rel="noopener">OpenAI compatibility docs</a> · <a href="https://ollama.com/pricing" rel="noopener">Pricing</a></p></article>
+
+<article class="tool" id="lm-studio"><h3><a href="https://lmstudio.ai/download" rel="noopener">LM Studio</a> <span class="where">Element Labs · desktop app, CLI, headless server</span></h3>
+<p><strong>Install:</strong> download LM Studio 0.4.26 from the download page. For servers and CI there's <code>llmster</code>, a headless daemon (<code>curl -fsSL https://lmstudio.ai/install.sh | bash</code>). The <code>lms</code> CLI handles <code>lms get</code> (download), <code>lms load</code>, <code>lms ls</code>, <code>lms chat</code> and <code>lms server start</code>.</p>
+<p><strong>What you get:</strong> search, download and chat with GGUF and MLX models, then serve them on a local server with OpenAI-compatible and Anthropic-compatible endpoints (the docs' example is <code>lms server start --port 1234</code>). LM Studio now also ships <strong>Bionic</strong>, an agent app for open models. Bionic 1.1.9 (Oct 21, 2026) is the newest version in the changelog, and it can use LM Studio for local inference when both are running.</p>
+<p><strong>Cost:</strong> the Free plan ($0) includes the Bionic agent and running local models with llama.cpp and MLX. Bionic+ ($20/month) and Pro ($100/month) add US-hosted open models in the cloud.</p>
+<p class="why"><strong>Our take:</strong> the friendliest way to try a model before you commit to it, and the easiest way to see which quantization fits your memory. Its server makes it a drop-in backend for agents that speak the OpenAI or Anthropic API.</p>
+<p class="src"><a href="https://lmstudio.ai/download" rel="noopener">Download page</a> · <a href="https://lmstudio.ai/pricing" rel="noopener">Pricing</a> · <a href="https://lmstudio.ai/changelog" rel="noopener">Changelog</a> · <a href="https://lmstudio.ai/docs/developer" rel="noopener">Developer docs</a> · <a href="https://lmstudio.ai/docs/cli" rel="noopener">CLI docs</a></p></article>
+
+<article class="tool" id="llama-cpp"><h3><a href="https://github.com/ggml-org/llama.cpp" rel="noopener">llama.cpp</a> <span class="where">ggml-org · open source (MIT) · CLI, server, library</span></h3>
+<p><strong>Install:</strong> <code>curl -LsSf https://llama.app/install.sh | sh</code> (or <code>irm https://llama.app/install.ps1 | iex</code> on Windows), Docker, prebuilt binaries from the releases page, or build from source. Then <code>llama cli -hf ggml-org/Qwen3.5-0.8B-GGUF</code> downloads a model from Hugging Face and chats, and <code>llama serve -hf …</code> starts an OpenAI-compatible server with a web UI.</p>
+<p><strong>What you get:</strong> plain C/C++ with no dependencies, 1.5-bit to 8-bit quantization, Apple silicon as "a first-class citizen," CUDA, AMD (HIP), Vulkan and SYCL backends, and CPU+GPU hybrid inference for models bigger than your VRAM. Release v0.8.0 (Oct 28, 2026) added the LFM3 family and Flint, among other new architectures. The server README lists the default port as 9931 (change it with <code>--port</code>).</p>
+<p class="why"><strong>Our take:</strong> the engine new models land in first, and the one to use when an app hides a setting you need. If a model ships a GGUF file, it runs here.</p>
+<p class="src"><a href="https://github.com/ggml-org/llama.cpp" rel="noopener">README</a> · <a href="https://github.com/ggml-org/llama.cpp/releases/tag/v0.8.0" rel="noopener">v0.8.0 release notes</a> · <a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md" rel="noopener">Server docs</a></p></article>
+
+<article class="tool" id="mlx"><h3><a href="https://github.com/ml-explore/mlx" rel="noopener">MLX and mlx-lm</a> <span class="where">Apple (ml-explore) · open source (MIT) · Python</span></h3>
+<p><strong>Install:</strong> <code>pip install mlx-lm</code> (or <code>conda install -c conda-forge mlx-lm</code>). Then <code>mlx_lm.generate --model &lt;model&gt; --prompt "…"</code>, <code>mlx_lm.chat</code> for a chat session, and <code>mlx_lm.server</code> to serve it.</p>
+<p><strong>What you get:</strong> MLX is "an array framework for machine learning on Apple silicon," and mlx-lm runs and fine-tunes LLMs with it. <code>mlx_lm.convert --model … -q</code> makes your own quantized copy. MLX itself also installs on Linux with a CUDA backend (<code>pip install mlx[cuda]</code>) or CPU-only (<code>pip install mlx[cpu]</code>). Many model makers now publish MLX builds directly: Liquid AI has 4-, 5-, 6- and 8-bit MLX versions of LFM3-1.7B on Hugging Face.</p>
+<p class="why"><strong>Our take:</strong> on a Mac, the most direct route to Apple-native speed, and the easiest place to try a small fine-tune. Not the first stop on Windows.</p>
+<p class="src"><a href="https://github.com/ml-explore/mlx" rel="noopener">MLX README</a> · <a href="https://github.com/ml-explore/mlx-lm" rel="noopener">mlx-lm README</a> · <a href="https://github.com/ml-explore/mlx/releases/tag/v0.32.4" rel="noopener">MLX v0.32.4</a> · <a href="https://github.com/ml-explore/mlx-lm/releases/tag/v0.32.2" rel="noopener">mlx-lm v0.32.2</a></p></article>
+
+<h2 id="models">2. Small open models worth trying (from recent issues)</h2>
+<p>Three open-weight models we covered this month, with what their makers and model pages say today. Benchmark numbers are the publisher's own, so treat them as a starting point and test on your own tasks.</p>
+
+<article class="tool" id="flint"><h3><a href="https://recursive.com/updates/introducing-recursive-flint" rel="noopener">Recursive Flint</a> <span class="where">40B mixture-of-experts · about 2.5B active · Apache 2.0</span></h3>
+<p>Built for local coding agents. Recursive reports more than 125 tokens/second on an M4 Pro MacBook Pro at short contexts, up to 512K context (256K recommended), and 74.2% on SWE-bench Verified. It works with llama.cpp, Ollama, LM Studio, Unsloth, vLLM and SGLang. On Ollama it's <code>ollama run flint</code>, a 23 GB download. Recursive's own advice: break work into subtasks, because it may need more guidance than larger closed models.</p>
+<p class="why"><strong>Our take:</strong> the one to try first if you have a Mac or GPU with 32 GB or more and want a local coding agent. Covered in <a href="/issues/002/">issue #2</a>.</p>
+<p class="src"><a href="https://recursive.com/updates/introducing-recursive-flint" rel="noopener">Recursive announcement</a> · <a href="https://ollama.com/library/flint" rel="noopener">Ollama model page</a> · <a href="https://huggingface.co/RecursiveSI/flint" rel="noopener">Hugging Face</a></p></article>
+
+<article class="tool" id="lfm3"><h3><a href="https://www.liquid.ai/blog/lfm3" rel="noopener">Liquid AI LFM3</a> <span class="where">about 2B · six models · LFM Open License v1.0</span></h3>
+<p>Released Oct 27, 2026: text, vision, audio, omni and two decision models on one 1.7B backbone. The text model, LFM3-1.7B, fits in about 1 GB at 4-bit, has a 256K context, and needs 1.6 GB of KV cache for a full 128K context. Liquid says it beats Qwen3.5-9B on WebArena-Verified (38.42 vs 28.94) and AutomationBench (41.29 vs 15.10), and that bigger models still win on agentic coding and knowledge. Official GGUF and MLX builds are on Hugging Face, and Ollama has <code>ollama run lfm3</code> (Apple hardware only for now). The license is not Apache: commercial use is licensed only for organizations under $10 million in annual revenue.</p>
+<p class="why"><strong>Our take:</strong> a background helper that runs on almost any laptop, good for tool calls, routing and triage. Not your refactoring model. Covered in <a href="/issues/006/">issue #6</a>.</p>
+<p class="src"><a href="https://www.liquid.ai/blog/lfm3" rel="noopener">Liquid AI announcement</a> · <a href="https://huggingface.co/LiquidAI/LFM3-1.7B" rel="noopener">Hugging Face</a> · <a href="https://huggingface.co/LiquidAI/LFM3-1.7B/blob/main/LICENSE" rel="noopener">License</a> · <a href="https://ollama.com/library/lfm3" rel="noopener">Ollama model page</a></p></article>
+
+<article class="tool" id="nanbeige"><h3><a href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B" rel="noopener">Nanbeige4.3-33B</a> <span class="where">dense 33B · Apache 2.0 · 512K context</span></h3>
+<p>A dense coding-agent model. On its model card it scores 65.5 on DeepSWE vs 42.5 for Qwen3.8-27B, while Qwen edges it on SWE-Bench Pro (61.7 vs 60.3). The official weights are BF16, about 66 GB on Hugging Face, and the card's instructions cover Transformers, SGLang and vLLM rather than Ollama or llama.cpp. Community GGUF and MLX conversions exist on Hugging Face, but they don't come from Nanbeige. For agent and tool use, the card recommends <code>preserve_thinking=True</code> and <code>tool_call_format="xml"</code>.</p>
+<p class="why"><strong>Our take:</strong> a workstation model, not a laptop one. Worth it if you already have a big GPU and want a stronger local agent than the small models. Covered in <a href="/issues/004/">issue #4</a>.</p>
+<p class="src"><a href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B" rel="noopener">Model card</a></p></article>
+
+<h2 id="hardware">3. How much memory you need</h2>
+<p>A model has to fit in memory (VRAM on a graphics card, or unified memory on Apple silicon) with room left over for its context. The download size is a good first guess for the weights:</p>
+<ul class="check">
+<li><strong>About 1 GB:</strong> LFM3-1.7B at 4-bit, per Liquid AI. Runs on almost anything, including older laptops.</li>
+<li><strong>About 23 GB:</strong> Flint on Ollama. Plan on a 32 GB Mac or a GPU setup with similar memory.</li>
+<li><strong>About 66 GB:</strong> Nanbeige4.3-33B at full BF16. Quantized community builds are smaller, at some cost in quality.</li>
+<li><strong>Context costs memory too.</strong> Long contexts need extra room for the KV cache (1.6 GB for LFM3 at 128K). If a model is slow or crashes, lower the context before you blame the model.</li>
+<li><strong>Too big still runs, slowly.</strong> llama.cpp can split a model between GPU and CPU, but each layer that spills onto the CPU costs speed.</li>
+</ul>
+<p class="why"><strong>Our take:</strong> rough math for a 4-bit build is about half a gigabyte per billion parameters, plus context. That's our rule of thumb, not a vendor number, so check the actual file size before you download.</p>
+
+<h2 id="agents">4. Use a local model with a coding agent</h2>
+<p>Every tool above can run a local server that speaks an API your agent already knows. Point the agent's base URL at it and pick the local model:</p>
+<ul class="check">
+<li><strong>Ollama:</strong> <code>http://localhost:11434/v1</code> for OpenAI-style clients (the API key is "required but ignored"). Model pages list one-line launchers, for example <code>ollama launch claude --model flint</code> or <code>ollama launch opencode --model flint</code>.</li>
+<li><strong>LM Studio:</strong> <code>lms server start</code>, then use its OpenAI- or Anthropic-compatible endpoints.</li>
+<li><strong>llama.cpp:</strong> <code>llama serve -hf &lt;repo&gt;</code> for an OpenAI-compatible server.</li>
+<li><strong>MLX:</strong> <code>mlx_lm.server</code>.</li>
+</ul>
+<p>A local model takes your API bill out of the picture, but not the agent's risks: it still runs commands as you. Keep approvals and sandboxing on, as in our <a href="/guides/run-ai-coding-agents-safely/">guide to running coding agents safely</a>. Want an agent that's built around bring-your-own models? See the free and open source picks in <a href="/guides/which-ai-coding-agent/">Which AI coding agent should you use?</a></p>
+<p class="why"><strong>Our take:</strong> pair a local model with small, well-scoped tasks: write the test, explain the stack trace, rename across a file. Hand the multi-file refactors to a bigger model.</p>
+
+<h2 id="checklist">Quick-start checklist</h2>
+<ul class="check">
+<li>Check your free memory (RAM, or VRAM on a GPU) before picking a model.</li>
+<li>Install Ollama or LM Studio and run a small model first, like LFM3-1.7B, to make sure everything works.</li>
+<li>Move up to Flint if you have the memory and want a coding agent.</li>
+<li>Read the license on the model page before shipping it in a product. Apache 2.0 and the LFM Open License are not the same.</li>
+<li>Start the local server and point your agent at it.</li>
+<li>Keep the agent's approvals and sandbox on.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2><details><summary>What is the easiest way to run an AI model locally?</summary><p>Install Ollama or LM Studio. Ollama is a command line tool and local server: install it, then run a model with one command such as ollama run flint. LM Studio is a desktop app where you search for a model, download it and chat, and it can also serve the model to other apps. Both are free for local use as of Oct 28, 2026.</p></details><details><summary>Do I need a GPU to run AI models locally?</summary><p>Not always. llama.cpp runs on plain CPUs and splits work between CPU and GPU when a model does not fit in video memory, and Apple silicon Macs use shared memory for the GPU. The limit is usually memory: a model has to fit in RAM or VRAM, and it gets slow when it does not. Small models like LFM3-1.7B fit in about 1 GB at 4-bit; Flint is a 23 GB download on Ollama.</p></details><details><summary>Which small open models are worth trying for coding agents?</summary><p>From recent Hotfix Daily issues: Recursive Flint (40B mixture-of-experts, about 2.5B active, Apache 2.0) for local coding agents, Nanbeige4.3-33B (dense 33B, Apache 2.0, 512K context) if you have a big GPU, and Liquid AI LFM3-1.7B for tool calls and triage on almost any laptop. Their makers say bigger models still win on hard coding work.</p></details><details><summary>Is running a model locally really free?</summary><p>The software is: Ollama, llama.cpp and MLX are MIT-licensed, and LM Studio has a $0 plan for local models. You pay in hardware, power and time. Ollama and LM Studio also sell optional cloud plans (Ollama Pro $20 a month, LM Studio Bionic+ $20 a month) for models too big to run at home, but you do not need them to run models locally.</p></details><details><summary>Can I use a local model with Claude Code or other coding agents?</summary><p>Yes, through a local server. Ollama serves an OpenAI-compatible API at http://localhost:11434/v1 and its model pages list launch commands such as ollama launch claude --model flint. LM Studio offers OpenAI- and Anthropic-compatible endpoints from its local server, and llama.cpp has llama serve. Point the agent at that URL and pick the local model.</p></details>
+
+<p class="endprompt">Found this useful? Hotfix Daily covers new open models and tools every weekday. <a href="#subscribe-end">Get the updates free</a>, plus 13 Starter Prompts. Or <a href="https://x.com/intent/post?text=How%20to%20run%20AI%20models%20locally%3A%20Ollama%2C%20LM%20Studio%2C%20llama.cpp%20and%20MLX%20%28via%20%40hotfixdaily%29&amp;url=https%3A%2F%2Fhotfixdaily.com%2Fguides%2Frun-local-ai-models%2F" rel="noopener">share it on X</a>.</p>
+
+<h2>Related</h2><ul><li><a href="/guides/run-ai-coding-agents-safely/">How to run AI coding agents safely: folders, sandboxes, approvals and secrets</a></li><li><a href="/guides/which-ai-coding-agent/">Which AI coding agent should you use? Pick by budget and use case</a></li><li><a href="/guides/ai-coding-agents/">What are the best AI coding agents? Compared (October 2026)</a></li><li><a href="/guides/ai-deprecation-deadlines/">AI deprecation deadlines for builders: model and API shutdowns</a></li><li><a href="/guides/ai-agent-frameworks/">Which AI agent framework should you use? (October 2026)</a></li><li><a href="/issues/006/">Issue #6: Liquid AI's LFM3 small agent models</a></li></ul>
+
+<p class="muted small">How we write these: we read each tool's and model's official pages on the date shown and link the source for every version, price and command we name. Benchmark scores are the publisher's own. "Our take" lines are our opinion. Tools change often, so check the linked page before you rely on a detail. This guide has no affiliate links.</p>
+
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g2">Email address</label>
+<input id="email-g2" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+<ul class="footnav" aria-label="Footer"><li><a href="/issues/">Issues</a></li><li><a href="/guides/">Guides</a></li><li><a href="/sponsor/">Sponsor</a></li><li><a href="/about/">About</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/feed.xml">RSS</a></li><li><a href="https://x.com/hotfixdaily" rel="me noopener">X</a></li><li><a href="/privacy/">Privacy</a></li></ul>
+<p>© 2026 Hotfix Daily · The daily AI builder digest, free on weekdays · <a href="mailto:hello@hotfixdaily.com">hello@hotfixdaily.com</a></p>
+</div></footer>
+<script src="/assets/subscribe.js" defer></script>
+<script data-goatcounter="https://hotfixdaily.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
