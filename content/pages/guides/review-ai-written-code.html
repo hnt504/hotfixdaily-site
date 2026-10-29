@@ -1,0 +1,191 @@
+---
+title: 'How to review AI-written code: a checklist for agent PRs (October 2026)'
+description: 'A tool-neutral checklist for reviewing AI agent pull requests: scope, tests, dependencies, security and merge gates, with CI on a clean checkout as the gate.'
+og_type: article
+jsonld:
+- '{"@context":"https://schema.org","@type":"Article","headline":"How to review AI-written code: a checklist for agent PRs (October 2026)","description":"A tool-neutral checklist for reviewing AI agent pull requests: scope, tests, dependencies, security and merge gates, with CI on a clean checkout as the gate.","url":"https://hotfixdaily.com/guides/review-ai-written-code/","mainEntityOfPage":"https://hotfixdaily.com/guides/review-ai-written-code/","datePublished":"2026-10-29","dateModified":"2026-10-29","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"},"citation":[{"@type":"ScholarlyArticle","name":"Artificial Intelligence in the Firm: Bottlenecks in Software Production","author":[{"@type":"Person","name":"Fiona Chen"},{"@type":"Person","name":"James Stratton"}],"url":"https://fion.ac/jellyfish.pdf"}]}'
+- '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI-generated code take longer to review?","acceptedAnswer":{"@type":"Answer","text":"In one large study, yes. A Harvard working paper by Fiona Chen and James Stratton (current version Aug 4, 2026), covering 718 firms, found that after firms adopted AI coding agents the time from opening a pull request to merging it rose 49% (from a 7.03-day baseline), the share of PRs with changes requested nearly doubled, and comments per PR rose 35%. It is a working paper, not a peer-reviewed article."}},{"@type":"Question","name":"Is it enough that the agent says the tests pass?","acceptedAnswer":{"@type":"Answer","text":"No. The agent ran the tests in its own working copy, with your local files, caches and environment variables. CI runs them on a fresh checkout of what was actually committed, which catches files the agent forgot to add and tests that only pass on your machine. Make that CI check required before merging."}},{"@type":"Question","name":"What should I look at first in an AI agent pull request?","acceptedAnswer":{"@type":"Answer","text":"Start with the list of changed files (git diff --stat) and compare it with what you asked for. Then check whether any test files changed, whether new dependencies appeared, and whether agent or CI config files such as AGENTS.md, .github/workflows/ or package.json scripts were touched. Only then read the code line by line."}},{"@type":"Question","name":"Can an AI code reviewer replace a human reviewer?","acceptedAnswer":{"@type":"Answer","text":"Not on its own. In the Harvard study, the review bottleneck persisted after firms adopted AI code review tools, and human reviewers stayed central. An automated reviewer is useful as a first pass, but a person should still check intent, tests and anything touching security, money or data."}},{"@type":"Question","name":"How do I make GitHub enforce these checks?","acceptedAnswer":{"@type":"Answer","text":"Use a branch protection rule or ruleset on main: require a pull request with at least one approving review, require status checks to pass (your CI job), and optionally require branches to be up to date, dismiss stale approvals when new commits are pushed, require approval of the most recent push by someone other than the pusher, and require review from code owners."}}]}'
+- '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://hotfixdaily.com/guides/"},{"@type":"ListItem","position":3,"name":"How to review AI-written code","item":"https://hotfixdaily.com/guides/review-ai-written-code/"}]}'
+listing:
+  kind: guide
+  order: 36
+  home_title: How to review AI-written code (agent PR checklist)
+---
+<div class="wrap prose wide guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">How to review AI-written code</span></nav>
+
+<p class="kicker">Guide · Updated October 2026 · Last reviewed <time datetime="2026-10-29">October 29, 2026</time></p>
+<h1>How to review AI-written code: a checklist for agent PRs</h1>
+<p class="lede">Coding agents made writing code cheap. Checking it didn't get cheaper. A large Harvard study found that after firms adopted AI coding agents, pull requests took 49% longer to get through review, and reviewers asked for changes almost twice as often. This guide is a practical, tool-neutral checklist for reviewing a pull request an agent wrote: what to look at first, where agent code tends to go wrong, and how to set up your repo so CI on a clean checkout, not the agent's own terminal, decides what merges. Every study figure and GitHub setting below was checked on the primary source on October 29, 2026.</p>
+<nav class="toc" aria-label="On this page"><strong>On this page:</strong> <a href="#gap">The verification gap</a> · <a href="#gate">CI is the gate</a> · <a href="#first-pass">The 5-minute first pass</a> · <a href="#checklist">The full checklist</a> · <a href="#red-flags">Red flags</a> · <a href="#merge-rules">Merge rules on GitHub</a> · <a href="#cheaper">Make review cheaper</a> · <a href="#faq">FAQ</a></nav>
+
+<h2 id="gap">1. The verification gap, in numbers</h2>
+<p>The study is <a href="https://fion.ac/jellyfish.pdf" rel="noopener">"Artificial Intelligence in the Firm: Bottlenecks in Software Production"</a> by Fiona Chen and James Stratton of Harvard University (job market paper; first version January 7, 2026, current version August 4, 2026). It uses about 300 million work events (GitHub activity, Jira issues and Google Calendar events) from 718 firms, provided by the engineering analytics platform Jellyfish, and compares firms before and after they adopted AI coding assistants and agents.</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">After firms adopted AI coding agents</th><th scope="col">Change</th><th scope="col">Baseline</th></tr></thead><tbody>
+<tr><th scope="row">Lines of code</th><td>+30%</td><td>5,017 lines per worker-month</td></tr>
+<tr><th scope="row">Commits / pull requests</th><td>+20% / +23%</td><td>Not restated here</td></tr>
+<tr><th scope="row">Delivered output (Jira issues and epics resolved)</th><td>Small, not statistically significant. Rules out a rise above 12%</td><td>n/a</td></tr>
+<tr><th scope="row">Time from PR submitted to merged</th><td>+49% (+3.45 days)</td><td>7.03 days</td></tr>
+<tr><th scope="row">Share of PRs with changes requested</th><td>+12 points, "nearly doubling the rate"</td><td>13% of PRs</td></tr>
+<tr><th scope="row">Review comments per PR</th><td>+35% (+0.58)</td><td>1.66</td></tr>
+<tr><th scope="row">Share of workers doing code review</th><td>+14%</td><td>29% of workers</td></tr>
+</tbody></table></div>
+<p>The authors' reading: writing code is only one step, and "written code must be reviewed and tested before it can be deployed to production." When agents speed up the writing, review becomes the bottleneck. They also report that the bottleneck "persists following the adoption of AI code review tools" and that "human reviewers continue to play a central role." AI coding <em>assistants</em> (autocomplete and chat) showed no significant effect on review time. The jump showed up with agents.</p>
+<p class="why"><strong>Our take:</strong> this is a working paper, not a peer-reviewed article, and it measures firm-level averages, not your team. But it matches what solo builders feel: the agent finishes in two minutes and you spend twenty working out whether to trust it. The fix isn't to stop reviewing. It's to review in a set order, and to let machines check what machines can check.</p>
+<p class="src"><a href="https://fion.ac/jellyfish.pdf" rel="noopener">Chen &amp; Stratton, Harvard (PDF, current version Aug 4, 2026)</a> · figures from the introduction and section on code review</p>
+
+<h2 id="gate">2. Rule one: CI on a clean checkout is the gate</h2>
+<p>A Hotfix Daily reader corrected one of our early tips, and they were right: "proof of done" isn't the agent's terminal output. The agent ran its tests in its own working copy, with your local files, caches, environment variables and whatever it installed along the way. None of that ships.</p>
+<p>CI starts from a fresh checkout of the commit you're about to merge. That catches the file the agent created but never added, the test that only passes because your <code>.env</code> is there, the dependency installed globally but missing from the lockfile, and the step it quietly skipped. So:</p>
+<ul class="check">
+<li><strong>Treat "All tests pass" as a claim.</strong> Look for the green check on the PR, not the sentence in the chat.</li>
+<li><strong>Make the CI job required.</strong> On GitHub, once required status checks are on, "all required status checks must pass before collaborators can merge changes into the protected branch" (<a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches" rel="noopener">docs</a>).</li>
+<li><strong>Run the same commands CI runs.</strong> Use the clean-install command for your stack (for example <code>npm ci</code>, not <code>npm install</code>) so the lockfile is what gets tested.</li>
+<li><strong>If CI is red, the PR isn't done</strong>, however confident the summary sounds.</li>
+</ul>
+<p>Our <a href="/guides/run-ai-coding-agents-safely/#ci">safe-setup guide</a> has a minimal GitHub Actions workflow you can copy.</p>
+
+<section class="ctabox" aria-label="Subscribe" data-growth="1"><h2>Agents change every week. Your review habits shouldn't have to.</h2><p>Hotfix Daily gives you five things worth knowing in AI coding and agents, with sources, plus one practical fix. Free, weekdays, about 3 minutes.</p><p class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g1">Email address</label>
+<input id="email-g1" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Get the prompts free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+
+<h2 id="first-pass">3. The 5-minute first pass</h2>
+<p>Before reading a single line of logic, answer these. Most bad agent PRs fail here, and it costs you minutes, not an afternoon.</p>
+<ol>
+<li><strong>Does the PR say what it was asked to do?</strong> Put your original request next to the description. If the agent "also refactored" things you didn't ask for, send those back as a separate PR.</li>
+<li><strong>Which files changed?</strong> Run <code>git diff --stat main...HEAD</code> (or read the Files changed tab). Files outside the area you named are the first warning sign.</li>
+<li><strong>How big is it?</strong> If you can't review it in one sitting, ask the agent to split it. Big diffs are where things slip through.</li>
+<li><strong>Did any tests change?</strong> Check test files before the code. New tests are good. Edited or deleted tests need a reason.</li>
+<li><strong>Did config change?</strong> Look for <code>AGENTS.md</code>, <code>CLAUDE.md</code>, agent settings folders, <code>.mcp.json</code>, <code>.github/workflows/</code>, <code>package.json</code> scripts, lockfiles, Dockerfiles and <code>.gitignore</code>. These change how code runs or gets checked, so read every line.</li>
+<li><strong>Is CI green on this exact commit?</strong> If not, stop here.</li>
+</ol>
+
+<h2 id="checklist">4. The full checklist for agent PRs</h2>
+<p>Once the first pass is clean, go through these in order. They're tool-neutral: they work the same whether the PR came from a terminal agent, an IDE agent or a cloud agent.</p>
+
+<h3 id="scope">Scope and intent</h3>
+<ul class="check">
+<li>The change solves the problem you described, not a nearby easier one.</li>
+<li>No unrelated renames, reformatting or "cleanup" that bloats the diff.</li>
+<li>Nothing was deleted to make an error go away (a removed check, a commented-out block, a catch that swallows errors).</li>
+<li>Any TODOs or placeholder values the agent left are listed in the PR, not hidden in the code.</li>
+</ul>
+
+<h3 id="tests">Tests</h3>
+<ul class="check">
+<li>There is at least one test that fails without the change and passes with it. Ask the agent to show it failing first if you're unsure.</li>
+<li>No tests were skipped, deleted or marked as expected failures without a written reason.</li>
+<li>Assertions weren't loosened to fit the new output (a strict equality turned into "is not null", a number range widened, snapshots regenerated wholesale).</li>
+<li>Mocks don't replace the very thing under test. A test that mocks the function it claims to test proves nothing.</li>
+<li>Edge cases are covered: empty input, missing fields, very large values, time zones, errors from the network or database.</li>
+</ul>
+
+<h3 id="correctness">Correctness and "does this exist?"</h3>
+<ul class="check">
+<li>Every function, method, flag and config key the code calls actually exists in the version you use. Agents sometimes write plausible calls to APIs that were renamed, deprecated or never existed. Check unfamiliar ones in the library's docs.</li>
+<li>Error handling does something useful. Watch for empty catch blocks, errors logged and then ignored, and retries with no limit.</li>
+<li>The code doesn't duplicate a helper that already exists elsewhere in your repo.</li>
+<li>Run it yourself once: click through the feature or call the endpoint. Reading isn't the same as using.</li>
+</ul>
+
+<h3 id="deps">Dependencies</h3>
+<ul class="check">
+<li>Every new package is one you meant to add. Search an unfamiliar name before you trust it: check that it's the real, maintained package and not a look-alike.</li>
+<li>The lockfile changed only as much as the manifest change explains. A one-line manifest change that rewrites hundreds of lockfile lines deserves a look.</li>
+<li>On GitHub, dependency review shows "which dependencies were added, removed, or updated" and "vulnerability data for these dependencies" in the PR's Files changed tab (<a href="https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review" rel="noopener">docs</a>).</li>
+</ul>
+
+<h3 id="security">Security and data</h3>
+<ul class="check">
+<li>No secrets, tokens or real customer data in code, tests, fixtures or logs. GitHub's push protection "blocks pushes that contain secrets before they reach your repository" (<a href="https://docs.github.com/en/code-security/concepts/secret-security/about-push-protection" rel="noopener">docs</a>), but don't rely on it alone.</li>
+<li>Every new route, endpoint or database query checks who the user is and what they're allowed to see. Missing permission checks are easy to miss because the code still "works".</li>
+<li>User input is validated, and queries use parameters, not strings glued together.</li>
+<li>Nothing widened permissions: CORS set to allow everything, a database rule opened up, a workflow given write tokens it didn't need.</li>
+</ul>
+
+<h3 id="ops">Before you merge</h3>
+<ul class="check">
+<li>Database migrations can run on real data and can be rolled back.</li>
+<li>New settings or environment variables are documented, with safe defaults.</li>
+<li>The PR description says how it was verified: which tests, which manual check, and the CI run.</li>
+<li>CI is green on the latest commit, after the last push, not an earlier one.</li>
+</ul>
+
+<h2 id="red-flags">5. Red flags in agent-written PRs</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">You see</th><th scope="col">What to check</th></tr></thead><tbody>
+<tr><th scope="row">"Fixed the failing test"</th><td>Did it fix the code, or change the test? Read the test diff first.</td></tr>
+<tr><th scope="row">"All tests pass" but no CI run</th><td>Push it and wait for CI on a clean checkout. The agent's terminal isn't proof.</td></tr>
+<tr><th scope="row">A new package you don't recognize</th><td>Is it real, maintained and the one you meant? Was it needed at all?</td></tr>
+<tr><th scope="row">Changes to workflow, agent or build config</th><td>Read every line. These files decide what gets checked and what runs.</td></tr>
+<tr><th scope="row">A very large diff for a small ask</th><td>Ask for a smaller PR limited to the request.</td></tr>
+<tr><th scope="row">try/catch added around the failing line</th><td>Is the error handled, or just hidden?</td></tr>
+<tr><th scope="row">A call to a function you've never seen</th><td>Check it exists in your library version.</td></tr>
+<tr><th scope="row">Hard-coded values in place of config</th><td>Test-only shortcuts that will break in production.</td></tr>
+</tbody></table></div>
+
+<h2 id="merge-rules">6. Make the repo enforce it (GitHub)</h2>
+<p>Checklists slip when you're tired. Branch protection doesn't. GitHub's <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches" rel="noopener">protected branches</a> page lists the settings that matter for agent PRs. On <code>main</code>:</p>
+<ul class="check">
+<li><strong>Require status checks before merging.</strong> Pick your CI job. With "Require branches to be up to date before merging" (the strict setting), the branch must include the latest <code>main</code> before it can merge.</li>
+<li><strong>Require pull request reviews before merging</strong>, with at least one approving review.</li>
+<li><strong>Dismiss stale pull request approvals when commits are pushed</strong>, so an approval doesn't carry over to code the agent changed afterwards.</li>
+<li><strong>Require approval of the most recent reviewable push</strong> by "someone other than the person who pushed it". Useful when an agent pushes under your account.</li>
+<li><strong>Require review from Code Owners</strong> for sensitive paths. Code owners "are automatically requested for review when someone opens a pull request that modifies code that they own" (<a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners" rel="noopener">docs</a>). Put <code>.github/workflows/</code>, auth code and migrations behind it.</li>
+<li><strong>Require conversation resolution before merging</strong>, so review comments can't be left hanging.</li>
+</ul>
+<p class="why"><strong>Our take:</strong> if you work alone, required status checks are the one to turn on today. Required reviews matter once a second person, or a second agent, can open PRs.</p>
+<p class="src"><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches" rel="noopener">About protected branches</a> · <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners" rel="noopener">About code owners</a> · checked Oct 29, 2026</p>
+
+<h2 id="cheaper">7. Make review cheaper before the PR exists</h2>
+<p>The study's point is that review is now the slow part. You can shrink it at the start:</p>
+<ul class="check">
+<li><strong>Ask for a plan first.</strong> Agree on the files and approach before the agent writes code. Rejecting a plan is cheaper than rejecting a diff.</li>
+<li><strong>One task per PR.</strong> Small, single-purpose PRs are faster to review and easier to roll back.</li>
+<li><strong>Ask for the test first.</strong> Have the agent write a failing test for the bug or feature, then the fix.</li>
+<li><strong>Put your rules in the repo.</strong> An <code>AGENTS.md</code> (or your agent's equivalent) with "don't edit tests to make them pass", "no new dependencies without asking" and "run the full test command before saying done" saves the same review comment every time.</li>
+<li><strong>Ask for a verification note.</strong> Have the agent end every PR description with what it changed, what it ran, and what it didn't check.</li>
+</ul>
+<p>A prompt you can paste at the end of any agent task:</p>
+<pre><code>Before you say you're done:
+1. List every file you changed and why.
+2. List any test you added, edited, skipped or deleted, and why.
+3. List any new dependency and why it's needed.
+4. Paste the exact test command you ran and its output.
+5. Tell me what you did NOT verify.
+Then open a pull request and wait for CI.</code></pre>
+
+<h2 id="quick-list">The printable version</h2>
+<ul class="check">
+<li>CI green on the latest commit, from a clean checkout.</li>
+<li>Diff matches the request. Nothing extra.</li>
+<li>Test diffs read first. No weakened or deleted tests.</li>
+<li>Config, workflow and agent files read line by line.</li>
+<li>New dependencies checked by name.</li>
+<li>Unfamiliar APIs checked against the docs.</li>
+<li>Auth, input validation and secrets checked on every new path.</li>
+<li>Ran the feature once yourself.</li>
+<li>Branch protection: required checks, fresh approvals.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2><details><summary>Does AI-generated code take longer to review?</summary><p>In one large study, yes. A Harvard working paper by Fiona Chen and James Stratton (current version Aug 4, 2026), covering 718 firms, found that after firms adopted AI coding agents the time from opening a pull request to merging it rose 49% (from a 7.03-day baseline), the share of PRs with changes requested nearly doubled, and comments per PR rose 35%. It is a working paper, not a peer-reviewed article.</p></details><details><summary>Is it enough that the agent says the tests pass?</summary><p>No. The agent ran the tests in its own working copy, with your local files, caches and environment variables. CI runs them on a fresh checkout of what was actually committed, which catches files the agent forgot to add and tests that only pass on your machine. Make that CI check required before merging.</p></details><details><summary>What should I look at first in an AI agent pull request?</summary><p>Start with the list of changed files (git diff --stat) and compare it with what you asked for. Then check whether any test files changed, whether new dependencies appeared, and whether agent or CI config files such as AGENTS.md, .github/workflows/ or package.json scripts were touched. Only then read the code line by line.</p></details><details><summary>Can an AI code reviewer replace a human reviewer?</summary><p>Not on its own. In the Harvard study, the review bottleneck persisted after firms adopted AI code review tools, and human reviewers stayed central. An automated reviewer is useful as a first pass, but a person should still check intent, tests and anything touching security, money or data.</p></details><details><summary>How do I make GitHub enforce these checks?</summary><p>Use a branch protection rule or ruleset on main: require a pull request with at least one approving review, require status checks to pass (your CI job), and optionally require branches to be up to date, dismiss stale approvals when new commits are pushed, require approval of the most recent push by someone other than the pusher, and require review from code owners.</p></details>
+
+<p class="endprompt">Found this useful? Hotfix Daily covers AI coding agents and the habits that keep them honest every weekday. <a href="#subscribe-end">Get the updates free</a>, plus 13 Starter Prompts. Or <a href="https://x.com/intent/post?text=How%20to%20review%20AI-written%20code%3A%20a%20checklist%20for%20agent%20PRs%20%28via%20%40hotfixdaily%29&amp;url=https%3A%2F%2Fhotfixdaily.com%2Fguides%2Freview-ai-written-code%2F" rel="noopener">share it on X</a>.</p>
+
+<h2>Related</h2><ul><li><a href="/guides/run-ai-coding-agents-safely/">How to run AI coding agents safely: folders, sandboxes, approvals and secrets</a></li><li><a href="/guides/ai-coding-agents/">What are the best AI coding agents? Compared (October 2026)</a></li><li><a href="/guides/which-ai-coding-agent/">Which AI coding agent should you use? A pick-by-budget guide (October 2026)</a></li><li><a href="/guides/vibe-coding-workflow/">How to vibe code an app from idea to launch: the workflow (Oct 2026)</a></li><li><a href="/guides/run-local-ai-models/">How to run AI models locally: Ollama, LM Studio, llama.cpp and MLX</a></li><li><a href="/guides/ai-deprecation-deadlines/">AI deprecation deadlines for builders: model and API shutdowns</a></li><li><a href="/issues/">Daily issues archive</a></li></ul>
+
+<p class="muted small">How we write these: we read the primary source on the date shown and link it for every figure and setting we name. Study figures come from the authors' own PDF. "Our take" lines are our opinion. This guide is tool-neutral and has no affiliate links or sponsors.</p>
+
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g2">Email address</label>
+<input id="email-g2" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+</div>
