@@ -6,10 +6,49 @@
 <link rel="self" type="application/atom+xml" href="https://hotfixdaily.com/feed.xml"/>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/"/>
 <id>https://hotfixdaily.com/</id>
-<updated>2026-10-28T11:00:00Z</updated>
+<updated>2026-10-29T11:00:00Z</updated>
 <author><name>Hotfix Daily</name><email>hello@hotfixdaily.com</email><uri>https://hotfixdaily.com/</uri></author>
 <icon>https://hotfixdaily.com/favicon.ico</icon>
 <logo>https://hotfixdaily.com/assets/icon-512.png</logo>
+<entry>
+<title>Hotfix Daily #7: Copilot Fusion, Clover-35B, Particle-1, Valve on AI games and Code2Video</title>
+<link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/007/"/>
+<id>https://hotfixdaily.com/issues/007/</id>
+<published>2026-10-29T11:00:00Z</published>
+<updated>2026-10-29T11:00:00Z</updated>
+<summary>Hotfix Daily #7: GitHub&#x27;s Copilot Fusion picks and combines models for you, DiffuSpace&#x27;s Clover-35B brings open diffusion LLMs to agent work, Particle-1 cuts coding-agent tokens, Valve won&#x27;t ban AI games on Steam, and SenseNova&#x27;s Code2Video makes videos as code.</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;DEVTOOLS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; GitHub&#x27;s Copilot Fusion picks your models for you&lt;/h2&gt;
+&lt;p&gt;Now generally available, Fusion swaps the model picker for an effort level (Standard, High or Max) and routes each task to one model or chains several, such as one drafting and another reviewing. GitHub says Fusion Max scored 60 on the Artificial Analysis Coding Agent Index, within two points of Claude Code with Opus 5.5 Max, at about half the cost per task.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; You&#x27;re still billed per model used, but paid plans get 30% off Fusion through November 30.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; Clover-35B: an open diffusion language model built for agent work&lt;/h2&gt;
+&lt;p&gt;DiffuSpace&#x27;s first model fills in blocks of tokens in parallel instead of one at a time. It has 35B parameters with about 3B active, a 128K context and Apache 2.0 weights. The team reports 73.6 on SWE-bench Verified and 680 tokens per second on a single GB300.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Diffusion models trade some familiarity for raw speed, which matters most in long agent loops. The BF16 weights are about 69 GB.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;CODING&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; Particle-1 trims the token bill on coding agents&lt;/h2&gt;
+&lt;p&gt;Suhail Doshi&#x27;s new company post-trained DeepSeek V4.1 Flash to finish tasks with less reasoning and fewer retries. Across four coding and data-engineering benchmarks, Particle reports 28% to 52% fewer output tokens and pass rates within the base model&#x27;s confidence intervals. It costs $0.25/$1 per million input/output tokens.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Same per-token price as the base model, fewer tokens per task. Run it against your own agent evals before you trust the averages.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://particle.ai/blog/introducing-particle-1&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; Valve says Steam won&#x27;t gatekeep games made with AI&lt;/h2&gt;
+&lt;p&gt;At Steam Indie Connect in Korea, Valve&#x27;s Steam business team said Next Fest shows demos at random for the first two days to give everyone exposure, then switches to personal recommendations. &quot;We recognize that the trade-off is some low-quality games get exposed,&quot; Marc Wilkinson said.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; AI disclosure rules stay, but no ban is coming. Valve&#x27;s advice for standing out from clones is regular updates and a community around your game.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.videogameschronicle.com/news/valve-has-a-significant-number-working-on-steams-visibility-dilemma-but-says-it-wont-gatekeep-games-made-with-ai/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Repo of the day: SenseNova 6.8 Code2Video&lt;/h2&gt;
+&lt;p&gt;SenseTime&#x27;s open 27B model (fine-tuned from Qwen3.8-27B, 512K context) makes short motion-design videos by writing and rendering code, then reviewing its own frames. The repo ships a &lt;code&gt;code-video&lt;/code&gt; skill, prompt templates and full production trajectories under Apache 2.0.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Code-based video stays editable, so you can change one scene without regenerating the whole thing.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/OpenSenseNova/SenseNova-6.8-Code2Video&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
+&lt;p&gt;Pointing Claude Code at a non-Anthropic model with a bigger context window? Set &lt;code&gt;CLAUDE_CODE_MAX_CONTEXT_TOKENS&lt;/code&gt; to the real limit. SenseNova&#x27;s model card notes Claude Code otherwise treats an unknown model as a 200K model.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://huggingface.co/sensenova/SenseNova-6.8-Code2Video&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+</entry>
 <entry>
 <title>Hotfix Daily #6: Liquid&#x27;s LFM3, Genie 4, Entire&#x27;s Trails, Judgment Labs and Ling 3.1 Flash</title>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/006/"/>
