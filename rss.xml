@@ -7,7 +7,45 @@
 <description>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</description>
 <language>en-us</language>
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Thu, 29 Oct 2026 11:00:00 +0000</lastBuildDate>
+<lastBuildDate>Fri, 30 Oct 2026 11:00:00 +0000</lastBuildDate>
+<item>
+<title>Hotfix Daily #8: Mistral Large 4 open weights, Jules winds down, OpenCode /goal, Roblox AI games and Pika H3 Flex</title>
+<link>https://hotfixdaily.com/issues/008/</link>
+<guid isPermaLink="true">https://hotfixdaily.com/issues/008/</guid>
+<pubDate>Fri, 30 Oct 2026 11:00:00 +0000</pubDate>
+<description>Hotfix Daily #8: Mistral releases open weights for its 1T-parameter Large 4, Google winds down Jules for Antigravity, OpenCode adds /goal, Roblox says 80% of its top 100 games used AI, and Pika opens H3 Flex video weights.</description>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Mistral releases open weights for Large 4, "Le Chonk"</h2>
+<p>Mistral's flagship is now downloadable: about 1T parameters with 49B active per token, a 1M-token context and text plus image input. Mistral says it scores 48% on the Artificial Analysis Coding Agent Index, effectively tied with GLM-5.3 while using 47% fewer tokens per task. The API price is $0.70/$2.10 per million input/output tokens.</p>
+<p class="why"><strong>Why builders care:</strong> The license is a modified MIT that's free for commercial use, but running it as a model-as-a-service business needs a separate deal with Mistral.</p>
+<p class="src"><a href="https://mistral.ai/news/mistral-large-4-oss/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">2</span> Google is winding down Jules</h2>
+<p>Google's asynchronous coding agent shuts down on December 31. You can keep finishing sessions until November 11, then Jules goes read-only. Google says what it learned is shaping Antigravity, its agent-first platform.</p>
+<p class="why"><strong>Why builders care:</strong> Your code and PRs already live in GitHub, but memories, setup scripts, scheduled tasks and session history live in Jules. Export them now.</p>
+<p class="src"><a href="https://jules.google/docs/changelog/2026-10-29/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">3</span> OpenCode adds /goal for long-running sessions</h2>
+<p>Version 2.2.1 lets you run <code>/goal &lt;objective&gt;</code> in the TUI or Desktop app, and the session keeps working until a reviewer confirms the objective is met. You can pause, resume or clear it, and the release also adds opt-in scheduled prompts and an experimental image tool.</p>
+<p class="why"><strong>Why builders care:</strong> Write the objective like a test you could check, because that's what the reviewer judges "done" against.</p>
+<p class="src"><a href="https://github.com/anomalyco/opencode/releases/tag/v2.2.1" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">4</span> Roblox says 80% of its top 100 games used AI tools</h2>
+<p>In its Q3 shareholder letter, Roblox says more than 80% of its top 100 games by hours engaged used AI to speed up creation over the past month. Two games built almost entirely with AI, Break and Steal an Egg and Huss Valley, reached the top 20 by concurrent players, and daily users of its MCP server grew nearly 5x since Q2.</p>
+<p class="why"><strong>Why builders care:</strong> You can already connect your own model to Roblox through its MCP server. Build, its prompt-to-game tool, is heading to the US.</p>
+<p class="src"><a href="https://www.sec.gov/Archives/edgar/data/1315098/000162828026068235/ex991-q32026earningsshar.htm" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Repo of the day: Pika H3 Flex</h2>
+<p>Pika post-trained MiniMax H3 to generate video in six steps instead of 50 and released the adapters and inference code. Locally it covers text-to-video, first- and last-frame generation and reference-to-video, with synced audio at 480p and 768p.</p>
+<p class="why"><strong>Why builders care:</strong> Upscaling to 4K and the five separate audio stems stay on Pika's hosted API, so plan around 768p if you self-host.</p>
+<p class="src"><a href="https://github.com/Pika-Labs/Pika-H3-Flex" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Deploying to Vercel with an agent? When it hits a confusing error, it can report it with <code>vercel feedback "message" -f task="..." -f expected="..." -f actual="..." -f type=bug</code>. No login or linked project needed, and leave secrets out of the message.</p>
+<p class="src"><a href="https://vercel.com/docs/cli/feedback" rel="noopener">Source</a></p>
+</aside>
+]]></content:encoded>
+</item>
 <item>
 <title>Hotfix Daily #7: Copilot Fusion, Clover-35B, Particle-1, Valve on AI games and Code2Video</title>
 <link>https://hotfixdaily.com/issues/007/</link>
