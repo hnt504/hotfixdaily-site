@@ -9,11 +9,11 @@
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
 <lastBuildDate>Mon, 02 Nov 2026 11:00:00 +0000</lastBuildDate>
 <item>
-<title>Hotfix Daily #9: GDPx, Agent Desktop, ChatGPT-Codex limits, Aura Autopilot and dsh-superagent</title>
+<title>Hotfix Daily #9: GDPx benchmark, Vercel Agent Desktop and more</title>
 <link>https://hotfixdaily.com/issues/009/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/009/</guid>
 <pubDate>Mon, 02 Nov 2026 11:00:00 +0000</pubDate>
-<description>Hotfix Daily #9: a new benchmark where the best model scores 12%, Vercel Labs&#x27; desktop agent CLI, shared ChatGPT and Codex limits, an open-source game tester and DeepSeek&#x27;s super-agent.</description>
+<description>A benchmark where the best model scores 12%, Vercel Labs&#x27; desktop agent CLI, shared ChatGPT and Codex limits, a game tester and DeepSeek&#x27;s super-agent.</description>
 <content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> SemiAnalysis launches GDPx, and the top model scores 12%</h2>
 <p>GDPx is a 206-task agentic benchmark across 11 domains, from chip design and cyber to finance and legal, with each task in a realistic environment. Claude Opus 5.5 leads at 12.0, ahead of Gemini 4 Carbon at 10.9 and GPT-6 Astra at 9.6. Every model scored zero on finance and legal under binary grading.</p>
@@ -47,11 +47,11 @@
 ]]></content:encoded>
 </item>
 <item>
-<title>Hotfix Daily #8: Mistral Large 4 open weights, Jules winds down, OpenCode /goal, Roblox AI games and Pika H3 Flex</title>
+<title>Hotfix Daily #8: Mistral Large 4 open weights, Jules winds down</title>
 <link>https://hotfixdaily.com/issues/008/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/008/</guid>
 <pubDate>Fri, 30 Oct 2026 11:00:00 +0000</pubDate>
-<description>Hotfix Daily #8: Mistral releases open weights for its 1T-parameter Large 4, Google winds down Jules for Antigravity, OpenCode adds /goal, Roblox says 80% of its top 100 games used AI, and Pika opens H3 Flex video weights.</description>
+<description>Mistral opens weights for its 1T-parameter Large 4, Google winds down Jules, OpenCode adds /goal, Roblox&#x27;s top games use AI, and Pika H3 Flex.</description>
 <content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Mistral releases open weights for Large 4, "Le Chonk"</h2>
 <p>Mistral's flagship is now downloadable: about 1T parameters with 49B active per token, a 1M-token context and text plus image input. Mistral says it scores 48% on the Artificial Analysis Coding Agent Index, effectively tied with GLM-5.3 while using 47% fewer tokens per task. The API price is $0.70/$2.10 per million input/output tokens.</p>
@@ -85,11 +85,11 @@
 ]]></content:encoded>
 </item>
 <item>
-<title>Hotfix Daily #7: Copilot Fusion, Clover-35B, Particle-1, Valve on AI games and Code2Video</title>
+<title>Hotfix Daily #7: Copilot Fusion, Clover-35B, Particle-1 and more</title>
 <link>https://hotfixdaily.com/issues/007/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/007/</guid>
 <pubDate>Thu, 29 Oct 2026 11:00:00 +0000</pubDate>
-<description>Hotfix Daily #7: GitHub&#x27;s Copilot Fusion picks and combines models for you, DiffuSpace&#x27;s Clover-35B brings open diffusion LLMs to agent work, Particle-1 cuts coding-agent tokens, Valve won&#x27;t ban AI games on Steam, and SenseNova&#x27;s Code2Video makes videos as code.</description>
+<description>GitHub&#x27;s Copilot Fusion picks models for you, Clover-35B brings open diffusion LLMs to agents, Particle-1 cuts agent tokens, and Valve on AI games.</description>
 <content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">DEVTOOLS</span></p><h2><span class="n">1</span> GitHub's Copilot Fusion picks your models for you</h2>
 <p>Now generally available, Fusion swaps the model picker for an effort level (Standard, High or Max) and routes each task to one model or chains several, such as one drafting and another reviewing. GitHub says Fusion Max scored 60 on the Artificial Analysis Coding Agent Index, within two points of Claude Code with Opus 5.5 Max, at about half the cost per task.</p>
@@ -123,11 +123,11 @@
 ]]></content:encoded>
 </item>
 <item>
-<title>Hotfix Daily #6: Liquid&#x27;s LFM3, Genie 4, Entire&#x27;s Trails, Judgment Labs and Ling 3.1 Flash</title>
+<title>Hotfix Daily #6: Liquid LFM3, Genie 4, Entire&#x27;s Trails and more</title>
 <link>https://hotfixdaily.com/issues/006/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/006/</guid>
 <pubDate>Wed, 28 Oct 2026 11:00:00 +0000</pubDate>
-<description>Hotfix Daily #6: Liquid AI&#x27;s LFM3 puts 2B-class agent models on-device, DeepMind&#x27;s Genie 4 adds audio to world simulation, ex-GitHub CEO&#x27;s Entire swaps pull requests for Trails, Judgment Labs opens agent monitoring, and Ling-3.1-flash-1019 ships MIT weights.</description>
+<description>Liquid&#x27;s LFM3 puts agent models on-device, Genie 4 adds audio to world sims, Entire swaps pull requests for Trails, and Ling 3.1 Flash ships MIT weights.</description>
 <content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Liquid AI's LFM3 brings small agent models to your device</h2>
 <p>Six open-weight models around 2B parameters (text, vision, audio, omni and two decision models) share one 1.7B backbone. The text model has a 256K context window, fits in about 1 GB at 4-bit, and Liquid says it beats Qwen3.5-9B on WebArena-Verified and AutomationBench. Every model can be fine-tuned on a single GPU.</p>
@@ -161,11 +161,11 @@
 ]]></content:encoded>
 </item>
 <item>
-<title>Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor&#x27;s Agent SDK, Uchikoshi on AI and tstack</title>
+<title>Hotfix Daily #5: GPT-6.1 Terra, Cursor Agent SDK, Fern and more</title>
 <link>https://hotfixdaily.com/issues/005/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/005/</guid>
 <pubDate>Tue, 27 Oct 2026 11:00:00 +0000</pubDate>
-<description>Hotfix Daily #5: OpenAI&#x27;s GPT-6.1 Terra halves API prices, Mirendil&#x27;s Fern holds 10M tokens, Cursor&#x27;s Agent SDK turns agents into code, Kotaro Uchikoshi on AI after a canceled game, and Theo&#x27;s tstack skills.</description>
+<description>GPT-6.1 Terra halves API prices, Mirendil&#x27;s Fern holds 10M tokens, Cursor&#x27;s Agent SDK turns agents into code, and Theo&#x27;s tstack skills.</description>
 <content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> OpenAI ships GPT-6.1 Terra at half the price</h2>
 <p>The new middle model targets computer use, visual reasoning and writing. API prices are $1 per million input tokens and $5 per million output, 50% below GPT-5.6 Terra and GPT-6.1 Sol. At max effort it solves 50.3% of Terminal-Bench 4.0, up from 21.5% for GPT-5.6 Terra.</p>
@@ -199,11 +199,11 @@
 ]]></content:encoded>
 </item>
 <item>
-<title>Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam&#x27;s AI label fight and more</title>
+<title>Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3, Pomerado and more</title>
 <link>https://hotfixdaily.com/issues/004/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/004/</guid>
 <pubDate>Mon, 26 Oct 2026 11:00:00 +0000</pubDate>
-<description>Hotfix Daily #4: Moonshot&#x27;s Kimi K3.1 Pro nears Claude Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes open under Apache 2.0, Pomerado turns websites into MCP tools, Tim Sweeney vs Steam&#x27;s AI label, and Anthropic&#x27;s kit for folding subagents.</description>
+<description>Kimi K3.1 Pro nears Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes Apache 2.0, Pomerado turns sites into MCP tools, and Steam&#x27;s AI label fight.</description>
 <content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Moonshot ships Kimi K3.1 Pro, with open weights due by Nov 4</h2>
 <p>It's a 2.8T-parameter mixture-of-experts model (104B active) with a 1M-token context window. On Terminal-Bench 4.0 it scores 65.7%, just behind Claude Opus 5.5 at 66.4% and ahead of GPT-6 Astra at 58.2%.</p>
@@ -237,11 +237,11 @@
 ]]></content:encoded>
 </item>
 <item>
-<title>Hotfix Daily #3: Agent Skills goes neutral, Canva Craft, Coding Agent Index v2.0 and more</title>
+<title>Hotfix Daily #3: Agent Skills goes neutral, Canva Craft and more</title>
 <link>https://hotfixdaily.com/issues/003/</link>
 <guid isPermaLink="true">https://hotfixdaily.com/issues/003/</guid>
 <pubDate>Fri, 23 Oct 2026 11:00:00 +0000</pubDate>
-<description>Hotfix Daily #3: Anthropic donates Agent Skills to the Agentic AI Foundation, Canva&#x27;s Craft image model hits the API, Coding Agent Index v2.0, Epic&#x27;s AI MegaJam, and Base Labs&#x27; decision models.</description>
+<description>Anthropic donates Agent Skills to the Agentic AI Foundation, Canva&#x27;s Craft model hits the API, Coding Agent Index v2.0 and Epic&#x27;s AI MegaJam.</description>
 <content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
 <article class="item" id="i1"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">1</span> Anthropic hands Agent Skills to the Agentic AI Foundation</h2>
 <p>The SKILL.md folder format now lives at the Linux Foundation's AAIF, next to MCP and AGENTS.md, with maintainers from Anthropic, Google, OpenAI and others. Anthropic says more than 70 agent platforms support it, with 1 million skills published and nearly 280 million installs. The proposed roadmap covers versioned releases, a formal proposal process and security guidance.</p>
