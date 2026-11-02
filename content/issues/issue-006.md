@@ -1,6 +1,6 @@
 # Hotfix Daily: The Daily AI Builder Digest
-<!-- title: Hotfix Daily #6: Liquid's LFM3, Genie 4, Entire's Trails, Judgment Labs and Ling 3.1 Flash -->
-<!-- description: Hotfix Daily #6: Liquid AI's LFM3 puts 2B-class agent models on-device, DeepMind's Genie 4 adds audio to world simulation, ex-GitHub CEO's Entire swaps pull requests for Trails, Judgment Labs opens agent monitoring, and Ling-3.1-flash-1019 ships MIT weights. -->
+<!-- title: Hotfix Daily #6: Liquid LFM3, Genie 4, Entire's Trails and more -->
+<!-- description: Liquid's LFM3 puts agent models on-device, Genie 4 adds audio to world sims, Entire swaps pull requests for Trails, and Ling 3.1 Flash ships MIT weights. -->
 **Issue #6 · Wednesday, Oct 28, 2026**
 
 Five things from the last few days worth your attention if you build with AI. No fluff.

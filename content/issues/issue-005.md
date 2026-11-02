@@ -1,6 +1,6 @@
 # Hotfix Daily: The Daily AI Builder Digest
-<!-- title: Hotfix Daily #5: GPT-6.1 Terra, Mirendil Fern, Cursor's Agent SDK, Uchikoshi on AI and tstack -->
-<!-- description: Hotfix Daily #5: OpenAI's GPT-6.1 Terra halves API prices, Mirendil's Fern holds 10M tokens, Cursor's Agent SDK turns agents into code, Kotaro Uchikoshi on AI after a canceled game, and Theo's tstack skills. -->
+<!-- title: Hotfix Daily #5: GPT-6.1 Terra, Cursor Agent SDK, Fern and more -->
+<!-- description: GPT-6.1 Terra halves API prices, Mirendil's Fern holds 10M tokens, Cursor's Agent SDK turns agents into code, and Theo's tstack skills. -->
 **Issue #5 · Tuesday, Oct 27, 2026**
 
 Five things from the last few days worth your attention if you build with AI. No fluff.

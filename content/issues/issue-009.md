@@ -1,6 +1,6 @@
 # Hotfix Daily: The Daily AI Builder Digest
-<!-- title: Hotfix Daily #9: GDPx, Agent Desktop, ChatGPT-Codex limits, Aura Autopilot and dsh-superagent -->
-<!-- description: Hotfix Daily #9: a new benchmark where the best model scores 12%, Vercel Labs' desktop agent CLI, shared ChatGPT and Codex limits, an open-source game tester and DeepSeek's super-agent. -->
+<!-- title: Hotfix Daily #9: GDPx benchmark, Vercel Agent Desktop and more -->
+<!-- description: A benchmark where the best model scores 12%, Vercel Labs' desktop agent CLI, shared ChatGPT and Codex limits, a game tester and DeepSeek's super-agent. -->
 **Issue #9 · Monday, Nov 2, 2026**
 
 Five things from the weekend worth your attention if you build with AI. No fluff.

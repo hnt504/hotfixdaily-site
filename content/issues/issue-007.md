@@ -1,6 +1,6 @@
 # Hotfix Daily: The Daily AI Builder Digest
-<!-- title: Hotfix Daily #7: Copilot Fusion, Clover-35B, Particle-1, Valve on AI games and Code2Video -->
-<!-- description: Hotfix Daily #7: GitHub's Copilot Fusion picks and combines models for you, DiffuSpace's Clover-35B brings open diffusion LLMs to agent work, Particle-1 cuts coding-agent tokens, Valve won't ban AI games on Steam, and SenseNova's Code2Video makes videos as code. -->
+<!-- title: Hotfix Daily #7: Copilot Fusion, Clover-35B, Particle-1 and more -->
+<!-- description: GitHub's Copilot Fusion picks models for you, Clover-35B brings open diffusion LLMs to agents, Particle-1 cuts agent tokens, and Valve on AI games. -->
 **Issue #7 · Thursday, Oct 29, 2026**
 
 Five things from the last few days worth your attention if you build with AI. No fluff.

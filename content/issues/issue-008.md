@@ -1,6 +1,6 @@
 # Hotfix Daily: The Daily AI Builder Digest
-<!-- title: Hotfix Daily #8: Mistral Large 4 open weights, Jules winds down, OpenCode /goal, Roblox AI games and Pika H3 Flex -->
-<!-- description: Hotfix Daily #8: Mistral releases open weights for its 1T-parameter Large 4, Google winds down Jules for Antigravity, OpenCode adds /goal, Roblox says 80% of its top 100 games used AI, and Pika opens H3 Flex video weights. -->
+<!-- title: Hotfix Daily #8: Mistral Large 4 open weights, Jules winds down -->
+<!-- description: Mistral opens weights for its 1T-parameter Large 4, Google winds down Jules, OpenCode adds /goal, Roblox's top games use AI, and Pika H3 Flex. -->
 **Issue #8 · Friday, Oct 30, 2026**
 
 Five things from the last few days worth your attention if you build with AI. No fluff.

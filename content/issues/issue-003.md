@@ -1,6 +1,6 @@
 # Hotfix Daily: The Daily AI Builder Digest
-<!-- title: Hotfix Daily #3: Agent Skills goes neutral, Canva Craft, Coding Agent Index v2.0 and more -->
-<!-- description: Hotfix Daily #3: Anthropic donates Agent Skills to the Agentic AI Foundation, Canva's Craft image model hits the API, Coding Agent Index v2.0, Epic's AI MegaJam, and Base Labs' decision models. -->
+<!-- title: Hotfix Daily #3: Agent Skills goes neutral, Canva Craft and more -->
+<!-- description: Anthropic donates Agent Skills to the Agentic AI Foundation, Canva's Craft model hits the API, Coding Agent Index v2.0 and Epic's AI MegaJam. -->
 **Issue #3 · Friday, Oct 23, 2026**
 
 Five things from the last 48 hours worth your attention if you build with AI. No fluff.

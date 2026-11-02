@@ -1,6 +1,6 @@
 # Hotfix Daily: The Daily AI Builder Digest
-<!-- title: Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3-33B, Pomerado, Steam's AI label fight and more -->
-<!-- description: Hotfix Daily #4: Moonshot's Kimi K3.1 Pro nears Claude Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes open under Apache 2.0, Pomerado turns websites into MCP tools, Tim Sweeney vs Steam's AI label, and Anthropic's kit for folding subagents. -->
+<!-- title: Hotfix Daily #4: Kimi K3.1 Pro, Nanbeige4.3, Pomerado and more -->
+<!-- description: Kimi K3.1 Pro nears Opus 5.5 on Terminal-Bench, Nanbeige4.3-33B goes Apache 2.0, Pomerado turns sites into MCP tools, and Steam's AI label fight. -->
 **Issue #4 · Monday, Oct 26, 2026**
 
 Five things from the last few days worth your attention if you build with AI. No fluff.
