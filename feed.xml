@@ -6,10 +6,49 @@
 <link rel="self" type="application/atom+xml" href="https://hotfixdaily.com/feed.xml"/>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/"/>
 <id>https://hotfixdaily.com/</id>
-<updated>2026-10-30T11:00:00Z</updated>
+<updated>2026-11-02T11:00:00Z</updated>
 <author><name>Hotfix Daily</name><email>hello@hotfixdaily.com</email><uri>https://hotfixdaily.com/</uri></author>
 <icon>https://hotfixdaily.com/favicon.ico</icon>
 <logo>https://hotfixdaily.com/assets/icon-512.png</logo>
+<entry>
+<title>Hotfix Daily #9: GDPx, Agent Desktop, ChatGPT-Codex limits, Aura Autopilot and dsh-superagent</title>
+<link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/009/"/>
+<id>https://hotfixdaily.com/issues/009/</id>
+<published>2026-11-02T11:00:00Z</published>
+<updated>2026-11-02T11:00:00Z</updated>
+<summary>Hotfix Daily #9: a new benchmark where the best model scores 12%, Vercel Labs&#x27; desktop agent CLI, shared ChatGPT and Codex limits, an open-source game tester and DeepSeek&#x27;s super-agent.</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; SemiAnalysis launches GDPx, and the top model scores 12%&lt;/h2&gt;
+&lt;p&gt;GDPx is a 206-task agentic benchmark across 11 domains, from chip design and cyber to finance and legal, with each task in a realistic environment. Claude Opus 5.5 leads at 12.0, ahead of Gemini 4 Carbon at 10.9 and GPT-6 Astra at 9.6. Every model scored zero on finance and legal under binary grading.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Models ran in their native harnesses, and SemiAnalysis says safety classifiers drag some scores down, so check the per-domain results for your use case.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://gdpx.semianalysis.com/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;AGENTS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; Vercel Labs&#x27; agent-desktop gives agents desktop apps&lt;/h2&gt;
+&lt;p&gt;An Apache-2.0 CLI and C library for macOS, Windows and Linux that reads the OS accessibility tree instead of matching pixels. A snapshot returns JSON with a ref for every element, the agent acts on a ref, then snapshots again to check.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Snapshots and screenshots can hold private desktop content, so keep them out of public logs.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/vercel-labs/agent-desktop&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;CODING&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; ChatGPT and Codex will share one usage allowance&lt;/h2&gt;
+&lt;p&gt;Starting in December, Plus, Pro and Business plans get a single token-based allowance across ChatGPT and Codex. Bigger models and harder tasks use more, and Instant chat doesn&#x27;t count. Combined usage and reset times will show in Settings → Usage.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; A long Codex session will now eat into your chat budget. OpenAI hasn&#x27;t published the allowance sizes yet.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; Aura Autopilot: an open-source agent that playtests your game&lt;/h2&gt;
+&lt;p&gt;Ramen open-sourced Autopilot under Apache 2.0. It runs as a plugin in Unreal Engine 5.4-5.8, Unity 6 and Godot 4.7+ on Windows and macOS, uses a coding agent to write a control harness for your game, then plays it with real inputs and writes a test report. It works with your Aura plan, your own API keys, or Claude Code and Codex.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Setup asks whether to share your runs with Ramen. Decide before you point it at an unreleased game.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/ramenvr/autopilot&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Repo of the day: DeepSeek&#x27;s dsh-superagent-prototype&lt;/h2&gt;
+&lt;p&gt;An MIT-licensed proactive coding agent for one GitHub repo. It listens to GitHub (and optionally Feishu), opens a work item per request, works in its own session and directory, and answers in the same thread, for example with a pull request. DeepSeek calls it research code, not an official product.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Even if you never run it, its rule of acting only when asked or when a team rule allows it is a good spec for any team agent.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/deepseek-ai/dsh-superagent-prototype&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
+&lt;p&gt;Want your Claude plan inside OpenCode? Install Claude Code 2.1.248 or later, run &lt;code&gt;claude auth login&lt;/code&gt;, then &lt;code&gt;/connect&lt;/code&gt; and pick Claude Agent. OpenCode keeps its own tools and permissions, but your &lt;code&gt;CLAUDE.md&lt;/code&gt;, hooks and Claude Code MCP servers don&#x27;t load, so put shared rules in &lt;code&gt;AGENTS.md&lt;/code&gt;.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://opencode.ai/v2/docs/claude-agent&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+</entry>
 <entry>
 <title>Hotfix Daily #8: Mistral Large 4 open weights, Jules winds down, OpenCode /goal, Roblox AI games and Pika H3 Flex</title>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/008/"/>
