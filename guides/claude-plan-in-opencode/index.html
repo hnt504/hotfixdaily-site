@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name='impact-site-verification' value='61a18ed7-af0a-4189-8c9e-f49d709af4ea'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Use your Claude plan inside OpenCode (November 2026)</title>
+<meta name="description" content="Use a Claude subscription in OpenCode: install Claude Code 2.1.248+, sign in, connect Claude Agent, and see what loads, what it costs, and the limits.">
+<link rel="canonical" href="https://hotfixdaily.com/guides/claude-plan-in-opencode/">
+<meta name="theme-color" content="#0b0f14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="Hotfix Daily (Atom)" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Hotfix Daily (RSS)" href="/rss.xml">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="stylesheet" href="/assets/style.css?v=eff47e18">
+<meta property="og:site_name" content="Hotfix Daily">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Use your Claude plan inside OpenCode (November 2026)">
+<meta property="og:description" content="Use a Claude subscription in OpenCode: install Claude Code 2.1.248+, sign in, connect Claude Agent, and see what loads, what it costs, and the limits.">
+<meta property="og:url" content="https://hotfixdaily.com/guides/claude-plan-in-opencode/">
+<meta property="og:image" content="https://hotfixdaily.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hotfix Daily: the daily AI builder digest">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hotfixdaily">
+<meta name="twitter:title" content="Use your Claude plan inside OpenCode (November 2026)">
+<meta name="twitter:description" content="Use a Claude subscription in OpenCode: install Claude Code 2.1.248+, sign in, connect Claude Agent, and see what loads, what it costs, and the limits.">
+<meta name="twitter:image" content="https://hotfixdaily.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hotfixdaily.com/#org","name":"Hotfix Daily","url":"https://hotfixdaily.com/","logo":"https://hotfixdaily.com/assets/icon-512.png","email":"hello@hotfixdaily.com","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","sameAs":["https://x.com/hotfixdaily"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://hotfixdaily.com/#website","name":"Hotfix Daily","alternateName":"Hotfix Daily newsletter","url":"https://hotfixdaily.com/","description":"Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.","inLanguage":"en-US","publisher":{"@id":"https://hotfixdaily.com/#org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Use your Claude plan inside OpenCode (November 2026)","description":"Use a Claude subscription in OpenCode: install Claude Code 2.1.248+, sign in, connect Claude Agent, and see what loads, what it costs, and the limits.","url":"https://hotfixdaily.com/guides/claude-plan-in-opencode/","mainEntityOfPage":"https://hotfixdaily.com/guides/claude-plan-in-opencode/","datePublished":"2026-11-02","dateModified":"2026-11-02","image":"https://hotfixdaily.com/assets/og.png","author":{"@id":"https://hotfixdaily.com/#org"},"publisher":{"@id":"https://hotfixdaily.com/#org"},"mentions":[{"@type":"SoftwareApplication","name":"OpenCode","url":"https://opencode.ai/v2/docs/claude-agent/"},{"@type":"SoftwareApplication","name":"Claude Code","url":"https://code.claude.com/docs/en/setup"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use Claude Pro or Max inside OpenCode?","acceptedAnswer":{"@type":"Answer","text":"Yes, when Claude Code accepts that login. OpenCode shows no separate price for a Claude subscription and says your plan covers it. Anthropic's pricing page, checked November 2, 2026, says the Pro plan includes Claude Code, and Max and Ultra include everything in Pro. Claude Code is included in all paid plans and shares that plan's usage limits with the rest of Claude, including chat. OpenCode's Claude Agent page does not list plan names or dollar prices."}},{"@type":"Question","name":"Does Claude Agent load my CLAUDE.md, hooks, and Claude Code MCP servers?","acceptedAnswer":{"@type":"Answer","text":"Those Claude Code files stay out of the session. OpenCode's docs say your Claude Code settings, CLAUDE.md files, hooks, MCP servers, skills, and memory are not loaded. Claude does get Claude Code's system prompt, plus your agent prompt, AGENTS.md files, skills, and MCP instructions. Put rules you want this session to follow in AGENTS.md."}},{"@type":"Question","name":"Does a Claude subscription show a separate cost in OpenCode?","acceptedAnswer":{"@type":"Answer","text":"No separate price is shown. OpenCode's cost table says a Claude subscription is covered by your plan. An Anthropic API key, or Claude Platform on AWS or Google Cloud, is billed at Anthropic prices. Amazon Bedrock, Google Vertex, and Microsoft Foundry show those platforms' prices, and Bedrock Mantle shows Anthropic prices. A custom base URL shows no price in OpenCode. The docs do not say whether the server behind that URL bills you."}},{"@type":"Question","name":"Can I use Claude Agent with a remote OpenCode workspace?","acceptedAnswer":{"@type":"Answer","text":"Claude Code has to be installed on the same machine as the OpenCode server. OpenCode's docs say Claude Agent is not available in remote workspaces. Keep a personal Claude login on a machine you control, because that login is the one the session spends against. That is practical advice about whose account is signed in. This guide does not take it from Anthropic's terms."}},{"@type":"Question","name":"What do I do when OpenCode says Claude Code is missing, logged out, or too old?","acceptedAnswer":{"@type":"Answer","text":"Not installed: install Claude Code, or set OPENCODE_CLAUDE_PATH to the binary. Not logged in: run claude auth login, then connect Claude Agent again. Too old: run claude update. OpenCode requires Claude Code 2.1.248 or later. If you installed with Homebrew, WinGet, apt, dnf, or apk, Anthropic says those copies do not auto-update through Claude Code, so upgrade with the package manager."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hotfixdaily.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://hotfixdaily.com/guides/"},{"@type":"ListItem","position":3,"name":"Use your Claude plan inside OpenCode","item":"https://hotfixdaily.com/guides/claude-plan-in-opencode/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap row">
+<a class="brand" href="/" aria-label="Hotfix Daily home"><img src="/favicon.svg" width="28" height="28" alt=""> <span>Hotfix Daily</span></a>
+<nav aria-label="Main"><a href="/issues/">Issues</a><a href="/guides/">Guides</a><a href="/starter-stack/" class="hide-s">Starter Stack</a><a href="/#subscribe" class="navcta">Subscribe</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap prose wide guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">Use your Claude plan inside OpenCode</span></nav>
+
+<p class="kicker">Guide · Updated November 2026 · Last reviewed <time datetime="2026-11-02">November 2, 2026</time></p>
+<h1>Use your Claude plan inside OpenCode</h1>
+<p class="lede">You already pay for Claude, and you want OpenCode's tools and permission prompts. OpenCode's Claude Agent provider is the path for that. Claude Code, signed in on your machine, calls the model. OpenCode supplies the tools, the permissions, compaction, and subagents. This guide is the setup, what actually loads, what shows up as a cost, and the limits. The steps come from <a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">OpenCode's Claude Agent docs</a>, checked on November 2, 2026, with install commands from <a href="https://code.claude.com/docs/en/setup" rel="noopener">Anthropic's Claude Code setup page</a> the same day. It expands the Hotfix of the Day in <a href="/issues/009/">issue #9</a>.</p>
+<nav class="toc" aria-label="On this page"><strong>On this page:</strong> <a href="#at-a-glance">At a glance</a> · <a href="#how">How it works</a> · <a href="#cost">What it costs</a> · <a href="#config">Config</a> · <a href="#limits">Limits</a> · <a href="#errors">Errors</a> · <a href="#safety">Permissions and the login</a> · <a href="#checklist">Checklist</a> · <a href="#faq">FAQ</a></nav>
+
+<h2 id="at-a-glance">1. At a glance</h2>
+<p>OpenCode added this provider in <a href="https://github.com/anomalyco/opencode/releases/tag/v2.2.3" rel="noopener">2.2.3 on October 30, 2026</a>. <a href="https://github.com/anomalyco/opencode/releases/tag/v2.2.4" rel="noopener">2.2.4</a>, later the same day, added a guided setup in the provider picker. The release notes say choosing Claude Agent there copies <code>claude auth login</code>, installs Claude Code, and verifies the connection before model selection. The steps below are the ones on the current docs page.</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">Step</th><th scope="col">What you run</th><th scope="col">What the docs say it does</th></tr></thead><tbody>
+<tr><th scope="row">1. Claude Code 2.1.248 or later</th><td>Install or update, then <code>claude --version</code></td><td>OpenCode requires this version. An older copy raises <code>Claude Code ... is too old</code>.</td></tr>
+<tr><th scope="row">2. Sign in</th><td><code>claude auth login</code></td><td>This is the Claude Code login Claude Agent uses.</td></tr>
+<tr><th scope="row">3. Connect</th><td><code>/connect</code>, then Claude Agent. Or, in OpenCode's CLI, <code>auth login claude-agent</code></td><td>Connects the provider. The 2.2.4 release notes also describe a guided setup in the provider picker.</td></tr>
+<tr><th scope="row">4. Pick a model</th><td><code>/models</code></td><td>The model list comes from Claude Code. Effort levels are variants. The docs' example is <code>claude-agent/opus#high</code>.</td></tr>
+</tbody></table></div>
+<p>Anthropic's setup page gives these installers. Native installs update in the background. <code>claude update</code> applies an update now. Then sign in the way OpenCode documents:</p>
+<pre><code># macOS, Linux, or WSL
+curl -fsSL https://claude.ai/install.sh | bash
+
+# Windows PowerShell
+irm https://claude.ai/install.ps1 | iex
+
+claude --version
+claude auth login</code></pre>
+<p>Anthropic also documents a Windows CMD installer, plus Homebrew, WinGet, apt, dnf, and apk. Homebrew, WinGet, apt, dnf, and apk copies do not auto-update through Claude Code. Upgrade those with the package manager. For Homebrew that is <code>brew upgrade claude-code</code> or <code>brew upgrade claude-code@latest</code>. For WinGet it is <code>winget upgrade Anthropic.ClaudeCode</code>. The setup page has the apt, dnf, and apk commands.</p>
+<p>Anthropic's setup page says you can also start <code>claude</code> and follow the browser prompts. If <code>ANTHROPIC_API_KEY</code> is set and you approve it when asked, Claude Code skips the login prompt and uses the key. That is a different bill. See <a href="#cost">what it costs</a>.</p>
+<p class="src"><a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">OpenCode: Claude Agent</a> · <a href="https://code.claude.com/docs/en/setup" rel="noopener">Claude Code setup</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.2.3" rel="noopener">OpenCode 2.2.3</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.2.4" rel="noopener">OpenCode 2.2.4</a></p>
+
+<section class="ctabox" aria-label="Subscribe" data-growth="1"><h2>OpenCode and Claude Code both ship often</h2><p>Hotfix Daily flags the changes that matter, with the source. Free, weekdays, about 3 minutes.</p><p class="gift">Join free and get <strong>13 ready-to-paste Starter Prompts</strong> for coding agents, vibe coding and game dev right away.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g1">Email address</label>
+<input id="email-g1" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Get the prompts free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+
+<h2 id="how">2. How it works</h2>
+<p>OpenCode's line for this provider: "Claude Code calls the model, and OpenCode does everything else."</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">Piece</th><th scope="col">In a Claude Agent session</th></tr></thead><tbody>
+<tr><th scope="row">Who calls the model</th><td>Claude Code, on your machine</td></tr>
+<tr><th scope="row">System prompt</th><td>Claude gets Claude Code's system prompt. It replaces OpenCode's built-in prompt. Your custom agent prompt still applies.</td></tr>
+<tr><th scope="row">Project instructions</th><td>Claude gets your agent prompt, <code>AGENTS.md</code> files, skills, and MCP instructions</td></tr>
+<tr><th scope="row">Tools, permissions, compaction, subagents</th><td>OpenCode's. Claude uses OpenCode's tools and permissions instead of Claude Code's built-in tools. OpenCode runs compaction and subagents.</td></tr>
+<tr><th scope="row">Claude Code settings, <code>CLAUDE.md</code>, hooks, MCP servers, skills, memory</th><td>Not loaded</td></tr>
+<tr><th scope="row">Other models</th><td>You can switch between Claude Agent and other models in the same session</td></tr>
+</tbody></table></div>
+<p>Read the two "skills" rows as the docs split them. The loaded list sits next to your agent prompt and <code>AGENTS.md</code>. The unloaded list is "your Claude Code" settings, <code>CLAUDE.md</code> files, hooks, MCP servers, skills, and memory. A <code>CLAUDE.md</code> that Claude Code follows on its own stays out of this session. Put shared rules in <code>AGENTS.md</code>, which the same page says Claude receives.</p>
+<p class="why"><strong>Our take:</strong> if a rule matters, it belongs in <code>AGENTS.md</code> before you start the session. Finding out mid-task that the Claude Code copy of your rules never loaded is a bad time to learn it.</p>
+<p class="src"><a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">OpenCode: Claude Agent, How it works and Limitations</a></p>
+
+<h2 id="cost">3. What it costs</h2>
+<p>Cost depends on how Claude Code is signed in. This is OpenCode's table, including the "Cost shown" wording. "None" means OpenCode displays no price for that login.</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">Login</th><th scope="col">Cost shown</th></tr></thead><tbody>
+<tr><th scope="row">Claude subscription</th><td>None, your plan covers it</td></tr>
+<tr><th scope="row">Anthropic API key, or Claude Platform on AWS or Google Cloud</th><td>Anthropic prices</td></tr>
+<tr><th scope="row">Amazon Bedrock</th><td>Bedrock prices, or Anthropic prices on Bedrock Mantle</td></tr>
+<tr><th scope="row">Google Vertex</th><td>Vertex prices</td></tr>
+<tr><th scope="row">Microsoft Foundry</th><td>Azure prices</td></tr>
+<tr><th scope="row">Custom base URL</th><td>None</td></tr>
+</tbody></table></div>
+<p>For a custom base URL, the docs stop at "None." They do not say the server behind that URL is free.</p>
+<p>Anthropic's pricing page, checked the same day, says the Pro plan includes Claude Code, and Max and Ultra include everything in Pro. It also says Claude Code is included in all paid plans and shares that plan's usage limits with the rest of Claude, including chat on the web, desktop, and mobile. A subscription row in OpenCode still spends your plan's allowance. The OpenCode page does not name Pro, Max, or a dollar price. Anthropic says heavy coding sessions can switch to pay-as-you-go API credits through a Console account, which matches the API-key row above.</p>
+<p class="src"><a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">OpenCode: Claude Agent, Cost</a> · <a href="https://claude.com/pricing" rel="noopener">Claude plans and pricing</a></p>
+
+<h2 id="config">4. Point OpenCode at the Claude Code you want</h2>
+<p>OpenCode finds <code>claude</code> on your <code>PATH</code>. To use another copy, set <code>OPENCODE_CLAUDE_PATH</code> on the server:</p>
+<pre><code>opencode service set env OPENCODE_CLAUDE_PATH /opt/claude/bin/claude</code></pre>
+<p>Connection settings on the <code>claude-agent</code> provider are passed through to Claude Code. They override the same variables set in your shell. OpenCode's example:</p>
+<pre><code>{
+  "$schema": "https://opencode.ai/config.json",
+  "providers": {
+    "claude-agent": {
+      "settings": {
+        "baseURL": "https://llm-proxy.example.com/anthropic"
+      },
+      "headers": {
+        "X-Gateway-Tenant": "engineering"
+      }
+    }
+  }
+}</code></pre>
+<div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">OpenCode config</th><th scope="col">Claude Code variable</th></tr></thead><tbody>
+<tr><th scope="row"><code>settings.baseURL</code></th><td><code>ANTHROPIC_BASE_URL</code></td></tr>
+<tr><th scope="row"><code>settings.apiKey</code></th><td><code>ANTHROPIC_API_KEY</code></td></tr>
+<tr><th scope="row"><code>settings.authToken</code></th><td><code>ANTHROPIC_AUTH_TOKEN</code></td></tr>
+<tr><th scope="row"><code>settings.headerTimeout</code></th><td><code>API_TIMEOUT_MS</code></td></tr>
+<tr><th scope="row"><code>settings.chunkTimeout</code></th><td><code>CLAUDE_STREAM_IDLE_TIMEOUT_MS</code></td></tr>
+<tr><th scope="row"><code>headers</code></th><td><code>ANTHROPIC_CUSTOM_HEADERS</code></td></tr>
+<tr><th scope="row"><code>body</code></th><td><code>CLAUDE_CODE_EXTRA_BODY</code></td></tr>
+</tbody></table></div>
+<p>Set the same fields on a model to override the provider's values for that model. The sample <code>baseURL</code> above is OpenCode's placeholder, not a service you need.</p>
+<p class="src"><a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">OpenCode: Claude Agent, Configure</a></p>
+
+<h2 id="limits">5. Limits from the docs</h2>
+<ul>
+<li><strong>Same machine.</strong> Claude Code has to be installed on the same machine as the OpenCode server. Claude Agent is not available in remote workspaces.</li>
+<li><strong>Prompt.</strong> Claude Code's system prompt replaces OpenCode's built-in prompt. Custom agent prompts still apply.</li>
+<li><strong>Sampling.</strong> Temperature, top-p, top-k, seed, and stop sequences are not supported.</li>
+<li><strong>Plugin HTTP hooks.</strong> Plugin <code>http.request</code> and <code>http.response</code> hooks do not run, because Claude Code makes the API calls.</li>
+<li><strong>Some Claude Code features.</strong> <code>/usage</code>, <code>/loop</code>, auto mode, and agent teams are not available.</li>
+</ul>
+<p class="src"><a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">OpenCode: Claude Agent, Limitations</a></p>
+
+<h2 id="errors">6. Errors the docs name</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">Error or symptom</th><th scope="col">What OpenCode says to check</th></tr></thead><tbody>
+<tr><th scope="row"><code>Claude Code is not installed</code></th><td>Install Claude Code, or set <code>OPENCODE_CLAUDE_PATH</code> to its path.</td></tr>
+<tr><th scope="row"><code>Claude Code is not logged in</code></th><td>Run <code>claude auth login</code>, then connect Claude Agent again.</td></tr>
+<tr><th scope="row"><code>Claude Code ... is too old</code></th><td>Run <code>claude update</code>. OpenCode requires 2.1.248 or later.</td></tr>
+</tbody></table></div>
+<p>If Claude Code came from Homebrew, WinGet, apt, dnf, or apk, Anthropic says those installs do not auto-update through Claude Code. Upgrade with the package manager, then run <code>claude --version</code>. Homebrew is <code>brew upgrade claude-code</code> or <code>brew upgrade claude-code@latest</code>. WinGet is <code>winget upgrade Anthropic.ClaudeCode</code>. The setup page has the apt, dnf, and apk commands. You can also point <code>OPENCODE_CLAUDE_PATH</code> at a binary that is 2.1.248 or newer.</p>
+<p class="src"><a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">OpenCode: Claude Agent, Errors</a> · <a href="https://code.claude.com/docs/en/setup" rel="noopener">Claude Code setup: updates</a></p>
+
+<h2 id="safety">7. Permissions, and whose login is on the machine</h2>
+<p>Claude uses OpenCode's tools and permissions, not Claude Code's built-in tools. Keep OpenCode's permission rules on. OpenCode's permissions page says each rule has an <code>action</code>, a <code>resource</code>, and an effect of <code>allow</code>, <code>deny</code>, or <code>ask</code>. If no rule matches, OpenCode asks. The last matching rule wins. Their common setup asks before shell commands, allows routine git inspection, and blocks <code>git push</code>:</p>
+<pre><code>{
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git push *", "effect": "deny" }
+  ]
+}</code></pre>
+<p>OpenCode's V2 docs use <code>permissions</code>, <code>shell</code>, and <code>subagent</code>. V1 used different names. A shell pattern ending in <code>*</code> also matches the command without arguments, so <code>git status *</code> matches both <code>git status</code> and <code>git status --short</code>.</p>
+<p>The habits in <a href="/guides/run-ai-coding-agents-safely/">How to run AI coding agents safely</a> still apply: start in a project folder, keep approvals on, and keep secrets out of reach. That guide covers Claude Code, Cursor, Codex, Copilot, Cline, and Gemini CLI. It does not document OpenCode's permission file. Use it for the habits, and use <a href="https://opencode.ai/v2/docs/permissions/" rel="noopener">OpenCode's permissions page</a> for the rules.</p>
+<p>Claude Agent spends whatever Claude Code login is on the OpenCode server, and Anthropic says that usage draws from the same pool as your chats. Keep a personal Claude login on a machine you control. A shared team server is a poor place for it, because anyone who can start a session there spends your plan. That is practical advice about whose account is signed in. This guide does not take it from Anthropic's terms.</p>
+<p class="src"><a href="https://opencode.ai/v2/docs/permissions/" rel="noopener">OpenCode: Permissions</a> · <a href="https://opencode.ai/v2/docs/claude-agent/" rel="noopener">Claude Agent limitations</a> · <a href="https://claude.com/pricing" rel="noopener">Claude pricing: shared usage</a></p>
+
+<h2 id="checklist">Checklist</h2>
+<ul class="check">
+<li><code>claude --version</code> is 2.1.248 or later. If it is older, run <code>claude update</code>, or upgrade the package-manager install.</li>
+<li>You signed in with <code>claude auth login</code>, or you meant to use an API key and you know that bills at Anthropic prices.</li>
+<li>Claude Agent is connected, and <code>/models</code> shows a model you picked.</li>
+<li>Rules you care about are in <code>AGENTS.md</code>. A <code>CLAUDE.md</code> alone will not load.</li>
+<li>OpenCode permission rules still ask before shell commands you want to approve yourself.</li>
+<li>The Claude login on that machine is one you are willing to spend. It is not a personal login on a shared team server.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<details><summary>Can I use Claude Pro or Max inside OpenCode?</summary><p>Yes, when Claude Code accepts that login. OpenCode shows no separate price for a Claude subscription and says your plan covers it. Anthropic's pricing page, checked November 2, 2026, says the Pro plan includes Claude Code, and Max and Ultra include everything in Pro. Claude Code is included in all paid plans and shares that plan's usage limits with the rest of Claude, including chat. OpenCode's Claude Agent page does not list plan names or dollar prices.</p></details>
+<details><summary>Does Claude Agent load my CLAUDE.md, hooks, and Claude Code MCP servers?</summary><p>Those Claude Code files stay out of the session. OpenCode's docs say your Claude Code settings, CLAUDE.md files, hooks, MCP servers, skills, and memory are not loaded. Claude does get Claude Code's system prompt, plus your agent prompt, AGENTS.md files, skills, and MCP instructions. Put rules you want this session to follow in AGENTS.md.</p></details>
+<details><summary>Does a Claude subscription show a separate cost in OpenCode?</summary><p>No separate price is shown. OpenCode's cost table says a Claude subscription is covered by your plan. An Anthropic API key, or Claude Platform on AWS or Google Cloud, is billed at Anthropic prices. Amazon Bedrock, Google Vertex, and Microsoft Foundry show those platforms' prices, and Bedrock Mantle shows Anthropic prices. A custom base URL shows no price in OpenCode. The docs do not say whether the server behind that URL bills you.</p></details>
+<details><summary>Can I use Claude Agent with a remote OpenCode workspace?</summary><p>Claude Code has to be installed on the same machine as the OpenCode server. OpenCode's docs say Claude Agent is not available in remote workspaces. Keep a personal Claude login on a machine you control, because that login is the one the session spends against. That is practical advice about whose account is signed in. This guide does not take it from Anthropic's terms.</p></details>
+<details><summary>What do I do when OpenCode says Claude Code is missing, logged out, or too old?</summary><p>Not installed: install Claude Code, or set OPENCODE_CLAUDE_PATH to the binary. Not logged in: run claude auth login, then connect Claude Agent again. Too old: run claude update. OpenCode requires Claude Code 2.1.248 or later. If you installed with Homebrew, WinGet, apt, dnf, or apk, Anthropic says those copies do not auto-update through Claude Code, so upgrade with the package manager.</p></details>
+
+<p class="endprompt">Found this useful? Hotfix Daily covers practical agent setup every weekday. <a href="#subscribe-end">Get the updates free</a>, plus 13 Starter Prompts. Or <a href="https://x.com/intent/post?text=Use%20your%20Claude%20plan%20inside%20OpenCode%20%28November%202026%29%20%28via%20%40hotfixdaily%29&amp;url=https%3A%2F%2Fhotfixdaily.com%2Fguides%2Fclaude-plan-in-opencode%2F" rel="noopener">share it on X</a>.</p>
+
+<h2>Related</h2>
+<p>These are other Hotfix Daily guides. They do not walk through OpenCode's Claude Agent setup.</p>
+<ul>
+<li><a href="/guides/which-ai-coding-agent/">Which AI coding agent should you use? Pick by budget and use case</a></li>
+<li><a href="/guides/run-ai-coding-agents-safely/">How to run AI coding agents safely: folders, sandboxes, approvals and secrets</a></li>
+<li><a href="/guides/ai-coding-agents/">What are the best AI coding agents? Compared (October 2026)</a></li>
+<li><a href="/guides/review-ai-written-code/">How to review AI-written code: a checklist for agent PRs</a></li>
+<li><a href="/issues/009/">Issue #9: the Hotfix of the Day this guide expands</a></li>
+</ul>
+
+<p class="muted small">How we write these: we read OpenCode's Claude Agent and permissions docs, Anthropic's Claude Code setup and pricing pages, and the OpenCode 2.2.3 and 2.2.4 release notes on November 2, 2026, and we link the page for every step we name. "Our take" is our opinion. Commands change, so check the linked page before you rely on a detail. This guide has no affiliate links.</p>
+
+<section class="ctabox" id="subscribe-end" aria-label="Subscribe"><h2>Get the next issue in your inbox</h2><p>Five things worth your attention in AI, agents, vibe coding and game dev, every weekday. Plus 13 free Starter Prompts and the AI Builder Starter Stack PDF when you join.</p>
+<form class="signup" action="https://app.kit.com/forms/10075086/subscriptions" method="post" data-kit-form="10075086" data-redirect="/welcome/">
+<label class="sr" for="email-g2">Email address</label>
+<input id="email-g2" type="email" name="email_address" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+<button type="submit">Subscribe free</button>
+<p class="formnote" role="status" aria-live="polite">Free. Weekdays. Unsubscribe in one click.</p>
+</form>
+<p class="rssnote"><a href="/feed.xml">Follow by RSS</a></p></section>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+<ul class="footnav" aria-label="Footer"><li><a href="/issues/">Issues</a></li><li><a href="/guides/">Guides</a></li><li><a href="/sponsor/">Sponsor</a></li><li><a href="/about/">About</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/feed.xml">RSS</a></li><li><a href="https://x.com/hotfixdaily" rel="me noopener">X</a></li><li><a href="/privacy/">Privacy</a></li></ul>
+<p>© 2026 Hotfix Daily · The daily AI builder digest, free on weekdays · <a href="mailto:hello@hotfixdaily.com">hello@hotfixdaily.com</a></p>
+</div></footer>
+<script src="/assets/subscribe.js" defer></script>
+<script data-goatcounter="https://hotfixdaily.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
