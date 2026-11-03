@@ -7,7 +7,45 @@
 <description>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</description>
 <language>en-us</language>
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Mon, 02 Nov 2026 11:00:00 +0000</lastBuildDate>
+<lastBuildDate>Tue, 03 Nov 2026 11:00:00 +0000</lastBuildDate>
+<item>
+<title>UE6 drops Blueprints, LongCat-2.5, BF1942 in a browser and more</title>
+<link>https://hotfixdaily.com/issues/010/</link>
+<guid isPermaLink="true">https://hotfixdaily.com/issues/010/</guid>
+<pubDate>Tue, 03 Nov 2026 11:00:00 +0000</pubDate>
+<description>Unreal Engine 6 moves gameplay to Verse, Meituan ships LongCat-2.5, Claude Code ports Battlefield 1942 to the web, and Anthropic opens FlashProve.</description>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item" id="i1"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">1</span> Unreal Engine 6 will remove Blueprints, not just deprecate them</h2>
+<p>At the Unreal Fest Tokyo keynote, Epic said UE6 will drop Actors, Blueprints and the C++ Gameplay Framework when it reaches Early Access, moving gameplay code to Verse and Scene Graph. C++ stays for the low-level engine, UE5 projects can keep going, and Epic plans AI-assisted conversion to Verse.</p>
+<p class="why"><strong>Why builders care:</strong> If your game logic lives in Blueprints, start planning for Verse now.</p>
+<p class="src"><a href="https://gamemakers.jp/article/2026_11_03_149166/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">2</span> Meituan ships LongCat-2.5 for long-horizon agent work</h2>
+<p>LongCat-2.5 is a natively multimodal MoE with 1.6 trillion total parameters and about 48 billion active per token, trained with large-scale RL on long coding tasks. Meituan's own table puts it at 88.4 on Terminal Bench v2.1, up from 70.8 for LongCat-2.0, using a Claude Code harness.</p>
+<p class="why"><strong>Why builders care:</strong> Another agentic coding model worth testing; treat the scores as vendor-reported.</p>
+<p class="src"><a href="https://longcat.ai/blog/longcat-2.5/" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">3</span> Pieter Levels ports Battlefield 1942 to the browser with Claude Code</h2>
+<p>With no open-source engine to build on, Levels says Claude Code disassembled the shareware demo into about 57,000 x86 functions, translated them into roughly 100,000 lines of C, compiled that to WebAssembly and rewrote the Direct3D calls for WebGL 2. He says it took about 1 million output tokens.</p>
+<p class="why"><strong>Why builders care:</strong> A vivid data point on what agents can do with legacy binaries.</p>
+<p class="src"><a href="https://x.com/levelsio/status/2117374984192512391" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">4</span> Hume's Audio Decisions API answers questions about recordings with probabilities</h2>
+<p>Send one MP3 or WAV between 5 seconds and 5 minutes plus plain-language questions, and you get back probabilities instead of a transcript: yes or no, multiple choice, scores on a scale, or time spans. Pricing is $0.47 per million input tokens, with a 1 million token trial credit.</p>
+<p class="why"><strong>Why builders care:</strong> A cheap way to test voice agents, like flagging calls where the agent talks over the caller.</p>
+<p class="src"><a href="https://dev.hume.ai/audio-decisions/docs/overview" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Anthropic open-sources FlashProve for provable inference</h2>
+<p>FlashProve produces cryptographic proofs that a reply came from a committed set of weights, without revealing those weights. It runs full-size Llama 4 Maverick on one H100 at about 110 tokens a second of prefill, and anyone can verify a proof on an ordinary CPU in seconds. It's an Apache 2.0 research artifact with a 1,024-token context, and it isn't maintained.</p>
+<p class="why"><strong>Why builders care:</strong> If customers ask you to prove which model answered, this is a working reference.</p>
+<p class="src"><a href="https://github.com/anthropics/FlashProve" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>If you use Claude Agent SDK hook callbacks as guardrails, update Claude Code and set <code>onFailure: "block"</code> on them. New in 2.1.317, it makes a callback that fails block the action instead of letting it run, so a crashed safety check can't quietly wave a risky tool call through.</p>
+<p class="src"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" rel="noopener">Source</a></p>
+</aside>
+]]></content:encoded>
+</item>
 <item>
 <title>Hotfix Daily #9: GDPx benchmark, Vercel Agent Desktop and more</title>
 <link>https://hotfixdaily.com/issues/009/</link>
