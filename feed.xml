@@ -6,10 +6,49 @@
 <link rel="self" type="application/atom+xml" href="https://hotfixdaily.com/feed.xml"/>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/"/>
 <id>https://hotfixdaily.com/</id>
-<updated>2026-11-03T11:00:00Z</updated>
+<updated>2026-11-04T11:00:00Z</updated>
 <author><name>Hotfix Daily</name><email>hello@hotfixdaily.com</email><uri>https://hotfixdaily.com/</uri></author>
 <icon>https://hotfixdaily.com/favicon.ico</icon>
 <logo>https://hotfixdaily.com/assets/icon-512.png</logo>
+<entry>
+<title>Tencent Hy4, GitBook&#x27;s AI-agent breach, itch.io No AI and more</title>
+<link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/011/"/>
+<id>https://hotfixdaily.com/issues/011/</id>
+<published>2026-11-04T11:00:00Z</published>
+<updated>2026-11-04T11:00:00Z</updated>
+<summary>Tencent Hy4 adds vision and computer use, GitBook rotates tokens after an AI-agent attack, itch.io adds No AI filters, plus QuickProof and Crouton Alpha.</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Tencent ships Hy4 with vision and computer use&lt;/h2&gt;
+&lt;p&gt;Hy4 is the first Hy model that can see, and the first that does computer use across CLIs and GUIs, with targeted training on tools like Blender and CAD. It&#x27;s live on Tencent Cloud and OpenRouter at $0.834 input and $2.501 output per million tokens, and Tencent says it plans to release the weights later with a system card.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; A cheap, soon-to-be-open model aimed at agents and game dev. Tencent itself says a notable gap to top proprietary models remains, so test before you switch.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://hy.tencent.ai/research/hy4&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;AGENTS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; GitBook says an attacker used AI agents to get in&lt;/h2&gt;
+&lt;p&gt;An attacker using AI agents got some of GitBook&#x27;s infrastructure credentials on Nov 2. Integration tokens, Git Sync secrets, API tokens and Assistant visitor questions may have been accessed. GitBook revoked all personal API tokens and restored service Nov 3.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; If your docs live on GitBook, rotate your GitBook and third-party tokens and re-authenticate its MCP server today.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.gitbook.com/status/security-incident-2026-11-03&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; itch.io adds AI-disclosure filtering to search&lt;/h2&gt;
+&lt;p&gt;After deleting &quot;a couple terabytes of ai slop,&quot; itch.io is adding generative AI disclosure filtering to more of the site, including search results. Tabletop games, books, comics and soundtracks now need an AI disclosure before you can create or edit a page, joining game assets.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; If you sell on itch.io, fill in your disclosure accurately. It now decides who finds you.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://bsky.app/profile/itch.io/post/3mzezjvqexs2h&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;CODING&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; Crouton Alpha: a free stealth model on OpenRouter&lt;/h2&gt;
+&lt;p&gt;OpenRouter listed Crouton Alpha on Nov 3. It&#x27;s free, with a 1,048,576-token context, multimodal input, tool calling and structured outputs. The provider is anonymous, and prompts may be retained, though not used for training.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; A free long-context model to try for agent sub-tasks. Just keep secrets and client code out of it.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://openrouter.ai/stealth/crouton-alpha&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; QuickProof: write C specs like tests, let agents prove them&lt;/h2&gt;
+&lt;p&gt;GenProof&#x27;s QuickProof turns a small C program into a Rocq theorem that AI agents then prove, and &lt;code&gt;qp verify&lt;/code&gt; checks that nobody weakened the statement. GenProof says it found more than 300 bugs across 20 C projects, including Redis and zstd.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Practical formal verification for C. Note that it&#x27;s under the PolyForm Noncommercial license.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/genproof/quickproof-public&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
+&lt;p&gt;Check what other apps have wired into your coding agents. A GitHub report shows Postman Desktop auto-installed plugins into Claude Code and Codex, including a SessionStart hook. Look at &lt;code&gt;enabledPlugins&lt;/code&gt; and &lt;code&gt;hooks&lt;/code&gt; in &lt;code&gt;~/.claude/settings.json&lt;/code&gt;, and the &lt;code&gt;[plugins]&lt;/code&gt; and &lt;code&gt;[hooks.state]&lt;/code&gt; sections in &lt;code&gt;~/.codex/config.toml&lt;/code&gt;. Remove what you didn&#x27;t add.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://github.com/postmanlabs/postman-app-support/issues/14370&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+</entry>
 <entry>
 <title>UE6 drops Blueprints, LongCat-2.5, BF1942 in a browser and more</title>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/010/"/>

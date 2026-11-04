@@ -7,7 +7,45 @@
 <description>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</description>
 <language>en-us</language>
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Tue, 03 Nov 2026 11:00:00 +0000</lastBuildDate>
+<lastBuildDate>Wed, 04 Nov 2026 11:00:00 +0000</lastBuildDate>
+<item>
+<title>Tencent Hy4, GitBook&#x27;s AI-agent breach, itch.io No AI and more</title>
+<link>https://hotfixdaily.com/issues/011/</link>
+<guid isPermaLink="true">https://hotfixdaily.com/issues/011/</guid>
+<pubDate>Wed, 04 Nov 2026 11:00:00 +0000</pubDate>
+<description>Tencent Hy4 adds vision and computer use, GitBook rotates tokens after an AI-agent attack, itch.io adds No AI filters, plus QuickProof and Crouton Alpha.</description>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Tencent ships Hy4 with vision and computer use</h2>
+<p>Hy4 is the first Hy model that can see, and the first that does computer use across CLIs and GUIs, with targeted training on tools like Blender and CAD. It's live on Tencent Cloud and OpenRouter at $0.834 input and $2.501 output per million tokens, and Tencent says it plans to release the weights later with a system card.</p>
+<p class="why"><strong>Why builders care:</strong> A cheap, soon-to-be-open model aimed at agents and game dev. Tencent itself says a notable gap to top proprietary models remains, so test before you switch.</p>
+<p class="src"><a href="https://hy.tencent.ai/research/hy4" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">2</span> GitBook says an attacker used AI agents to get in</h2>
+<p>An attacker using AI agents got some of GitBook's infrastructure credentials on Nov 2. Integration tokens, Git Sync secrets, API tokens and Assistant visitor questions may have been accessed. GitBook revoked all personal API tokens and restored service Nov 3.</p>
+<p class="why"><strong>Why builders care:</strong> If your docs live on GitBook, rotate your GitBook and third-party tokens and re-authenticate its MCP server today.</p>
+<p class="src"><a href="https://www.gitbook.com/status/security-incident-2026-11-03" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">3</span> itch.io adds AI-disclosure filtering to search</h2>
+<p>After deleting "a couple terabytes of ai slop," itch.io is adding generative AI disclosure filtering to more of the site, including search results. Tabletop games, books, comics and soundtracks now need an AI disclosure before you can create or edit a page, joining game assets.</p>
+<p class="why"><strong>Why builders care:</strong> If you sell on itch.io, fill in your disclosure accurately. It now decides who finds you.</p>
+<p class="src"><a href="https://bsky.app/profile/itch.io/post/3mzezjvqexs2h" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">CODING</span></p><h2><span class="n">4</span> Crouton Alpha: a free stealth model on OpenRouter</h2>
+<p>OpenRouter listed Crouton Alpha on Nov 3. It's free, with a 1,048,576-token context, multimodal input, tool calling and structured outputs. The provider is anonymous, and prompts may be retained, though not used for training.</p>
+<p class="why"><strong>Why builders care:</strong> A free long-context model to try for agent sub-tasks. Just keep secrets and client code out of it.</p>
+<p class="src"><a href="https://openrouter.ai/stealth/crouton-alpha" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> QuickProof: write C specs like tests, let agents prove them</h2>
+<p>GenProof's QuickProof turns a small C program into a Rocq theorem that AI agents then prove, and <code>qp verify</code> checks that nobody weakened the statement. GenProof says it found more than 300 bugs across 20 C projects, including Redis and zstd.</p>
+<p class="why"><strong>Why builders care:</strong> Practical formal verification for C. Note that it's under the PolyForm Noncommercial license.</p>
+<p class="src"><a href="https://github.com/genproof/quickproof-public" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Check what other apps have wired into your coding agents. A GitHub report shows Postman Desktop auto-installed plugins into Claude Code and Codex, including a SessionStart hook. Look at <code>enabledPlugins</code> and <code>hooks</code> in <code>~/.claude/settings.json</code>, and the <code>[plugins]</code> and <code>[hooks.state]</code> sections in <code>~/.codex/config.toml</code>. Remove what you didn't add.</p>
+<p class="src"><a href="https://github.com/postmanlabs/postman-app-support/issues/14370" rel="noopener">Source</a></p>
+</aside>
+]]></content:encoded>
+</item>
 <item>
 <title>UE6 drops Blueprints, LongCat-2.5, BF1942 in a browser and more</title>
 <link>https://hotfixdaily.com/issues/010/</link>
