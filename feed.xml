@@ -6,10 +6,49 @@
 <link rel="self" type="application/atom+xml" href="https://hotfixdaily.com/feed.xml"/>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/"/>
 <id>https://hotfixdaily.com/</id>
-<updated>2026-11-04T11:00:00Z</updated>
+<updated>2026-11-05T11:00:00Z</updated>
 <author><name>Hotfix Daily</name><email>hello@hotfixdaily.com</email><uri>https://hotfixdaily.com/</uri></author>
 <icon>https://hotfixdaily.com/favicon.ico</icon>
 <logo>https://hotfixdaily.com/assets/icon-512.png</logo>
+<entry>
+<title>Kimi K3.1 Pro open weights, Factory buys HumanLayer and more</title>
+<link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/012/"/>
+<id>https://hotfixdaily.com/issues/012/</id>
+<published>2026-11-05T11:00:00Z</published>
+<updated>2026-11-05T11:00:00Z</updated>
+<summary>Moonshot publishes Kimi K3.1 Pro&#x27;s weights, Factory buys HumanLayer, Together&#x27;s agents tune inference, and 40% of 2026 Steam games disclose AI.</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://hotfixdaily.com/sponsor/&quot; rel=&quot;noopener&quot;&gt;Sponsor Hotfix Daily&lt;/a&gt;&lt;/p&gt;
+&lt;article class=&quot;item&quot; id=&quot;i1&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;MODEL&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;1&lt;/span&gt; Moonshot publishes the Kimi K3.1 Pro weights&lt;/h2&gt;
+&lt;p&gt;Kimi K3.1 Pro is now on Hugging Face: a 2.8T-parameter mixture-of-experts model with 104B active, a 1M-token context and image input. The license reads like MIT, except API resellers over $20M a year need a separate deal and huge products must show the Kimi name.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; A frontier-class open agent model you can self-host or fine-tune, though it needs data-center hardware.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://huggingface.co/moonshotai/Kimi-K3.1-Pro&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i2&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;AGENTS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;2&lt;/span&gt; Factory buys HumanLayer, the multiplayer coding-agent IDE&lt;/h2&gt;
+&lt;p&gt;HumanLayer&#x27;s founders Dex Horthy and Kyle Mistele are joining Factory. The hosted platform stays up for at least 30 days so users can export data, move to Factory or self-host the Apache 2.0 open-source version. Recent paying customers get refunds.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; If your team runs on HumanLayer, pick self-host or migrate before the window closes.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://factory.com/news/humanlayer&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i3&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;DEVTOOLS&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;3&lt;/span&gt; Together AI lets agents tune its inference kernels&lt;/h2&gt;
+&lt;p&gt;Together Compiler has a swarm of agents propose GPU kernel changes, while a persistent engine checks each one for speed and correctness. Only verified changes ship. Together says it reached up to 2.6x higher tokens per second on open models in under 24 hours, and it&#x27;s on by default for supported serverless models at the same price.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Cheaper, faster open-model endpoints with nothing to configure.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i4&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;GAME DEV&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;4&lt;/span&gt; 40% of 2026 Steam releases now disclose AI content&lt;/h2&gt;
+&lt;p&gt;A daily count by PCGame.com of Valve&#x27;s own AI flag finds 10,661 of 26,486 Steam games released this year disclose AI content (as of Nov 5). Flagged games are 40% of releases but just 12% of reviews.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; Disclosure is self-reported and art leads the uses. Players are filtering, so be specific about what AI did in your game.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://www.pcgame.com/steam-ai-statistics&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&quot;item&quot; id=&quot;i5&quot;&gt;&lt;p class=&quot;lbl&quot;&gt;&lt;span class=&quot;chip&quot;&gt;REPO&lt;/span&gt;&lt;/p&gt;&lt;h2&gt;&lt;span class=&quot;n&quot;&gt;5&lt;/span&gt; Axiom formalizes the whole Stacks Project in Lean&lt;/h2&gt;
+&lt;p&gt;Axiom used coordinated swarms of AI agents to turn the roughly 7,500-page algebraic geometry reference into about 16 million lines of machine-checked Lean. Along the way it found dozens of statements needing fixes, like missing hypotheses.&lt;/p&gt;
+&lt;p class=&quot;why&quot;&gt;&lt;strong&gt;Why builders care:&lt;/strong&gt; A real blueprint for agent swarms on one huge codebase: stable interfaces, audits and downstream checks.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://axiommath.ai/research/the-stacks-project-formalized/&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;aside class=&quot;hotd&quot; id=&quot;hotd&quot; aria-label=&quot;Hotfix of the Day&quot;&gt;&lt;h2&gt;Hotfix of the Day&lt;/h2&gt;
+&lt;p&gt;Give reasoning models room to think before you judge them. webAI&#x27;s new TwIL-8B card says it averages about 19.5k output tokens per AIME 2026 problem and that a short budget &quot;truncates the reasoning and scores far worse.&quot; Its example sets &lt;code&gt;max_new_tokens=32768&lt;/code&gt;. Check your eval harness&#x27;s token cap before you call a small model bad.&lt;/p&gt;
+&lt;p class=&quot;src&quot;&gt;&lt;a href=&quot;https://huggingface.co/webAI-Official/TwIL-8B&quot; rel=&quot;noopener&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+</entry>
 <entry>
 <title>Tencent Hy4, GitBook&#x27;s AI-agent breach, itch.io No AI and more</title>
 <link rel="alternate" type="text/html" href="https://hotfixdaily.com/issues/011/"/>

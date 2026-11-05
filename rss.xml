@@ -7,7 +7,45 @@
 <description>Hotfix Daily is a free weekday email for people who build with AI: five things worth your attention in AI, AI agents, vibe coding, and game dev, plus one tip to try today. About a 3-minute read.</description>
 <language>en-us</language>
 <atom:link href="https://hotfixdaily.com/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Wed, 04 Nov 2026 11:00:00 +0000</lastBuildDate>
+<lastBuildDate>Thu, 05 Nov 2026 11:00:00 +0000</lastBuildDate>
+<item>
+<title>Kimi K3.1 Pro open weights, Factory buys HumanLayer and more</title>
+<link>https://hotfixdaily.com/issues/012/</link>
+<guid isPermaLink="true">https://hotfixdaily.com/issues/012/</guid>
+<pubDate>Thu, 05 Nov 2026 11:00:00 +0000</pubDate>
+<description>Moonshot publishes Kimi K3.1 Pro&#x27;s weights, Factory buys HumanLayer, Together&#x27;s agents tune inference, and 40% of 2026 Steam games disclose AI.</description>
+<content:encoded><![CDATA[<p><a href="https://hotfixdaily.com/sponsor/" rel="noopener">Sponsor Hotfix Daily</a></p>
+<article class="item" id="i1"><p class="lbl"><span class="chip">MODEL</span></p><h2><span class="n">1</span> Moonshot publishes the Kimi K3.1 Pro weights</h2>
+<p>Kimi K3.1 Pro is now on Hugging Face: a 2.8T-parameter mixture-of-experts model with 104B active, a 1M-token context and image input. The license reads like MIT, except API resellers over $20M a year need a separate deal and huge products must show the Kimi name.</p>
+<p class="why"><strong>Why builders care:</strong> A frontier-class open agent model you can self-host or fine-tune, though it needs data-center hardware.</p>
+<p class="src"><a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i2"><p class="lbl"><span class="chip">AGENTS</span></p><h2><span class="n">2</span> Factory buys HumanLayer, the multiplayer coding-agent IDE</h2>
+<p>HumanLayer's founders Dex Horthy and Kyle Mistele are joining Factory. The hosted platform stays up for at least 30 days so users can export data, move to Factory or self-host the Apache 2.0 open-source version. Recent paying customers get refunds.</p>
+<p class="why"><strong>Why builders care:</strong> If your team runs on HumanLayer, pick self-host or migrate before the window closes.</p>
+<p class="src"><a href="https://factory.com/news/humanlayer" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i3"><p class="lbl"><span class="chip">DEVTOOLS</span></p><h2><span class="n">3</span> Together AI lets agents tune its inference kernels</h2>
+<p>Together Compiler has a swarm of agents propose GPU kernel changes, while a persistent engine checks each one for speed and correctness. Only verified changes ship. Together says it reached up to 2.6x higher tokens per second on open models in under 24 hours, and it's on by default for supported serverless models at the same price.</p>
+<p class="why"><strong>Why builders care:</strong> Cheaper, faster open-model endpoints with nothing to configure.</p>
+<p class="src"><a href="https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i4"><p class="lbl"><span class="chip">GAME DEV</span></p><h2><span class="n">4</span> 40% of 2026 Steam releases now disclose AI content</h2>
+<p>A daily count by PCGame.com of Valve's own AI flag finds 10,661 of 26,486 Steam games released this year disclose AI content (as of Nov 5). Flagged games are 40% of releases but just 12% of reviews.</p>
+<p class="why"><strong>Why builders care:</strong> Disclosure is self-reported and art leads the uses. Players are filtering, so be specific about what AI did in your game.</p>
+<p class="src"><a href="https://www.pcgame.com/steam-ai-statistics" rel="noopener">Source</a></p>
+</article>
+<article class="item" id="i5"><p class="lbl"><span class="chip">REPO</span></p><h2><span class="n">5</span> Axiom formalizes the whole Stacks Project in Lean</h2>
+<p>Axiom used coordinated swarms of AI agents to turn the roughly 7,500-page algebraic geometry reference into about 16 million lines of machine-checked Lean. Along the way it found dozens of statements needing fixes, like missing hypotheses.</p>
+<p class="why"><strong>Why builders care:</strong> A real blueprint for agent swarms on one huge codebase: stable interfaces, audits and downstream checks.</p>
+<p class="src"><a href="https://axiommath.ai/research/the-stacks-project-formalized/" rel="noopener">Source</a></p>
+</article>
+<aside class="hotd" id="hotd" aria-label="Hotfix of the Day"><h2>Hotfix of the Day</h2>
+<p>Give reasoning models room to think before you judge them. webAI's new TwIL-8B card says it averages about 19.5k output tokens per AIME 2026 problem and that a short budget "truncates the reasoning and scores far worse." Its example sets <code>max_new_tokens=32768</code>. Check your eval harness's token cap before you call a small model bad.</p>
+<p class="src"><a href="https://huggingface.co/webAI-Official/TwIL-8B" rel="noopener">Source</a></p>
+</aside>
+]]></content:encoded>
+</item>
 <item>
 <title>Tencent Hy4, GitBook&#x27;s AI-agent breach, itch.io No AI and more</title>
 <link>https://hotfixdaily.com/issues/011/</link>
